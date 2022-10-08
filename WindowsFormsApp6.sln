@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigJetGas", "WindowsFormsApp6\BigJetGas.csproj", "{23F326C9-D607-4748-B49D-102431F59C03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23F326C9-D607-4748-B49D-102431F59C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F326C9-D607-4748-B49D-102431F59C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F326C9-D607-4748-B49D-102431F59C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F326C9-D607-4748-B49D-102431F59C03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {747CA791-5BBE-4EF3-8E88-DC4F95D38E58}
+	EndGlobalSection
+EndGlobal
