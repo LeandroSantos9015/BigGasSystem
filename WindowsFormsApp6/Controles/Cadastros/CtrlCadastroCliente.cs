@@ -156,6 +156,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
             cliente.Cidade = idCidade;
             cliente.Complemento = ClienteCadastroView.TxtComp.Text;
             cliente.Endereco = ClienteCadastroView.TxtEnd.Text;
+            cliente.Fornecedor = ClienteCadastroView.ChkFornecedor.Checked;
 
             cliente.Obs = ClienteCadastroView.RchObs.Text;
             cliente.Telefone = ClienteCadastroView.TxtTelefone.Text.RemoveMascara();
@@ -179,6 +180,8 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 ClienteCadastroView.TxtComp.Text = null;
                 ClienteCadastroView.CbmCidade.SelectedItem = cidade.FirstOrDefault();
                 ClienteCadastroView.TxtEnd.Text = null;
+                ClienteCadastroView.ChkFornecedor.Checked = false;
+
 
                 ClienteCadastroView.RchObs.Text = null;
                 ClienteCadastroView.TxtTelefone.Text = null;
@@ -203,6 +206,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 ClienteCadastroView.CbmCidade.SelectedItem = cidade.SingleOrDefault(x => x.Id == cliente.Cidade);
                 ClienteCadastroView.TxtEnd.Text = cliente.Endereco;
 
+                ClienteCadastroView.ChkFornecedor.Checked = cliente.Fornecedor;
                 ClienteCadastroView.RchObs.Text = cliente.Obs;
                 ClienteCadastroView.TxtCPF.Text = cliente.Cpf.CpfCnpjMascara();
                 ClienteCadastroView.TxtTelefone.Text = cliente.Telefone.TelefoneMascara();

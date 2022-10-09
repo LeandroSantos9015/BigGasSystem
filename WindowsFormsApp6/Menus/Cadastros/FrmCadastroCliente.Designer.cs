@@ -57,6 +57,7 @@ namespace WindowsFormsApp6.Menus
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvHistorico = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -109,7 +110,7 @@ namespace WindowsFormsApp6.Menus
             // 
             this.txtCpf.Location = new System.Drawing.Point(70, 57);
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(287, 20);
+            this.txtCpf.Size = new System.Drawing.Size(173, 20);
             this.txtCpf.TabIndex = 2;
             // 
             // label3
@@ -249,6 +250,7 @@ namespace WindowsFormsApp6.Menus
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.txtId);
             this.tabPage1.Controls.Add(this.rchObs);
             this.tabPage1.Controls.Add(this.txtNome);
@@ -325,6 +327,16 @@ namespace WindowsFormsApp6.Menus
             this.dgvHistorico.Size = new System.Drawing.Size(358, 318);
             this.dgvHistorico.TabIndex = 0;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(277, 59);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 14;
+            this.checkBox1.Text = "Fornecedor";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // FrmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,5 +388,6 @@ namespace WindowsFormsApp6.Menus
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

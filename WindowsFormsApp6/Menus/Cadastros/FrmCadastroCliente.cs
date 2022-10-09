@@ -45,5 +45,7 @@ namespace WindowsFormsApp6.Menus
         public DataGridView DgvHistorico => dgvHistorico;
 
         public RichTextBox RchObs => rchObs;
+
+        public CheckBox ChkFornecedor => checkBox1;
     }
 }

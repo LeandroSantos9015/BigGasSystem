@@ -109,6 +109,7 @@
     <Compile Include="Modelos\ModelMercadoria.cs" />
     <Compile Include="Modelos\ModelCliente.cs" />
     <Compile Include="Modelos\ModelConfiguracao.cs" />
+    <Compile Include="Modelos\ModelMercadoriaBase.cs" />
     <Compile Include="Modelos\ModeloCidade.cs" />
     <Compile Include="Menus\Movimentacao\FrmEntradas.cs">
       <SubType>Form</SubType>
@@ -116,6 +117,9 @@
     <Compile Include="Menus\Movimentacao\FrmEntradas.Designer.cs">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Movimentacao\DapperDinamico.cs" />
+    <Compile Include="Modelos\Movimentacao\ModelItemMovimentacao.cs" />
+    <Compile Include="Modelos\Movimentacao\ModelMovimentacao.cs" />
     <Compile Include="Pesquisar\FrmPesquisar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +131,7 @@
     <Compile Include="Repositorios\Cadastros\RepositorioMercadoria.cs" />
     <Compile Include="Repositorios\Cadastros\RepositorioCliente.cs" />
     <Compile Include="Repositorios\IRepositoryBase.cs" />
+    <Compile Include="Repositorios\Movimentacao\RepositorioMovimentacao.cs" />
     <Compile Include="Repositorios\RepositorioBase.cs" />
     <Compile Include="Utilitarios\EnumPelaDescricao.cs" />
     <Compile Include="Utilitarios\Mascara.cs" />
@@ -183,8 +188,6 @@
   <ItemGroup>
     <None Include="Resources\botao_mais.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositorios\Movimentacao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

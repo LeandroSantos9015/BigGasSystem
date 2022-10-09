@@ -22,6 +22,7 @@ namespace WindowsFormsApp6.Modelos
         public string Telefone { get; set; }
         public long Cidade { get; set; }
         public string Obs { get; set; }
+        public bool Fornecedor { get; set; }
 
         [Browsable(false)]
         public string Consulta => Nome;
@@ -44,6 +45,7 @@ namespace WindowsFormsApp6.Modelos
             base.Add("@Complemento", cli.Complemento);
             base.Add("@Telefone", cli.Telefone);
             base.Add("@Cidade", cli.Cidade);
+            base.Add("@Fornecedor", cli.Fornecedor);
             base.Add("@Obs", cli.Obs);
             base.Add("@Return", dbType: DbType.Int64, direction: ParameterDirection.ReturnValue);
         }

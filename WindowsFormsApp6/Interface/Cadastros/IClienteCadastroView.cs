@@ -41,6 +41,8 @@ namespace WindowsFormsApp6.Interface.Cadastros
 
         RichTextBox RchObs { get; }
 
+        CheckBox ChkFornecedor { get; }
+
 
     }
 }
