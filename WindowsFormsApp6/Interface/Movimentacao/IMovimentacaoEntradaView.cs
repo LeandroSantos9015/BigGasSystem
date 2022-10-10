@@ -41,5 +41,7 @@ namespace WindowsFormsApp6.Interface.Movimentacao
 
         DataGridView DgvMercadorias { get; }
 
+        ComboBox CbmFornecedor { get; }
+
     }
 }

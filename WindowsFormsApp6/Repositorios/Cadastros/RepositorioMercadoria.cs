@@ -41,9 +41,9 @@ namespace WindowsFormsApp6.Repositorios.Cliente
             return consulta;
         }
 
-        public IList<ModelMercadoriaEntrada> ListarEntrada()
+        public IList<ModelMercadoria> ListarEntrada()
         {
-            var consulta = Conexao.Query<ModelMercadoriaEntrada>("SELECT * FROM ConsultarMercadoria()").ToList();
+            var consulta = Conexao.Query<ModelMercadoria>("SELECT * FROM ConsultarMercadoria()").ToList();
 
             return consulta;
         }

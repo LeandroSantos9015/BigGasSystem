@@ -71,7 +71,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
         {
             var lista = regraMercadoria.ListaMercadorias().Cast<Object>().ToList();
 
-            CtrlPesquisar Pesquisa = new CtrlPesquisar(Pai, lista, 690, "Pesquisa de Clientes");
+            CtrlPesquisar Pesquisa = new CtrlPesquisar(Pai, lista, 690, "Pesquisa de Mercadorias");
 
             ObjetoParaTela(Pesquisa.RetornaObjetoSelecionado() as ModelMercadoria);
 

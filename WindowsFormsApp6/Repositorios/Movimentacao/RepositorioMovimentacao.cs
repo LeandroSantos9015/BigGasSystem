@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp6.Enumeradores;
 using WindowsFormsApp6.Modelos.Movimentacao;
 
 namespace WindowsFormsApp6.Repositorios.Movimentacao
@@ -20,14 +21,14 @@ namespace WindowsFormsApp6.Repositorios.Movimentacao
         }
 
 
-        public void Salvar(ModelMovimentacao cli)
+        public Int64 Salvar(ModelMovimentacao mov)
         {
             try
             {
-                var p = cli.Salvar;
-                Conexao.Execute("SalvarCliente", p, commandType: CommandType.StoredProcedure);
+                var p = mov.Save;
+                Conexao.Execute("SalvarMovimentacao", p, commandType: CommandType.StoredProcedure);
                 var b = p.Get<object>("@Return");
-                b.ToString();
+                return Convert.ToInt64(b.ToString());
             }
             catch (Exception e)
             {
@@ -35,9 +36,32 @@ namespace WindowsFormsApp6.Repositorios.Movimentacao
             }
         }
 
-        public IList<ModelMovimentacao> Listar()
+        public void SalvarItens(IList<ModelItemMovimentacao> itens)
         {
-            var consulta = Conexao.Query<ModelMovimentacao>("SELECT * FROM ConsultarCliente()").ToList();
+            try
+            {
+                foreach (var item in itens)
+                {
+                    var p = item.Save;
+                    Conexao.Execute("SalvarItemMovimentacao", p, commandType: CommandType.StoredProcedure);
+                    //var b = p.Get<object>("@Return");
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public IList<ModelMovimentacao> Listar(EOperacaoMovimento operacao, EStatusMovimento status)
+        {
+            var consulta = Conexao.Query<ModelMovimentacao>($"SELECT * FROM ConsultaNotas({(byte)operacao},{(byte)status})").ToList();
+
+            return consulta;
+        }
+
+        public IList<ModelItemMovimentacao> ListaMercadoriasNotas(Int64 Id, EOperacaoMovimento operacao, EStatusMovimento status)
+        {
+            var consulta = Conexao.Query<ModelItemMovimentacao>($"SELECT * FROM ListaMercadoriasNotas({Id},{(byte)operacao},{(byte)status})").ToList();
 
             return consulta;
         }

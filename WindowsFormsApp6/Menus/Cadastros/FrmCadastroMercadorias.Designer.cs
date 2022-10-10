@@ -31,22 +31,22 @@ namespace WindowsFormsApp6.Menus
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvHistorico = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCusto = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtVenda = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.txtVenda = new System.Windows.Forms.TextBox();
+            this.txtCusto = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvHistorico = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -60,7 +60,7 @@ namespace WindowsFormsApp6.Menus
             this.tabControl1.Location = new System.Drawing.Point(4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(356, 287);
+            this.tabControl1.Size = new System.Drawing.Size(356, 183);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -82,21 +82,28 @@ namespace WindowsFormsApp6.Menus
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(348, 261);
+            this.tabPage1.Size = new System.Drawing.Size(348, 157);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Principal";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // btnExcluir
             // 
-            this.tabPage2.Controls.Add(this.dgvHistorico);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(348, 261);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Histórico";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btnExcluir.Location = new System.Drawing.Point(263, 127);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(69, 22);
+            this.btnExcluir.TabIndex = 8;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(182, 127);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // txtId
             // 
@@ -104,32 +111,82 @@ namespace WindowsFormsApp6.Menus
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(75, 20);
-            this.txtId.TabIndex = 14;
+            this.txtId.TabIndex = 0;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(78, 82);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ReadOnly = true;
+            this.txtQuantidade.Size = new System.Drawing.Size(75, 20);
+            this.txtQuantidade.TabIndex = 6;
+            this.txtQuantidade.Text = "0";
+            // 
+            // txtVenda
+            // 
+            this.txtVenda.Location = new System.Drawing.Point(78, 56);
+            this.txtVenda.Name = "txtVenda";
+            this.txtVenda.Size = new System.Drawing.Size(75, 20);
+            this.txtVenda.TabIndex = 4;
+            // 
+            // txtCusto
+            // 
+            this.txtCusto.Location = new System.Drawing.Point(257, 56);
+            this.txtCusto.Name = "txtCusto";
+            this.txtCusto.Size = new System.Drawing.Size(75, 20);
+            this.txtCusto.TabIndex = 5;
             // 
             // txtDescricao
             // 
             this.txtDescricao.Location = new System.Drawing.Point(78, 31);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(254, 20);
-            this.txtDescricao.TabIndex = 15;
+            this.txtDescricao.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Quantidade:";
             // 
             // btnLimpar
             // 
             this.btnLimpar.Location = new System.Drawing.Point(257, 5);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 22);
-            this.btnLimpar.TabIndex = 19;
+            this.btnLimpar.TabIndex = 2;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Preço Venda:";
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(182, 5);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(69, 22);
-            this.btnPesquisar.TabIndex = 18;
+            this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(183, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Preço Custo:";
             // 
             // label2
             // 
@@ -149,85 +206,30 @@ namespace WindowsFormsApp6.Menus
             this.label1.TabIndex = 17;
             this.label1.Text = "Descrição:";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dgvHistorico);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(348, 157);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Histórico";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // dgvHistorico
             // 
             this.dgvHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorico.Location = new System.Drawing.Point(6, 6);
             this.dgvHistorico.Name = "dgvHistorico";
-            this.dgvHistorico.Size = new System.Drawing.Size(336, 249);
+            this.dgvHistorico.Size = new System.Drawing.Size(336, 145);
             this.dgvHistorico.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(183, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Preço Custo:";
-            // 
-            // txtCusto
-            // 
-            this.txtCusto.Location = new System.Drawing.Point(257, 56);
-            this.txtCusto.Name = "txtCusto";
-            this.txtCusto.Size = new System.Drawing.Size(75, 20);
-            this.txtCusto.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Preço Venda:";
-            // 
-            // txtVenda
-            // 
-            this.txtVenda.Location = new System.Drawing.Point(78, 56);
-            this.txtVenda.Name = "txtVenda";
-            this.txtVenda.Size = new System.Drawing.Size(75, 20);
-            this.txtVenda.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Quantidade:";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(78, 82);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(75, 20);
-            this.txtQuantidade.TabIndex = 15;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(182, 107);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(69, 22);
-            this.btnExcluir.TabIndex = 21;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(257, 106);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 20;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // FrmCadastroMercadorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 294);
+            this.ClientSize = new System.Drawing.Size(361, 188);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmCadastroMercadorias";
             this.Text = "Cadastro de Mercadorias";

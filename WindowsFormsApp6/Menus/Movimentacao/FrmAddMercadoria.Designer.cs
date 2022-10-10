@@ -101,7 +101,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.btnAdd.Location = new System.Drawing.Point(82, 122);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 23);
-            this.btnAdd.TabIndex = 7;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Adicionar";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
@@ -145,21 +145,21 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.cbmUnid.Location = new System.Drawing.Point(204, 45);
             this.cbmUnid.Name = "cbmUnid";
             this.cbmUnid.Size = new System.Drawing.Size(78, 21);
-            this.cbmUnid.TabIndex = 5;
+            this.cbmUnid.TabIndex = 2;
             // 
             // txtVenda
             // 
             this.txtVenda.Location = new System.Drawing.Point(84, 71);
             this.txtVenda.Name = "txtVenda";
             this.txtVenda.Size = new System.Drawing.Size(73, 20);
-            this.txtVenda.TabIndex = 4;
+            this.txtVenda.TabIndex = 3;
             // 
             // txtQtd
             // 
             this.txtQtd.Location = new System.Drawing.Point(84, 46);
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(73, 20);
-            this.txtQtd.TabIndex = 4;
+            this.txtQtd.TabIndex = 1;
             this.txtQtd.Text = "1";
             // 
             // label4

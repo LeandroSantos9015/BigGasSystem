@@ -34,22 +34,4 @@ namespace WindowsFormsApp6.Modelos
         public DynamicParameters Save => Salvar(this);
 
     }
-
-    //public class ModelMercadoriaDapper : DynamicParameters
-    //{
-    //    public ModelMercadoriaDapper(ModelMercadoria cli)
-    //    {
-    //        base.Add("@Id", cli.Id);
-    //        base.Add("@Descricao", cli.Descricao);
-    //        base.Add("@PrecoCusto", cli.PrecoCusto);
-    //        base.Add("@PrecoVenda", cli.PrecoVenda);
-    //        base.Add("@Quantidade", cli.Quantidade);
-    //        base.Add("@Return", dbType: DbType.Int64, direction: ParameterDirection.ReturnValue);
-    //    }
-    //}
-
-    public class ModelMercadoriaEntrada : ModelMercadoria
-    {
-        public decimal Total => base.PrecoVenda * base.Quantidade;
-    }
 }

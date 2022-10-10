@@ -50,6 +50,8 @@ namespace WindowsFormsApp6.Movimentacao
             this.txtDescAcre = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbmFornecedor = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMercadorias)).BeginInit();
             this.SuspendLayout();
@@ -60,21 +62,21 @@ namespace WindowsFormsApp6.Movimentacao
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(98, 20);
-            this.txtId.TabIndex = 20;
+            this.txtId.TabIndex = 0;
             // 
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(67, 37);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(257, 20);
-            this.txtDesc.TabIndex = 21;
+            this.txtDesc.TabIndex = 3;
             // 
             // btnLimpar
             // 
             this.btnLimpar.Location = new System.Drawing.Point(249, 11);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 22);
-            this.btnLimpar.TabIndex = 25;
+            this.btnLimpar.TabIndex = 2;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             // 
@@ -83,7 +85,7 @@ namespace WindowsFormsApp6.Movimentacao
             this.btnPesquisar.Location = new System.Drawing.Point(170, 11);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(69, 22);
-            this.btnPesquisar.TabIndex = 24;
+            this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
@@ -109,7 +111,7 @@ namespace WindowsFormsApp6.Movimentacao
             // 
             this.lblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorTotal.ForeColor = System.Drawing.Color.Blue;
-            this.lblValorTotal.Location = new System.Drawing.Point(5, 295);
+            this.lblValorTotal.Location = new System.Drawing.Point(5, 327);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(319, 20);
             this.lblValorTotal.TabIndex = 23;
@@ -118,17 +120,17 @@ namespace WindowsFormsApp6.Movimentacao
             // 
             // txtNum
             // 
-            this.txtNum.Location = new System.Drawing.Point(67, 63);
+            this.txtNum.Location = new System.Drawing.Point(67, 95);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(98, 20);
-            this.txtNum.TabIndex = 21;
+            this.txtNum.TabIndex = 5;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvMercadorias);
             this.groupBox1.Controls.Add(this.btnRem);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Location = new System.Drawing.Point(5, 115);
+            this.groupBox1.Location = new System.Drawing.Point(5, 147);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(319, 177);
             this.groupBox1.TabIndex = 26;
@@ -145,7 +147,7 @@ namespace WindowsFormsApp6.Movimentacao
             this.dgvMercadorias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvMercadorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMercadorias.Size = new System.Drawing.Size(266, 152);
-            this.dgvMercadorias.TabIndex = 26;
+            this.dgvMercadorias.TabIndex = 1;
             // 
             // btnRem
             // 
@@ -154,7 +156,7 @@ namespace WindowsFormsApp6.Movimentacao
             this.btnRem.Location = new System.Drawing.Point(277, 50);
             this.btnRem.Name = "btnRem";
             this.btnRem.Size = new System.Drawing.Size(34, 30);
-            this.btnRem.TabIndex = 25;
+            this.btnRem.TabIndex = 2;
             this.btnRem.UseVisualStyleBackColor = true;
             // 
             // btnAdd
@@ -164,17 +166,17 @@ namespace WindowsFormsApp6.Movimentacao
             this.btnAdd.Location = new System.Drawing.Point(277, 19);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(34, 30);
-            this.btnAdd.TabIndex = 25;
+            this.btnAdd.TabIndex = 0;
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnProcessar
             // 
             this.btnProcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcessar.ForeColor = System.Drawing.Color.Green;
-            this.btnProcessar.Location = new System.Drawing.Point(163, 324);
+            this.btnProcessar.Location = new System.Drawing.Point(80, 356);
             this.btnProcessar.Name = "btnProcessar";
             this.btnProcessar.Size = new System.Drawing.Size(74, 22);
-            this.btnProcessar.TabIndex = 28;
+            this.btnProcessar.TabIndex = 8;
             this.btnProcessar.Text = "Processar";
             this.btnProcessar.UseVisualStyleBackColor = true;
             // 
@@ -182,10 +184,10 @@ namespace WindowsFormsApp6.Movimentacao
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.Color.Black;
-            this.btnSalvar.Location = new System.Drawing.Point(249, 324);
+            this.btnSalvar.Location = new System.Drawing.Point(165, 356);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(74, 22);
-            this.btnSalvar.TabIndex = 27;
+            this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -193,17 +195,17 @@ namespace WindowsFormsApp6.Movimentacao
             // 
             this.btnEstornar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstornar.ForeColor = System.Drawing.Color.Red;
-            this.btnEstornar.Location = new System.Drawing.Point(78, 324);
+            this.btnEstornar.Location = new System.Drawing.Point(250, 356);
             this.btnEstornar.Name = "btnEstornar";
             this.btnEstornar.Size = new System.Drawing.Size(74, 22);
-            this.btnEstornar.TabIndex = 28;
+            this.btnEstornar.TabIndex = 10;
             this.btnEstornar.Text = "Estornar";
             this.btnEstornar.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 67);
+            this.label5.Location = new System.Drawing.Point(14, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 23;
@@ -214,7 +216,7 @@ namespace WindowsFormsApp6.Movimentacao
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Green;
-            this.lblStatus.Location = new System.Drawing.Point(229, 92);
+            this.lblStatus.Location = new System.Drawing.Point(229, 124);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(92, 16);
             this.lblStatus.TabIndex = 23;
@@ -223,7 +225,7 @@ namespace WindowsFormsApp6.Movimentacao
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(168, 67);
+            this.label7.Location = new System.Drawing.Point(168, 99);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 23;
@@ -231,34 +233,52 @@ namespace WindowsFormsApp6.Movimentacao
             // 
             // txtDescAcre
             // 
-            this.txtDescAcre.Location = new System.Drawing.Point(246, 63);
+            this.txtDescAcre.Location = new System.Drawing.Point(246, 95);
             this.txtDescAcre.Name = "txtDescAcre";
             this.txtDescAcre.Size = new System.Drawing.Size(78, 20);
-            this.txtDescAcre.TabIndex = 21;
+            this.txtDescAcre.TabIndex = 6;
             this.txtDescAcre.Text = "0,00";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(67, 88);
+            this.dateTimePicker1.Location = new System.Drawing.Point(67, 120);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
-            this.dateTimePicker1.TabIndex = 27;
+            this.dateTimePicker1.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 92);
+            this.label3.Location = new System.Drawing.Point(29, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 23;
             this.label3.Text = "Data:";
             // 
+            // cbmFornecedor
+            // 
+            this.cbmFornecedor.FormattingEnabled = true;
+            this.cbmFornecedor.Location = new System.Drawing.Point(67, 63);
+            this.cbmFornecedor.Name = "cbmFornecedor";
+            this.cbmFornecedor.Size = new System.Drawing.Size(257, 21);
+            this.cbmFornecedor.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(-2, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Fornecedor:";
+            // 
             // FrmEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 352);
+            this.ClientSize = new System.Drawing.Size(330, 383);
+            this.Controls.Add(this.cbmFornecedor);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnEstornar);
             this.Controls.Add(this.btnProcessar);
@@ -276,6 +296,7 @@ namespace WindowsFormsApp6.Movimentacao
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "FrmEntradas";
             this.Text = "Entrada de Mercadorias";
@@ -309,5 +330,7 @@ namespace WindowsFormsApp6.Movimentacao
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvMercadorias;
+        private System.Windows.Forms.ComboBox cbmFornecedor;
+        private System.Windows.Forms.Label label4;
     }
 }

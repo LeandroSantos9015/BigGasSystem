@@ -9,6 +9,7 @@ using WindowsFormsApp6.Enumeradores;
 using WindowsFormsApp6.Interface.Movimentacao;
 using WindowsFormsApp6.Menus.Movimentacao;
 using WindowsFormsApp6.Modelos;
+using WindowsFormsApp6.Modelos.Movimentacao;
 using WindowsFormsApp6.Utilitarios;
 using static WindowsFormsApp6.Utilitarios.Util;
 
@@ -19,7 +20,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
         private RegraMercadoria regraMercadoria = new RegraMercadoria();
         private RegraAddEntrada regraAddEntrada = new RegraAddEntrada();
 
-        private ModelMercadoriaEntrada mercadoriaCarregada;
+        private ModelItemMovimentacao mercadoriaCarregada;
 
         public IAddEntradaMercadoria EntradaMercadoriaView { get; set; }
 
@@ -30,6 +31,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             EntradaMercadoriaView.AddMercadoriaView.StartPosition = FormStartPosition.CenterParent;
 
             DelegarEventos();
+
+            MapeamentoInicial();
 
             EntradaMercadoriaView.AddMercadoriaView.ShowDialog();
         }
@@ -50,28 +53,48 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             EntradaMercadoriaView.CbmDescricao.SelectedValueChanged += CbmDescricao_SelectedValueChanged;
             EntradaMercadoriaView.CbmUnidade.SelectedValueChanged += CbmUnidade_SelectedValueChanged;
 
+            EntradaMercadoriaView.CbmDescricao.DropDownStyle = ComboBoxStyle.DropDownList;
+            EntradaMercadoriaView.CbmUnidade.DropDownStyle = ComboBoxStyle.DropDownList;
+
             EntradaMercadoriaView.TxtPrecoCusto.KeyPress += Validadores.CampoNumericoDecimal;
             EntradaMercadoriaView.TxtQuantidade.KeyPress += Validadores.CampoNumericoDecimal;
             EntradaMercadoriaView.TxtPrecoVenda.KeyPress += Validadores.CampoNumericoDecimal;
 
-            this.mercadoriaCarregada = regraMercadoria.ListaMercadoriasEntrada().FirstOrDefault();
+            EntradaMercadoriaView.TxtQuantidade.LostFocus += Txt_LostFocus;
+            EntradaMercadoriaView.TxtPrecoCusto.LostFocus += Txt_LostFocus;
+            EntradaMercadoriaView.TxtPrecoVenda.LostFocus += Txt_LostFocus;
 
-            AtualizacaoValores(1);
+
 
         }
 
-        private void AtualizacaoValores(int unidade)
+        private void Txt_LostFocus(object sender, EventArgs e)
         {
-            // colocar essa regra também no key press dos texts boxes 
+            int unidade = (int)(EUnidadeMedida)((KeyValuePair<Enum, string>)EntradaMercadoriaView.CbmUnidade.SelectedItem).Key;
+
+            AtualizacaoValores(unidade);
+
+        }
+
+        private void MapeamentoInicial()
+        {
+
+            this.mercadoriaCarregada = regraMercadoria.ListaMercadoriasEntrada().FirstOrDefault();
 
             EntradaMercadoriaView.TxtPrecoVenda.Text = this.mercadoriaCarregada.PrecoVenda.ToString();
             EntradaMercadoriaView.TxtPrecoCusto.Text = this.mercadoriaCarregada.PrecoCusto.ToString();
 
+            AtualizacaoValores(1);
+        }
+       
+        private void AtualizacaoValores(int unidade)
+        {
+           
             decimal.TryParse(EntradaMercadoriaView.TxtQuantidade.Text.Replace(".", ","), out decimal valorQtd);
             decimal.TryParse(EntradaMercadoriaView.TxtPrecoVenda.Text.Replace(".", ","), out decimal valorUnit);
             decimal.TryParse(EntradaMercadoriaView.TxtPrecoCusto.Text.Replace(".", ","), out decimal valorCusto);
 
-            decimal totalValor = valorUnit * valorQtd * unidade;
+            decimal totalValor = valorCusto * valorQtd * unidade;
 
             decimal totalUnidade = valorQtd * unidade;
 
@@ -82,6 +105,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             mercadoriaCarregada.PrecoCusto = valorCusto;
             mercadoriaCarregada.PrecoVenda = valorUnit;
             mercadoriaCarregada.Quantidade = totalUnidade;
+            mercadoriaCarregada.ValorTotal = totalValor;
 
 
         }
@@ -96,7 +120,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
         private void CbmDescricao_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.mercadoriaCarregada = (sender as ComboBox).SelectedItem as ModelMercadoriaEntrada;
+            this.mercadoriaCarregada = (sender as ComboBox).SelectedItem as ModelItemMovimentacao;
 
             int unidade = (int)(EUnidadeMedida)((KeyValuePair<Enum, string>)EntradaMercadoriaView.CbmUnidade.SelectedItem).Key;
 
@@ -128,7 +152,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
         }
 
 
-        public ModelMercadoriaEntrada RetornaObjetoSelecionado()
+        public ModelItemMovimentacao RetornaObjetoSelecionado()
         {
             int unidade = (int)(EUnidadeMedida)((KeyValuePair<Enum, string>)EntradaMercadoriaView.CbmUnidade.SelectedItem).Key;
             AtualizacaoValores(unidade);

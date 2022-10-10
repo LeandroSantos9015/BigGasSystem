@@ -68,6 +68,8 @@
     <Compile Include="Controles\CtrlPrincipal.cs" />
     <Compile Include="Controles\Movimentacao\CtrlEntrada.cs" />
     <Compile Include="Controles\Movimentacao\CtrlSaida.cs" />
+    <Compile Include="Enumeradores\EOperacaoMovimento.cs" />
+    <Compile Include="Enumeradores\EStatusMovimento.cs" />
     <Compile Include="Enumeradores\EUnidadeMedida.cs" />
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>

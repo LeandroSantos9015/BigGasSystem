@@ -52,12 +52,12 @@ namespace WindowsFormsApp6.Menus
             this.label9 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvHistorico = new System.Windows.Forms.DataGridView();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -99,7 +99,7 @@ namespace WindowsFormsApp6.Menus
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(282, 298);
+            this.btnSalvar.Location = new System.Drawing.Point(207, 298);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 10;
@@ -133,7 +133,7 @@ namespace WindowsFormsApp6.Menus
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(207, 298);
+            this.btnExcluir.Location = new System.Drawing.Point(288, 298);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(69, 22);
             this.btnExcluir.TabIndex = 11;
@@ -283,6 +283,16 @@ namespace WindowsFormsApp6.Menus
             this.tabPage1.Text = "Dados Principais";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(277, 59);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 14;
+            this.checkBox1.Text = "Fornecedor";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // btnLimpar
             // 
             this.btnLimpar.Location = new System.Drawing.Point(288, 5);
@@ -326,16 +336,6 @@ namespace WindowsFormsApp6.Menus
             this.dgvHistorico.Name = "dgvHistorico";
             this.dgvHistorico.Size = new System.Drawing.Size(358, 318);
             this.dgvHistorico.TabIndex = 0;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(277, 59);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "Fornecedor";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FrmCadastroCliente
             // 

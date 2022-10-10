@@ -41,10 +41,12 @@ namespace WindowsFormsApp6.Movimentacao
 
         public Label ValorTotal => lblValorTotal;
 
-        public TextBox TxtDescAcres => txtDesc;
+        public TextBox TxtDescAcres => txtDescAcre;
 
         public DateTimePicker DteData => dateTimePicker1;
 
         public DataGridView DgvMercadorias => dgvMercadorias;
+
+        public ComboBox CbmFornecedor => cbmFornecedor;
     }
 }
