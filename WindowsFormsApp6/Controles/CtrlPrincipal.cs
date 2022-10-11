@@ -40,7 +40,7 @@ namespace WindowsFormsApp6
 
         private void MenuSaidas_Click(object sender, EventArgs e)
         {
-
+            new CtrlSaida(Principal);
         }
 
         private void MenuMercadorias_Click(object sender, EventArgs e)

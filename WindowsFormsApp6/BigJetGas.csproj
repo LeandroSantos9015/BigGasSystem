@@ -87,6 +87,7 @@
     <Compile Include="Interface\Cadastros\IClienteCadastroView.cs" />
     <Compile Include="Interface\Movimentacao\IAddEntradaMercadoria.cs" />
     <Compile Include="Interface\Movimentacao\IMovimentacaoEntradaView.cs" />
+    <Compile Include="Interface\Movimentacao\IMovimentacaoSaidaView.cs" />
     <Compile Include="Interface\Pesquisa\IModeloGenerico.cs" />
     <Compile Include="Interface\Pesquisa\IPesquisar.cs" />
     <Compile Include="Interface\IPrincipalView.cs" />

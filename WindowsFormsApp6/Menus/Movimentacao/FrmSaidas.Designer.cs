@@ -33,6 +33,8 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.btnProcessar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvMercadorias = new System.Windows.Forms.DataGridView();
+            this.btnRem = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
             this.txtDescAcre = new System.Windows.Forms.TextBox();
             this.lblValorLiquidoTotal = new System.Windows.Forms.Label();
@@ -40,14 +42,12 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.lblEnd = new System.Windows.Forms.Label();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblCidade = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnRem = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMercadorias)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -69,7 +69,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.btnProcessar.Name = "btnProcessar";
             this.btnProcessar.Size = new System.Drawing.Size(74, 22);
             this.btnProcessar.TabIndex = 35;
-            this.btnProcessar.Text = "Processar";
+            this.btnProcessar.Text = "Finalizar";
             this.btnProcessar.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -95,6 +95,26 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.dgvMercadorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMercadorias.Size = new System.Drawing.Size(284, 152);
             this.dgvMercadorias.TabIndex = 0;
+            // 
+            // btnRem
+            // 
+            this.btnRem.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_menos;
+            this.btnRem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRem.Location = new System.Drawing.Point(292, 50);
+            this.btnRem.Name = "btnRem";
+            this.btnRem.Size = new System.Drawing.Size(34, 30);
+            this.btnRem.TabIndex = 2;
+            this.btnRem.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_mais;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Location = new System.Drawing.Point(292, 19);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(34, 30);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // txtValorTotal
             // 
@@ -162,90 +182,71 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.label4.TabIndex = 46;
             this.label4.Text = "Cliente:";
             // 
-            // textBox1
+            // txtCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(226, 20);
-            this.textBox1.TabIndex = 49;
+            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(67, 13);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(226, 20);
+            this.txtCliente.TabIndex = 49;
             // 
-            // label1
+            // lblEnd
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Endereço...";
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.Location = new System.Drawing.Point(67, 36);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(62, 13);
+            this.lblEnd.TabIndex = 51;
+            this.lblEnd.Text = "Endereço...";
             // 
-            // label2
+            // lblTel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Telefone";
+            this.lblTel.AutoSize = true;
+            this.lblTel.Location = new System.Drawing.Point(67, 55);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(49, 13);
+            this.lblTel.TabIndex = 51;
+            this.lblTel.Text = "Telefone";
             // 
-            // label5
+            // lblCidade
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "Cidade";
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.Location = new System.Drawing.Point(67, 75);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(40, 13);
+            this.lblCidade.TabIndex = 51;
+            this.lblCidade.Text = "Cidade";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lblCidade);
+            this.groupBox2.Controls.Add(this.txtCliente);
+            this.groupBox2.Controls.Add(this.lblTel);
+            this.groupBox2.Controls.Add(this.btnPesquisar);
+            this.groupBox2.Controls.Add(this.lblEnd);
             this.groupBox2.Location = new System.Drawing.Point(5, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(329, 100);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
             // 
-            // button1
+            // btnPesquisar
             // 
-            this.button1.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.lupa2;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(299, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(21, 23);
-            this.button1.TabIndex = 50;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnRem
-            // 
-            this.btnRem.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_menos;
-            this.btnRem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRem.Location = new System.Drawing.Point(292, 50);
-            this.btnRem.Name = "btnRem";
-            this.btnRem.Size = new System.Drawing.Size(34, 30);
-            this.btnRem.TabIndex = 2;
-            this.btnRem.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_mais;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Location = new System.Drawing.Point(292, 19);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(34, 30);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnPesquisar.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.lupa2;
+            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisar.Location = new System.Drawing.Point(299, 11);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(21, 23);
+            this.btnPesquisar.TabIndex = 50;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // FrmSaidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 386);
+            this.ClientSize = new System.Drawing.Size(346, 377);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnProcessar);
@@ -281,11 +282,11 @@ namespace WindowsFormsApp6.Menus.Movimentacao
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Label lblEnd;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.GroupBox groupBox2;
     }
 }

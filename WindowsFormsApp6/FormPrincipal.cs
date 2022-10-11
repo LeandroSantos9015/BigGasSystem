@@ -20,9 +20,13 @@ namespace WindowsFormsApp6
 
         public ToolStripMenuItem MenuMercadorias => mercadoriasToolStripMenuItem;
 
-        public ToolStripMenuItem MenuEntradas=> entradaToolStripMenuItem;
+        public ToolStripMenuItem MenuEntradas => entradaToolStripMenuItem;
 
-        public ToolStripMenuItem MenuSaidas  => saidaToolStripMenuItem;
+        public ToolStripMenuItem MenuSaidas => saidaToolStripMenuItem;
+
+        public ToolStripMenuItem MenuCancelamentoSaida => cancelamentoSaidaToolStripMenuItem;
+
+
 
     }
 }
