@@ -60,6 +60,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             MovimentacaoEntradaView.TxtDescAcres.LostFocus += TxtDescAcres_LostFocus;
             MovimentacaoEntradaView.TxtDescAcres.KeyPress += Validadores.CampoNumericoDecimalNegPos;
 
+            MovimentacaoEntradaView.MovimentacaoEntradaView.FormClosing += FormClosing;
+
         }
 
         private void TxtDescAcres_LostFocus(object sender, EventArgs e)
@@ -452,6 +454,16 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
             return retorno;
         }
-
+        public virtual void FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var result = MessageBox.Show(this.Pai.PrincipalView, "Você tem certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo);
+                if (result != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }

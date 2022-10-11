@@ -47,13 +47,15 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
             MercadoriaView.TxtPrecoCusto.LostFocus += Validadores.DecimalAposFoco;
             MercadoriaView.TxtPrecoVenda.LostFocus += Validadores.DecimalAposFoco;
+
+            MercadoriaView.MercadoriaView.FormClosing += FormClosing;
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             ModelMercadoria mercadoria = TelaParaObjeto();
 
-            bool camposObrig = false;///CamposObrigatorios(cliente);
+            bool camposObrig = CamposObrigatorios(mercadoria);
 
             if (!camposObrig)
             {
@@ -62,6 +64,31 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 if (salvou)
                     ObjetoParaTela();
             }
+        }
+
+        private bool CamposObrigatorios(ModelMercadoria mercadoria)
+        {
+
+            bool descricao = string.IsNullOrEmpty(mercadoria.Descricao);
+
+            bool custo = mercadoria.PrecoCusto == 0;
+            bool venda = mercadoria.PrecoVenda == 0;
+
+
+            bool retorno = descricao || custo || venda;
+
+            string custoString = custo ? "\nPreço de custo deve ser maior que zero" : "";
+            string vendaString = venda ? "\nPreço de venda deve ser maior que zero" : "";
+
+
+            if (retorno)
+                MessageBox.Show($"Preencha os campos obrigatórios\n{custoString}{vendaString}");
+
+            this.MercadoriaView.TxtDescricao.BackColor = descricao ? Color.Yellow : Color.White;
+            this.MercadoriaView.TxtPrecoCusto.BackColor = custo ? Color.Yellow : Color.White;
+            this.MercadoriaView.TxtPrecoVenda.BackColor = venda ? Color.Yellow : Color.White;
+
+            return retorno;
         }
 
         private void BtnLimpar_Click(object sender, EventArgs e)
@@ -137,6 +164,19 @@ namespace WindowsFormsApp6.Controles.Cadastros
             mercadoria.Quantidade = qtd;
 
             return mercadoria;
+        }
+
+
+        public virtual void FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var result = MessageBox.Show(this.Pai.PrincipalView, "Você tem certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo);
+                if (result != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

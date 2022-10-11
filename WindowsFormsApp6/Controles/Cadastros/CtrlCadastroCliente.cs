@@ -56,6 +56,8 @@ namespace WindowsFormsApp6.Controles.Cadastros
             ClienteCadastroView.TxtCPF.LostFocus += TxtCPF_LostFocus;
             ClienteCadastroView.TxtTelefone.LostFocus += TxtTelefone_LostFocus;
 
+            ClienteCadastroView.ClienteView.FormClosing += FormClosing;
+
         }
 
         private void TxtTelefone_LostFocus(object sender, EventArgs e)
@@ -210,6 +212,18 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 ClienteCadastroView.RchObs.Text = cliente.Obs;
                 ClienteCadastroView.TxtCPF.Text = cliente.Cpf.CpfCnpjMascara();
                 ClienteCadastroView.TxtTelefone.Text = cliente.Telefone.TelefoneMascara();
+            }
+        }
+
+        public virtual void FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var result = MessageBox.Show(this.Pai.PrincipalView, "Você tem certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo);
+                if (result != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }

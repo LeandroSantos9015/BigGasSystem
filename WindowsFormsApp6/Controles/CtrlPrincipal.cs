@@ -16,8 +16,8 @@ namespace WindowsFormsApp6
 
         public CtrlPrincipal()
         {
-           // if (usarTelaClassica)
-                Principal = new FormPrincipal();
+            // if (usarTelaClassica)
+            Principal = new FormPrincipal();
             //else
             //    Principal = new FrmPrincipal2();
 
@@ -34,11 +34,13 @@ namespace WindowsFormsApp6
 
             Principal.MenuSaidas.Click += MenuSaidas_Click;
 
+            Principal.PrincipalView.FormClosing += FormClosing;
+
         }
 
         private void MenuSaidas_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void MenuMercadorias_Click(object sender, EventArgs e)
@@ -71,6 +73,18 @@ namespace WindowsFormsApp6
 
 
 
+        }
+
+        public virtual void FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var result = MessageBox.Show(this.Principal.PrincipalView, "Você tem certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo);
+                if (result != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
     }
