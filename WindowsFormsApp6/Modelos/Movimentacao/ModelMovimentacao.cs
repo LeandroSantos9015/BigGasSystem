@@ -19,8 +19,9 @@ namespace WindowsFormsApp6.Modelos.Movimentacao
         public DateTime Data { get; set; }
         public EStatusMovimento Status { get; set; }
         public EOperacaoMovimento Operacao { get; set; }
-        public Int64 DescAcres { get; set; }
+        public decimal DescAcres { get; set; }
         public decimal ValorTotal { get; set; }
+        public decimal ValorLiquidoTotal { get; set; }
         public string NumeroNota { get; set; }
 
         

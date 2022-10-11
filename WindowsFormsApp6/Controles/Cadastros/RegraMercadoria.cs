@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp6.Enumeradores;
 using WindowsFormsApp6.Modelos;
+using WindowsFormsApp6.Modelos.Historico;
 using WindowsFormsApp6.Modelos.Movimentacao;
 using WindowsFormsApp6.Repositorios.Cliente;
 
@@ -37,6 +38,11 @@ namespace WindowsFormsApp6.Controles.Cadastros
         public IList<ModelMercadoria> ListaMercadorias()
         {
             return repositorio.Listar();
+        }
+
+        public IList<ModelHistoricoMercadoria> ListaNotasHistoricas(Int64 id)
+        {
+            return repositorio.ListaNotasHistoricas(id).OrderByDescending(x=> x.Data).ThenByDescending(y=> y.Nota).ToList();
         }
 
         public IList<ModelItemMovimentacao> ListaMercadoriasEntrada()

@@ -32,6 +32,44 @@ namespace WindowsFormsApp6.Utilitarios
                 e.Handled = true;
             }
         }
+        public static void CampoNumericoDecimalNegPos(object sender, KeyPressEventArgs e)
+        {
+            TextBox txtTemp = (TextBox)sender;
+
+            if (e.KeyChar == '.' || e.KeyChar == ',')
+            {
+                //troca o . pela virgula
+                e.KeyChar = ',';
+
+                //Verifica se já existe alguma vírgula na string
+                if (txtTemp.Text.Contains(","))
+                {
+                    e.Handled = true; // Caso exista, aborte 
+                }
+            }
+
+            //aceita apenas números, tecla backspace.
+            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void CampoNumericoDecimalPonto(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
+                && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                e.Handled = true;
+
+            // only allow one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+                e.Handled = true;
+
+            // only allow minus sign at the beginning
+            if (e.KeyChar == '-' && (sender as TextBox).Text.Length > 0)
+                e.Handled = true;
+        }
 
         public static void DecimalAposFoco(object sender, EventArgs e)
         {

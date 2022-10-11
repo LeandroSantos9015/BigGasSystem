@@ -23,6 +23,8 @@ namespace WindowsFormsApp6.Movimentacao
 
         public TextBox TxtNumeroNota => txtNum;
 
+        public TextBox TxtValorTotal => txtValorTotal;
+
         public Button BtnPesquisar => btnPesquisar;
 
         public Button BtnLimpar => btnLimpar;
@@ -39,7 +41,7 @@ namespace WindowsFormsApp6.Movimentacao
 
         public Label Status => lblStatus;
 
-        public Label ValorTotal => lblValorTotal;
+        public Label ValorTotal => lblValorLiquidoTotal;
 
         public TextBox TxtDescAcres => txtDescAcre;
 

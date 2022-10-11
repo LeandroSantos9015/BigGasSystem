@@ -43,5 +43,6 @@ namespace WindowsFormsApp6.Interface.Movimentacao
 
         ComboBox CbmFornecedor { get; }
 
+        TextBox TxtValorTotal { get; }
     }
 }

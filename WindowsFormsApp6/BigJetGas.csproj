@@ -108,6 +108,7 @@
     <Compile Include="Menus\Movimentacao\FrmAddMercadoria.Designer.cs">
       <DependentUpon>FrmAddMercadoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Historico\ModelHistoricoMercadoria.cs" />
     <Compile Include="Modelos\ModelMercadoria.cs" />
     <Compile Include="Modelos\ModelCliente.cs" />
     <Compile Include="Modelos\ModelConfiguracao.cs" />

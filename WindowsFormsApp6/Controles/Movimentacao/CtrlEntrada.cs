@@ -12,6 +12,7 @@ using WindowsFormsApp6.Modelos;
 using WindowsFormsApp6.Modelos.Movimentacao;
 using WindowsFormsApp6.Movimentacao;
 using WindowsFormsApp6.Repositorios.Movimentacao;
+using WindowsFormsApp6.Utilitarios;
 
 namespace WindowsFormsApp6.Controles.Movimentacao
 {
@@ -45,6 +46,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
         {
             MovimentacaoEntradaView.BtnAdd.Click += BtnAdd_Click;
             MovimentacaoEntradaView.BtnEstornar.Click += BtnEstornar_Click;
+            MovimentacaoEntradaView.BtnLimpar.Click += BtnLimpar_Click;
             MovimentacaoEntradaView.BtnPesquisar.Click += BtnPesquisar_Click;
             MovimentacaoEntradaView.BtnProcessar.Click += BtnProcessar_Click;
             MovimentacaoEntradaView.BtnRemove.Click += BtnRemove_Click;
@@ -55,6 +57,25 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             MovimentacaoEntradaView.CbmFornecedor.ValueMember = "Id";
             MovimentacaoEntradaView.CbmFornecedor.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            MovimentacaoEntradaView.TxtDescAcres.LostFocus += TxtDescAcres_LostFocus;
+            MovimentacaoEntradaView.TxtDescAcres.KeyPress += Validadores.CampoNumericoDecimalNegPos;
+
+        }
+
+        private void TxtDescAcres_LostFocus(object sender, EventArgs e)
+        {
+            string valorString = this.MovimentacaoEntradaView.TxtValorTotal.Text;
+            string descAcresString = this.MovimentacaoEntradaView.TxtDescAcres.Text;
+
+            decimal.TryParse(valorString, out decimal valorTotal);
+            decimal.TryParse(descAcresString, out decimal descAcres);
+
+            this.MovimentacaoEntradaView.ValorTotal.Text = (valorTotal + descAcres).ToString("C2");
+        }
+
+        private void BtnLimpar_Click(object sender, EventArgs e)
+        {
+            ObjetoParaTela();
         }
 
         #region Eventos
@@ -63,19 +84,36 @@ namespace WindowsFormsApp6.Controles.Movimentacao
         {
             EStatusMovimento eStatus = EStatusMovimento.M;
 
-            GravacaoNota(eStatus);
+            var idNota = GravacaoNota(eStatus);
+
+            if (idNota == 0)
+                return;
+
+            var entrada = repositorio.Listar(EOperacaoMovimento.Entrada, eStatus).Where(x => x.Id == idNota).FirstOrDefault();
+
+            ObjetoParaTela(entrada);
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
         {
+            if (this.MovimentacaoEntradaView.DgvMercadorias.RowCount < 1)
+                return;
 
+            ModelItemMovimentacao mercadoriaSelecionada = this.MovimentacaoEntradaView.DgvMercadorias.CurrentRow.DataBoundItem as ModelItemMovimentacao;
+
+            AtualizaListaMercadoria(mercadoriaSelecionada, false);
         }
 
         private void BtnProcessar_Click(object sender, EventArgs e)
         {
             EStatusMovimento eStatus = EStatusMovimento.P;
 
-            GravacaoNota(eStatus);
+            var idNota = GravacaoNota(eStatus);
+
+            if (idNota == 0)
+                return;
+
+            ObjetoParaTela();
         }
 
         private void BtnPesquisar_Click(object sender, EventArgs e)
@@ -94,7 +132,15 @@ namespace WindowsFormsApp6.Controles.Movimentacao
         {
             EStatusMovimento eStatus = EStatusMovimento.E;
 
-            GravacaoNota(eStatus);
+            Int64 idNota = GravacaoNota(eStatus);
+
+            if (idNota == 0)
+                return;
+
+            var entrada = repositorio.Listar(EOperacaoMovimento.Entrada, eStatus).Where(x => x.Id == idNota).FirstOrDefault();
+
+            ObjetoParaTela(entrada);
+
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -106,21 +152,31 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
         #endregion
 
-        private void AtualizaListaMercadoria(ModelItemMovimentacao mercadoria = null)
+        private void AtualizaListaMercadoria(ModelItemMovimentacao mercadoria = null, bool add = true)
         {
             if (mercadoria == null)
                 return;
 
             IList<ModelItemMovimentacao> listaMercadoria = MovimentacaoEntradaView.DgvMercadorias.DataSource as List<ModelItemMovimentacao> ?? new List<ModelItemMovimentacao>();
 
-            listaMercadoria.Add(mercadoria);
+            if (add)
+                listaMercadoria.Add(mercadoria);
+            else
+                listaMercadoria.Remove(mercadoria);
 
             MovimentacaoEntradaView.DgvMercadorias.DataSource = listaMercadoria.ToList();
 
+            decimal.TryParse(this.MovimentacaoEntradaView.TxtDescAcres.Text, out decimal descontoAcrescimo);
+
+            decimal totalBruto = listaMercadoria.Sum(x => x.ValorTotal);
+
             CustomizaGridMercadoria();
 
-            MovimentacaoEntradaView.ValorTotal.Text = listaMercadoria.Sum(x => x.ValorTotal).ToString("C2");
+            MovimentacaoEntradaView.ValorTotal.Text = (totalBruto + descontoAcrescimo).ToString("C2");
+            MovimentacaoEntradaView.TxtValorTotal.Text = totalBruto.ToString();
         }
+
+
 
         private void CustomizaGridMercadoria()
         {
@@ -152,7 +208,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             if (MovimentacaoEntradaView.DgvMercadorias.Columns["Quantidade"] != null)
             {
                 MovimentacaoEntradaView.DgvMercadorias.Columns["Quantidade"].DisplayIndex = 3;
-                MovimentacaoEntradaView.DgvMercadorias.Columns["Quantidade"].Width = 30;
+                MovimentacaoEntradaView.DgvMercadorias.Columns["Quantidade"].Width = 45;
             }
 
             if (MovimentacaoEntradaView.DgvMercadorias.Columns["ValorTotal"] != null)
@@ -162,15 +218,18 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             }
         }
 
-        private void GravacaoNota(EStatusMovimento eStatus)
+        private Int64 GravacaoNota(EStatusMovimento eStatus)
         {
             try
             {
                 ModelMovimentacao movimentacao = TelaParaObjeto(eStatus);
+                IList<ModelItemMovimentacao> lista = this.MovimentacaoEntradaView.DgvMercadorias.DataSource as List<ModelItemMovimentacao>;
+
+                bool naoValido = ValidacaoSalvar(movimentacao, lista);
+
+                if (naoValido) return 0;
 
                 Int64 idDocumento = repositorio.Salvar(movimentacao);
-
-                IList<ModelItemMovimentacao> lista = this.MovimentacaoEntradaView.DgvMercadorias.DataSource as List<ModelItemMovimentacao>;
 
                 var listaAtualizada = lista.Select(c =>
                 {
@@ -191,11 +250,15 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
                 MessageBox.Show($"Nota de entrada {tipoGravacao} com sucesso!");
 
+                return idDocumento;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            return 0;
         }
 
         private void ObjetoParaTela(ModelMovimentacao modelMovimentacao = null)
@@ -208,8 +271,9 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 this.MovimentacaoEntradaView.DteData.Value = modelMovimentacao.Data;
                 this.MovimentacaoEntradaView.TxtNumeroNota.Text = modelMovimentacao.NumeroNota;
                 this.MovimentacaoEntradaView.TxtDescricao.Text = modelMovimentacao.Descricao;
+                this.MovimentacaoEntradaView.TxtValorTotal.Text = modelMovimentacao.ValorTotal.ToString();
 
-                this.MovimentacaoEntradaView.ValorTotal.Text = modelMovimentacao.ValorTotal.ToString("C2");
+                this.MovimentacaoEntradaView.ValorTotal.Text = modelMovimentacao.ValorLiquidoTotal.ToString("C2");
 
 
                 this.MovimentacaoEntradaView.CbmFornecedor.SelectedValue = modelMovimentacao.IdParceiro;
@@ -222,6 +286,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
                 Color cor = Color.Orange;
                 string textoProc = "Memória";
+                bool somenteLeitura = false;
 
                 switch (modelMovimentacao.Status)
                 {
@@ -232,6 +297,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                     case EStatusMovimento.P:
                         cor = Color.Green;
                         textoProc = "Processada";
+                        somenteLeitura = true;
                         break;
                     case EStatusMovimento.M:
                     default:
@@ -244,6 +310,27 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 this.MovimentacaoEntradaView.Status.ForeColor = cor;
 
 
+                this.MovimentacaoEntradaView.TxtId.ReadOnly = somenteLeitura;
+                this.MovimentacaoEntradaView.TxtDescAcres.ReadOnly = somenteLeitura;
+
+                this.MovimentacaoEntradaView.DteData.Enabled = !somenteLeitura;
+                this.MovimentacaoEntradaView.TxtNumeroNota.ReadOnly = somenteLeitura;
+                this.MovimentacaoEntradaView.TxtDescricao.ReadOnly = somenteLeitura;
+
+                this.MovimentacaoEntradaView.ValorTotal.Text = modelMovimentacao.ValorLiquidoTotal.ToString("C2");
+
+                this.MovimentacaoEntradaView.CbmFornecedor.Enabled = !somenteLeitura;
+
+                this.MovimentacaoEntradaView.BtnAdd.Enabled = !somenteLeitura;
+                this.MovimentacaoEntradaView.BtnRemove.Enabled = !somenteLeitura;
+
+                this.MovimentacaoEntradaView.BtnProcessar.Enabled = !somenteLeitura;
+                this.MovimentacaoEntradaView.BtnSalvar.Enabled = !somenteLeitura;
+                this.MovimentacaoEntradaView.BtnEstornar.Enabled = somenteLeitura;
+
+
+
+
                 CustomizaGridMercadoria();
 
             }
@@ -254,7 +341,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
                 this.MovimentacaoEntradaView.DteData.Value = DateTime.Now;
                 this.MovimentacaoEntradaView.TxtNumeroNota.Text = null;
-                this.MovimentacaoEntradaView.TxtDescricao.Text = null; ;
+                this.MovimentacaoEntradaView.TxtDescricao.Text = null;
+                this.MovimentacaoEntradaView.TxtValorTotal.Text = null;
 
                 this.MovimentacaoEntradaView.CbmFornecedor.SelectedIndex = 0;
 
@@ -262,15 +350,22 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
                 this.MovimentacaoEntradaView.Status.Text = "Memória";
                 this.MovimentacaoEntradaView.Status.ForeColor = Color.Orange;
+
+                this.MovimentacaoEntradaView.ValorTotal.Text = decimal.Zero.ToString("C2");
+
+
+                this.MovimentacaoEntradaView.BtnProcessar.Enabled = true;
+                this.MovimentacaoEntradaView.BtnSalvar.Enabled = true;
+                this.MovimentacaoEntradaView.BtnEstornar.Enabled = false;
             }
         }
 
         private ModelMovimentacao TelaParaObjeto(EStatusMovimento status)
         {
-            string valorString = this.MovimentacaoEntradaView.ValorTotal.Text.Replace("R$ ", "");//.Replace(",", ".");
+            string valorString = this.MovimentacaoEntradaView.TxtValorTotal.Text;
 
             long.TryParse(this.MovimentacaoEntradaView.TxtId.Text, out long id);
-            long.TryParse(this.MovimentacaoEntradaView.TxtDescAcres.Text, out long descAcres);
+            decimal.TryParse(this.MovimentacaoEntradaView.TxtDescAcres.Text, out decimal descAcres);
             decimal.TryParse(valorString, out decimal valorTotal);
 
             DateTime data = this.MovimentacaoEntradaView.DteData.Value;
@@ -293,6 +388,70 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             };
         }
 
+
+        private bool ValidacaoSalvar(ModelMovimentacao entrada, IList<ModelItemMovimentacao> itens)
+        {
+
+
+            //bool data = entrada.Data.V
+            bool descAcres = entrada.DescAcres * -1 > entrada.ValorTotal;
+            bool desc = string.IsNullOrEmpty(entrada.Descricao);
+            bool num = string.IsNullOrEmpty(entrada.NumeroNota);
+            bool qtdItem = itens?.Count < 1;
+
+            bool retorno = desc || num || qtdItem;
+
+            string semItens = qtdItem ? "\n\nE também deve ter pelo menos uma mercadoria" : "";
+
+            string descAc = descAcres ? "\n\nO desconto não pode ser maior que o valor da nota" : "";
+
+            if (retorno)
+                MessageBox.Show("Preencha os campos obrigatórios" + semItens + descAc);
+
+
+            this.MovimentacaoEntradaView.TxtDescricao.BackColor = desc ? Color.Yellow : Color.White;
+            this.MovimentacaoEntradaView.TxtNumeroNota.BackColor = num ? Color.Yellow : Color.White;
+
+            this.MovimentacaoEntradaView.TxtDescAcres.BackColor = descAcres ? Color.Yellow : Color.White;
+
+            //new ModelItemMovimentacao
+            //    {
+            //        Descricao = "",
+            //        Id = 1,
+            //        IdDocumento = 1,
+            //        IdMercadoria = 1,
+            //        Operacao = EOperacaoMovimento.Entrada,
+            //        PrecoCusto = 1,
+            //        PrecoVenda = 1,
+            //        Quantidade = 1,
+            //        ValorTotal = 1
+
+
+            //    };
+
+
+            //bool bairro = string.IsNullOrEmpty(cliente.Bairro);
+            //bool cidade = cliente.Cidade == 0;
+            //bool cpf = string.IsNullOrEmpty(cliente.Cpf);
+            //bool endereco = string.IsNullOrEmpty(cliente.Endereco);
+            //bool nome = string.IsNullOrEmpty(cliente.Nome);
+            //bool numero = string.IsNullOrEmpty(cliente.Numero);
+
+            //bool retorno = bairro || cidade || cpf || endereco || nome || numero;
+
+            //if (retorno)
+            //    MessageBox.Show("Preencha os campos obrigatórios");
+
+            //this.ClienteCadastroView.TxtBairro.BackColor = bairro ? Color.Yellow : Color.White;
+            //this.ClienteCadastroView.CbmCidade.BackColor = cidade ? Color.Yellow : Color.White;
+            //this.ClienteCadastroView.TxtCPF.BackColor = cpf ? Color.Yellow : Color.White;
+            //this.ClienteCadastroView.TxtEnd.BackColor = endereco ? Color.Yellow : Color.White;
+            //this.ClienteCadastroView.TxtNome.BackColor = nome ? Color.Yellow : Color.White;
+            //this.ClienteCadastroView.TxtNumero.BackColor = numero ? Color.Yellow : Color.White;
+
+
+            return retorno;
+        }
 
     }
 }

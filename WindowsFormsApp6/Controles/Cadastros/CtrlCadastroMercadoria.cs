@@ -9,6 +9,7 @@ using WindowsFormsApp6.Interface.Cadastros;
 using WindowsFormsApp6.Menus;
 using WindowsFormsApp6.Modelos;
 using WindowsFormsApp6.Repositorios.Cliente;
+using WindowsFormsApp6.Utilitarios;
 
 namespace WindowsFormsApp6.Controles.Cadastros
 {
@@ -40,6 +41,12 @@ namespace WindowsFormsApp6.Controles.Cadastros
             MercadoriaView.BtnExcluir.Click += BtnExcluir_Click;
             MercadoriaView.BtnLimpar.Click += BtnLimpar_Click;
             MercadoriaView.BtnSalvar.Click += BtnSalvar_Click;
+
+            MercadoriaView.TxtPrecoCusto.KeyPress += Validadores.CampoNumericoDecimal;
+            MercadoriaView.TxtPrecoVenda.KeyPress += Validadores.CampoNumericoDecimal;
+
+            MercadoriaView.TxtPrecoCusto.LostFocus += Validadores.DecimalAposFoco;
+            MercadoriaView.TxtPrecoVenda.LostFocus += Validadores.DecimalAposFoco;
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -88,6 +95,8 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 MercadoriaView.TxtPrecoVenda.Text = null;
                 MercadoriaView.TxtQtd.Text = null;
 
+                MercadoriaView.DgvHistorico.DataSource = null;
+
                 MercadoriaView.TxtDescricao.BackColor = Color.White;
                 MercadoriaView.TxtPrecoCusto.BackColor = Color.White;
                 MercadoriaView.TxtPrecoVenda.BackColor = Color.White;
@@ -101,6 +110,12 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 MercadoriaView.TxtPrecoCusto.Text = mercadoria.PrecoCusto.ToString();
                 MercadoriaView.TxtPrecoVenda.Text = mercadoria.PrecoVenda.ToString();
                 MercadoriaView.TxtQtd.Text = mercadoria.Quantidade.ToString();
+
+
+                MercadoriaView.DgvHistorico.DataSource = regraMercadoria.ListaNotasHistoricas(mercadoria.Id);
+
+                MercadoriaView.DgvHistorico.Columns["Id"].Width = 30;
+                MercadoriaView.DgvHistorico.Columns["Nota"].Width = 180;
 
             }
         }
