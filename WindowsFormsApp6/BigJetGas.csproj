@@ -108,6 +108,12 @@
     <Compile Include="Menus\Movimentacao\FrmAddMercadoria.Designer.cs">
       <DependentUpon>FrmAddMercadoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus\Movimentacao\FrmSaidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Movimentacao\FrmSaidas.Designer.cs">
+      <DependentUpon>FrmSaidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Historico\ModelHistoricoMercadoria.cs" />
     <Compile Include="Modelos\ModelMercadoria.cs" />
     <Compile Include="Modelos\ModelCliente.cs" />
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="Menus\Movimentacao\FrmEntradas.resx">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Movimentacao\FrmSaidas.resx">
+      <DependentUpon>FrmSaidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pesquisar\FrmPesquisar.resx">
       <DependentUpon>FrmPesquisar.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +200,11 @@
   <ItemGroup>
     <None Include="Resources\botao_mais.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\procurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

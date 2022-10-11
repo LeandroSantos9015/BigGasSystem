@@ -36,6 +36,7 @@ namespace WindowsFormsApp6
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelamentoSaídaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +76,8 @@ namespace WindowsFormsApp6
             // 
             this.movimentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.entradaToolStripMenuItem,
-            this.saidaToolStripMenuItem});
+            this.saidaToolStripMenuItem,
+            this.cancelamentoSaídaToolStripMenuItem});
             this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
             this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.movimentaçãoToolStripMenuItem.Text = "Movimentação";
@@ -83,14 +85,21 @@ namespace WindowsFormsApp6
             // entradaToolStripMenuItem
             // 
             this.entradaToolStripMenuItem.Name = "entradaToolStripMenuItem";
-            this.entradaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.entradaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.entradaToolStripMenuItem.Text = "Entrada";
             // 
             // saidaToolStripMenuItem
             // 
             this.saidaToolStripMenuItem.Name = "saidaToolStripMenuItem";
-            this.saidaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saidaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.saidaToolStripMenuItem.Text = "Saída";
+            // 
+            // cancelamentoSaídaToolStripMenuItem
+            // 
+            this.cancelamentoSaídaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.cancelamentoSaídaToolStripMenuItem.Name = "cancelamentoSaídaToolStripMenuItem";
+            this.cancelamentoSaídaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.cancelamentoSaídaToolStripMenuItem.Text = "Cancelamento Saída";
             // 
             // FormPrincipal
             // 
@@ -118,6 +127,7 @@ namespace WindowsFormsApp6
         private System.Windows.Forms.ToolStripMenuItem movimentaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entradaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saidaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelamentoSaídaToolStripMenuItem;
     }
 }
 
