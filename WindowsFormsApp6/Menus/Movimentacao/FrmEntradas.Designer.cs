@@ -322,6 +322,9 @@ namespace WindowsFormsApp6.Movimentacao
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEntradas";
             this.Text = "Entrada de Mercadorias";
             this.groupBox1.ResumeLayout(false);

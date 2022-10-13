@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp6.Modelos;
+using WindowsFormsApp6.Modelos.Historico;
 using WindowsFormsApp6.Repositorios.Cliente;
 
 namespace WindowsFormsApp6.Controles.Cadastros
@@ -35,6 +36,11 @@ namespace WindowsFormsApp6.Controles.Cadastros
         public IList<ModelCliente> ListaClientes()
         {
             return repositorio.Listar();
+        }
+
+        public IList<ModelHistoricoCliente> ListaNotasHistoricas(Int64 id)
+        {
+            return repositorio.ListaNotasHistoricas(id).OrderByDescending(x => x.Data).ThenByDescending(y => y.Nota).ToList();
         }
 
         public IList<ModeloCidade> ListarCidades()

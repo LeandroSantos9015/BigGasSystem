@@ -35,5 +35,9 @@ namespace WindowsFormsApp6.Interface.Movimentacao
 
         Button BtnFinalizar { get; }
 
+        DataGridView DgvMercadorias { get; }
+
+        CheckBox SemFrete { get; }
+
     }
 }

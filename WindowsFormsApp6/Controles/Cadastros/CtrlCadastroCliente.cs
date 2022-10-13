@@ -196,6 +196,8 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 this.ClienteCadastroView.TxtNome.BackColor = Color.White;
                 this.ClienteCadastroView.TxtNumero.BackColor = Color.White;
 
+                this.ClienteCadastroView.DgvHistorico.DataSource = null;
+
             }
             else
             {
@@ -212,6 +214,15 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 ClienteCadastroView.RchObs.Text = cliente.Obs;
                 ClienteCadastroView.TxtCPF.Text = cliente.Cpf.CpfCnpjMascara();
                 ClienteCadastroView.TxtTelefone.Text = cliente.Telefone.TelefoneMascara();
+
+                this.ClienteCadastroView.DgvHistorico.DataSource = regraCliente.ListaNotasHistoricas(cliente.Id);
+
+
+                this.ClienteCadastroView.DgvHistorico.Columns["Id"].Width = 30;
+                this.ClienteCadastroView.DgvHistorico.Columns["Nota"].Width = 160;
+                this.ClienteCadastroView.DgvHistorico.Columns["Data"].Width = 70;
+                this.ClienteCadastroView.DgvHistorico.Columns["EOperacao"].Width = 70;
+
             }
         }
 

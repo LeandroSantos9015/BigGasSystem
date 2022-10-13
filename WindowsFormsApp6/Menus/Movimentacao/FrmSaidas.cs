@@ -43,5 +43,9 @@ namespace WindowsFormsApp6.Menus.Movimentacao
         public Button BtnExc => btnRem;
 
         public Button BtnFinalizar => btnProcessar;
+
+        public DataGridView DgvMercadorias => dgvMercadorias;
+
+        public CheckBox SemFrete => checkBox1;
     }
 }

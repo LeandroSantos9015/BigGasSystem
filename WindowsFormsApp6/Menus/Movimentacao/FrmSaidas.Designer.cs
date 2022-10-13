@@ -48,6 +48,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.lblCidade = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMercadorias)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -56,7 +57,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(234, 111);
+            this.dateTimePicker1.Location = new System.Drawing.Point(234, 107);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
             this.dateTimePicker1.TabIndex = 34;
@@ -65,7 +66,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             this.btnProcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcessar.ForeColor = System.Drawing.Color.Green;
-            this.btnProcessar.Location = new System.Drawing.Point(260, 346);
+            this.btnProcessar.Location = new System.Drawing.Point(260, 373);
             this.btnProcessar.Name = "btnProcessar";
             this.btnProcessar.Size = new System.Drawing.Size(74, 22);
             this.btnProcessar.TabIndex = 35;
@@ -77,7 +78,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.groupBox1.Controls.Add(this.dgvMercadorias);
             this.groupBox1.Controls.Add(this.btnRem);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Location = new System.Drawing.Point(5, 163);
+            this.groupBox1.Location = new System.Drawing.Point(5, 191);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(329, 177);
             this.groupBox1.TabIndex = 48;
@@ -88,7 +89,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             this.dgvMercadorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMercadorias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMercadorias.Location = new System.Drawing.Point(4, 19);
+            this.dgvMercadorias.Location = new System.Drawing.Point(4, 15);
             this.dgvMercadorias.Name = "dgvMercadorias";
             this.dgvMercadorias.RowHeadersVisible = false;
             this.dgvMercadorias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -100,7 +101,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             this.btnRem.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_menos;
             this.btnRem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRem.Location = new System.Drawing.Point(292, 50);
+            this.btnRem.Location = new System.Drawing.Point(291, 46);
             this.btnRem.Name = "btnRem";
             this.btnRem.Size = new System.Drawing.Size(34, 30);
             this.btnRem.TabIndex = 2;
@@ -110,7 +111,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             this.btnAdd.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_mais;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Location = new System.Drawing.Point(292, 19);
+            this.btnAdd.Location = new System.Drawing.Point(291, 15);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(34, 30);
             this.btnAdd.TabIndex = 1;
@@ -118,7 +119,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // txtValorTotal
             // 
-            this.txtValorTotal.Location = new System.Drawing.Point(75, 138);
+            this.txtValorTotal.Location = new System.Drawing.Point(75, 134);
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.ReadOnly = true;
             this.txtValorTotal.Size = new System.Drawing.Size(89, 20);
@@ -127,7 +128,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // txtDescAcre
             // 
-            this.txtDescAcre.Location = new System.Drawing.Point(75, 112);
+            this.txtDescAcre.Location = new System.Drawing.Point(75, 108);
             this.txtDescAcre.Name = "txtDescAcre";
             this.txtDescAcre.Size = new System.Drawing.Size(89, 20);
             this.txtDescAcre.TabIndex = 33;
@@ -135,11 +136,11 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // lblValorLiquidoTotal
             // 
-            this.lblValorLiquidoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorLiquidoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorLiquidoTotal.ForeColor = System.Drawing.Color.Blue;
-            this.lblValorLiquidoTotal.Location = new System.Drawing.Point(228, 142);
+            this.lblValorLiquidoTotal.Location = new System.Drawing.Point(152, 157);
             this.lblValorLiquidoTotal.Name = "lblValorLiquidoTotal";
-            this.lblValorLiquidoTotal.Size = new System.Drawing.Size(106, 20);
+            this.lblValorLiquidoTotal.Size = new System.Drawing.Size(182, 26);
             this.lblValorLiquidoTotal.TabIndex = 45;
             this.lblValorLiquidoTotal.Text = "R$ 0,00";
             this.lblValorLiquidoTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -148,7 +149,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             this.label6.AutoSize = true;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(8, 142);
+            this.label6.Location = new System.Drawing.Point(8, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 47;
@@ -157,7 +158,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 116);
+            this.label7.Location = new System.Drawing.Point(2, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 43;
@@ -167,7 +168,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             this.label3.AutoSize = true;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(198, 115);
+            this.label3.Location = new System.Drawing.Point(198, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 42;
@@ -176,7 +177,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 16);
+            this.label4.Location = new System.Drawing.Point(19, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 46;
@@ -185,7 +186,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // txtCliente
             // 
             this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(67, 13);
+            this.txtCliente.Location = new System.Drawing.Point(67, 9);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(226, 20);
@@ -194,7 +195,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // lblEnd
             // 
             this.lblEnd.AutoSize = true;
-            this.lblEnd.Location = new System.Drawing.Point(67, 36);
+            this.lblEnd.Location = new System.Drawing.Point(67, 32);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(62, 13);
             this.lblEnd.TabIndex = 51;
@@ -203,7 +204,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(67, 55);
+            this.lblTel.Location = new System.Drawing.Point(67, 51);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(49, 13);
             this.lblTel.TabIndex = 51;
@@ -212,7 +213,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(67, 75);
+            this.lblCidade.Location = new System.Drawing.Point(67, 71);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(40, 13);
             this.lblCidade.TabIndex = 51;
@@ -226,7 +227,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.groupBox2.Controls.Add(this.lblTel);
             this.groupBox2.Controls.Add(this.btnPesquisar);
             this.groupBox2.Controls.Add(this.lblEnd);
-            this.groupBox2.Location = new System.Drawing.Point(5, 3);
+            this.groupBox2.Location = new System.Drawing.Point(5, -1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(329, 100);
             this.groupBox2.TabIndex = 52;
@@ -236,17 +237,28 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             this.btnPesquisar.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.lupa2;
             this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisar.Location = new System.Drawing.Point(299, 11);
+            this.btnPesquisar.Location = new System.Drawing.Point(299, 7);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(21, 23);
             this.btnPesquisar.TabIndex = 50;
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(75, 162);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 17);
+            this.checkBox1.TabIndex = 54;
+            this.checkBox1.Text = "Sem frete";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // FrmSaidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 377);
+            this.ClientSize = new System.Drawing.Size(339, 400);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnProcessar);
@@ -257,6 +269,9 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmSaidas";
             this.Text = "Venda de Mercadorias";
             this.groupBox1.ResumeLayout(false);
@@ -288,5 +303,6 @@ namespace WindowsFormsApp6.Menus.Movimentacao
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

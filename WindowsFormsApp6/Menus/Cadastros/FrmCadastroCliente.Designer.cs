@@ -333,7 +333,10 @@ namespace WindowsFormsApp6.Menus
             // 
             this.dgvHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorico.Location = new System.Drawing.Point(6, 6);
+            this.dgvHistorico.MultiSelect = false;
             this.dgvHistorico.Name = "dgvHistorico";
+            this.dgvHistorico.RowHeadersVisible = false;
+            this.dgvHistorico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorico.Size = new System.Drawing.Size(358, 318);
             this.dgvHistorico.TabIndex = 0;
             // 

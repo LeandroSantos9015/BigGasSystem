@@ -50,6 +50,7 @@ namespace WindowsFormsApp6.Controles
 
             this.Pesquisa.TelaPesquisa.Resize += TamanhoTela;
 
+
         }
 
         private void TextoPesquisar(IList<Object> lista, string texto)
@@ -111,6 +112,8 @@ namespace WindowsFormsApp6.Controles
         void TxtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
             string texto = sender.RetornaTextoParaBusca(e);
+
+            texto = texto.Replace("\r", "");
 
             TextoPesquisar(this.ListaGenerica, texto);
 

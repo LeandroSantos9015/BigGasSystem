@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp6.Menus.Movimentacao
 {
-    partial class FrmAddMercadoria
+    partial class FrmAddMercadoriaSaida
     {
         /// <summary>
         /// Required designer variable.
@@ -35,15 +35,10 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.btnExc = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.lblUnidades = new System.Windows.Forms.Label();
-            this.txtCusto = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbmUnid = new System.Windows.Forms.ComboBox();
-            this.txtVenda = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtQtd = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +47,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.cbmDesc.FormattingEnabled = true;
             this.cbmDesc.Location = new System.Drawing.Point(84, 18);
             this.cbmDesc.Name = "cbmDesc";
-            this.cbmDesc.Size = new System.Drawing.Size(198, 21);
+            this.cbmDesc.Size = new System.Drawing.Size(179, 21);
             this.cbmDesc.TabIndex = 0;
             // 
             // label1
@@ -70,26 +65,21 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.lblTotal);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lblUnidades);
             this.groupBox1.Controls.Add(this.cbmDesc);
-            this.groupBox1.Controls.Add(this.txtCusto);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cbmUnid);
-            this.groupBox1.Controls.Add(this.txtVenda);
+            this.groupBox1.Controls.Add(this.txtPreco);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtQtd);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(5, 2);
+            this.groupBox1.Location = new System.Drawing.Point(5, -1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 160);
+            this.groupBox1.Size = new System.Drawing.Size(271, 141);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Entrada";
+            this.groupBox1.Text = "Venda";
             // 
             // btnExc
             // 
-            this.btnExc.Location = new System.Drawing.Point(199, 122);
+            this.btnExc.Location = new System.Drawing.Point(180, 107);
             this.btnExc.Name = "btnExc";
             this.btnExc.Size = new System.Drawing.Size(83, 23);
             this.btnExc.TabIndex = 6;
@@ -98,7 +88,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(82, 122);
+            this.btnAdd.Location = new System.Drawing.Point(82, 107);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 23);
             this.btnAdd.TabIndex = 5;
@@ -108,98 +98,58 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(176, 98);
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(136, 76);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(78, 13);
+            this.lblTotal.Size = new System.Drawing.Size(127, 20);
             this.lblTotal.TabIndex = 3;
             this.lblTotal.Text = "Total R$ 00,00";
             // 
-            // lblUnidades
+            // txtPreco
             // 
-            this.lblUnidades.AutoSize = true;
-            this.lblUnidades.Location = new System.Drawing.Point(176, 77);
-            this.lblUnidades.Name = "lblUnidades";
-            this.lblUnidades.Size = new System.Drawing.Size(86, 13);
-            this.lblUnidades.TabIndex = 3;
-            this.lblUnidades.Text = "Total 0 unidades";
+            this.txtPreco.Location = new System.Drawing.Point(205, 45);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(58, 20);
+            this.txtPreco.TabIndex = 1;
+            this.txtPreco.Text = "1";
             // 
-            // txtCusto
+            // label2
             // 
-            this.txtCusto.Location = new System.Drawing.Point(84, 96);
-            this.txtCusto.Name = "txtCusto";
-            this.txtCusto.Size = new System.Drawing.Size(73, 20);
-            this.txtCusto.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 100);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Preço Custo:";
-            // 
-            // cbmUnid
-            // 
-            this.cbmUnid.FormattingEnabled = true;
-            this.cbmUnid.Location = new System.Drawing.Point(204, 45);
-            this.cbmUnid.Name = "cbmUnid";
-            this.cbmUnid.Size = new System.Drawing.Size(78, 21);
-            this.cbmUnid.TabIndex = 2;
-            // 
-            // txtVenda
-            // 
-            this.txtVenda.Location = new System.Drawing.Point(84, 71);
-            this.txtVenda.Name = "txtVenda";
-            this.txtVenda.Size = new System.Drawing.Size(73, 20);
-            this.txtVenda.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(164, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Preço:";
             // 
             // txtQtd
             // 
-            this.txtQtd.Location = new System.Drawing.Point(84, 46);
+            this.txtQtd.Location = new System.Drawing.Point(84, 45);
             this.txtQtd.Name = "txtQtd";
-            this.txtQtd.Size = new System.Drawing.Size(73, 20);
+            this.txtQtd.Size = new System.Drawing.Size(58, 20);
             this.txtQtd.TabIndex = 1;
             this.txtQtd.Text = "1";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Preço Venda:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 50);
+            this.label3.Location = new System.Drawing.Point(14, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Quantidade:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(163, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Unid.:";
-            // 
-            // FrmAddMercadoria
+            // FrmAddMercadoriaSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 165);
+            this.ClientSize = new System.Drawing.Size(281, 144);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmAddMercadoria";
-            this.Text = "Adição Mercadoria";
+            this.Name = "FrmAddMercadoriaSaida";
+            this.Text = "Venda de Mercadorias";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -211,17 +161,12 @@ namespace WindowsFormsApp6.Menus.Movimentacao
         private System.Windows.Forms.ComboBox cbmDesc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblUnidades;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbmUnid;
-        private System.Windows.Forms.TextBox txtCusto;
-        private System.Windows.Forms.TextBox txtVenda;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtQtd;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnExc;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.Label label2;
     }
 }

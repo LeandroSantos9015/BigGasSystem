@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp6.Modelos;
+using WindowsFormsApp6.Modelos.Historico;
 
 namespace WindowsFormsApp6.Repositorios.Cliente
 {
@@ -37,6 +38,13 @@ namespace WindowsFormsApp6.Repositorios.Cliente
         public IList<ModelCliente> Listar()
         {
             var consulta = Conexao.Query<ModelCliente>("SELECT * FROM ConsultarCliente()").ToList();
+
+            return consulta;
+        }
+
+        public IList<ModelHistoricoCliente> ListaNotasHistoricas(Int64 id)
+        {
+            var consulta = Conexao.Query<ModelHistoricoCliente>($"SELECT * FROM ListarNotasPorCliente({id})").ToList();
 
             return consulta;
         }

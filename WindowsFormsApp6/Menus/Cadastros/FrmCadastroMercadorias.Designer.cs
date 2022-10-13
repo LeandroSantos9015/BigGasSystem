@@ -235,6 +235,9 @@ namespace WindowsFormsApp6.Menus
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 188);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCadastroMercadorias";
             this.Text = "Cadastro de Mercadorias";
             this.tabControl1.ResumeLayout(false);

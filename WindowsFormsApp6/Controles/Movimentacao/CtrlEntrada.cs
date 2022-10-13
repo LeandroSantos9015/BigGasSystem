@@ -124,7 +124,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
             var lista = repositorio.Listar(EOperacaoMovimento.Entrada, status).Cast<Object>().ToList();
 
-            CtrlPesquisar Pesquisa = new CtrlPesquisar(Pai, lista, 690, "Pesquisa de Clientes");
+            CtrlPesquisar Pesquisa = new CtrlPesquisar(Pai, lista, 690, "Pesquisa notas de entrada");
 
             ObjetoParaTela(Pesquisa.RetornaObjetoSelecionado() as ModelMovimentacao);
 
@@ -141,7 +141,12 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
             var entrada = repositorio.Listar(EOperacaoMovimento.Entrada, eStatus).Where(x => x.Id == idNota).FirstOrDefault();
 
-            ObjetoParaTela(entrada);
+            if (entrada != null)
+            {
+                ObjetoParaTela(entrada);
+                this.MovimentacaoEntradaView.BtnPesquisar.Enabled = false;
+            }
+
 
         }
 
@@ -329,7 +334,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 this.MovimentacaoEntradaView.BtnProcessar.Enabled = !somenteLeitura;
                 this.MovimentacaoEntradaView.BtnSalvar.Enabled = !somenteLeitura;
                 this.MovimentacaoEntradaView.BtnEstornar.Enabled = somenteLeitura;
-
+                this.MovimentacaoEntradaView.BtnPesquisar.Enabled = !somenteLeitura;
 
 
 
@@ -359,6 +364,31 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 this.MovimentacaoEntradaView.BtnProcessar.Enabled = true;
                 this.MovimentacaoEntradaView.BtnSalvar.Enabled = true;
                 this.MovimentacaoEntradaView.BtnEstornar.Enabled = false;
+
+
+                bool somenteLeitura = false;
+
+                this.MovimentacaoEntradaView.TxtId.ReadOnly = somenteLeitura;
+                this.MovimentacaoEntradaView.TxtDescAcres.ReadOnly = somenteLeitura;
+
+                this.MovimentacaoEntradaView.DteData.Enabled = !somenteLeitura;
+                this.MovimentacaoEntradaView.TxtNumeroNota.ReadOnly = somenteLeitura;
+                this.MovimentacaoEntradaView.TxtDescricao.ReadOnly = somenteLeitura;
+
+                this.MovimentacaoEntradaView.ValorTotal.Text = decimal.Zero.ToString("C2");
+
+                this.MovimentacaoEntradaView.CbmFornecedor.Enabled = !somenteLeitura;
+
+                this.MovimentacaoEntradaView.BtnAdd.Enabled = !somenteLeitura;
+                this.MovimentacaoEntradaView.BtnRemove.Enabled = !somenteLeitura;
+
+                this.MovimentacaoEntradaView.BtnProcessar.Enabled = !somenteLeitura;
+                this.MovimentacaoEntradaView.BtnSalvar.Enabled = !somenteLeitura;
+                this.MovimentacaoEntradaView.BtnEstornar.Enabled = somenteLeitura;
+                this.MovimentacaoEntradaView.BtnPesquisar.Enabled = !somenteLeitura;
+
+
+
             }
         }
 
@@ -415,42 +445,6 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             this.MovimentacaoEntradaView.TxtNumeroNota.BackColor = num ? Color.Yellow : Color.White;
 
             this.MovimentacaoEntradaView.TxtDescAcres.BackColor = descAcres ? Color.Yellow : Color.White;
-
-            //new ModelItemMovimentacao
-            //    {
-            //        Descricao = "",
-            //        Id = 1,
-            //        IdDocumento = 1,
-            //        IdMercadoria = 1,
-            //        Operacao = EOperacaoMovimento.Entrada,
-            //        PrecoCusto = 1,
-            //        PrecoVenda = 1,
-            //        Quantidade = 1,
-            //        ValorTotal = 1
-
-
-            //    };
-
-
-            //bool bairro = string.IsNullOrEmpty(cliente.Bairro);
-            //bool cidade = cliente.Cidade == 0;
-            //bool cpf = string.IsNullOrEmpty(cliente.Cpf);
-            //bool endereco = string.IsNullOrEmpty(cliente.Endereco);
-            //bool nome = string.IsNullOrEmpty(cliente.Nome);
-            //bool numero = string.IsNullOrEmpty(cliente.Numero);
-
-            //bool retorno = bairro || cidade || cpf || endereco || nome || numero;
-
-            //if (retorno)
-            //    MessageBox.Show("Preencha os campos obrigatórios");
-
-            //this.ClienteCadastroView.TxtBairro.BackColor = bairro ? Color.Yellow : Color.White;
-            //this.ClienteCadastroView.CbmCidade.BackColor = cidade ? Color.Yellow : Color.White;
-            //this.ClienteCadastroView.TxtCPF.BackColor = cpf ? Color.Yellow : Color.White;
-            //this.ClienteCadastroView.TxtEnd.BackColor = endereco ? Color.Yellow : Color.White;
-            //this.ClienteCadastroView.TxtNome.BackColor = nome ? Color.Yellow : Color.White;
-            //this.ClienteCadastroView.TxtNumero.BackColor = numero ? Color.Yellow : Color.White;
-
 
             return retorno;
         }

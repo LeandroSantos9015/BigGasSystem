@@ -62,6 +62,7 @@
     <Compile Include="Controles\Cadastros\CtrlCadastroMercadoria.cs" />
     <Compile Include="Controles\Cadastros\RegraMercadoria.cs" />
     <Compile Include="Controles\Cadastros\RegraCliente.cs" />
+    <Compile Include="Controles\Movimentacao\CtrlSaidaMercadoria.cs" />
     <Compile Include="Controles\Movimentacao\CtrlAddMercadoria.cs" />
     <Compile Include="Controles\Movimentacao\RegraAddEntrada.cs" />
     <Compile Include="Controles\Pesquisa\CtrlPesquisar.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Interface\Cadastros\IMercadoriaCadastroView.cs" />
     <Compile Include="Interface\Cadastros\IClienteCadastroView.cs" />
     <Compile Include="Interface\Movimentacao\IAddEntradaMercadoria.cs" />
+    <Compile Include="Interface\Movimentacao\IAddVendaMercadoria.cs" />
     <Compile Include="Interface\Movimentacao\IMovimentacaoEntradaView.cs" />
     <Compile Include="Interface\Movimentacao\IMovimentacaoSaidaView.cs" />
     <Compile Include="Interface\Pesquisa\IModeloGenerico.cs" />
@@ -103,6 +105,12 @@
     <Compile Include="Menus\Cadastros\FrmCadastroMercadorias.Designer.cs">
       <DependentUpon>FrmCadastroMercadorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus\Movimentacao\FrmAddMercadoriaSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Movimentacao\FrmAddMercadoriaSaida.Designer.cs">
+      <DependentUpon>FrmAddMercadoriaSaida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus\Movimentacao\FrmAddMercadoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +123,13 @@
     <Compile Include="Menus\Movimentacao\FrmSaidas.Designer.cs">
       <DependentUpon>FrmSaidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus\Utilitarios\FrmConfiguracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Utilitarios\FrmConfiguracoes.Designer.cs">
+      <DependentUpon>FrmConfiguracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Historico\ModelHistoricoCliente.cs" />
     <Compile Include="Modelos\Historico\ModelHistoricoMercadoria.cs" />
     <Compile Include="Modelos\ModelMercadoria.cs" />
     <Compile Include="Modelos\ModelCliente.cs" />
@@ -159,6 +174,9 @@
     <EmbeddedResource Include="Menus\Cadastros\FrmCadastroMercadorias.resx">
       <DependentUpon>FrmCadastroMercadorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Movimentacao\FrmAddMercadoriaSaida.resx">
+      <DependentUpon>FrmAddMercadoriaSaida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus\Movimentacao\FrmAddMercadoria.resx">
       <DependentUpon>FrmAddMercadoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\Movimentacao\FrmSaidas.resx">
       <DependentUpon>FrmSaidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Utilitarios\FrmConfiguracoes.resx">
+      <DependentUpon>FrmConfiguracoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pesquisar\FrmPesquisar.resx">
       <DependentUpon>FrmPesquisar.cs</DependentUpon>
