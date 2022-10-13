@@ -1,23 +1,21 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp6.Modelos.Movimentacao;
 
 namespace WindowsFormsApp6.Modelos
 {
-    public class ModelConfiguracao
+    public class ModelConfiguracao : DapperDinamico
     {
-        public string NomeComputador { get; set; }
+        public decimal ValorFrete { get; set; }
 
-        public string Usuario { get; set; }
-
-        public string Senha { get; set; }
-
-        public string Banco { get; set; }
+        public string PortaImpressora { get; set; }
 
 
-        public string StringConexao => $"server={NomeComputador};database={Banco};user={Usuario};password={Senha}";
+        public DynamicParameters Save => Salvar(this);
 
     }
 }

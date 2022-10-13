@@ -12,6 +12,7 @@ using WindowsFormsApp6.Menus.Movimentacao;
 using WindowsFormsApp6.Modelos;
 using WindowsFormsApp6.Modelos.Movimentacao;
 using WindowsFormsApp6.Repositorios.Movimentacao;
+using WindowsFormsApp6.Repositorios.Utilitarios;
 using WindowsFormsApp6.Utilitarios;
 
 namespace WindowsFormsApp6.Controles.Movimentacao
@@ -22,6 +23,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
         RegraCliente regraCliente = new RegraCliente();
 
+        RepositorioConfiguracao repCfg = new RepositorioConfiguracao();
+
         IList<ModeloCidade> listaCidades = new List<ModeloCidade>();
 
         Int64 idCliente = 0;
@@ -30,7 +33,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
         private RepositorioMovimentacao repositorio = new RepositorioMovimentacao();
 
-        decimal adicionalFrete = 5;
+        decimal adicionalFrete = 0;
 
         public CtrlSaida(IPrincipalView Pai)
         {
@@ -85,8 +88,17 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
         }
 
+        private void AtualizaFrete()
+        {
+            ModelConfiguracao cfg = repCfg.Listar();
+
+            adicionalFrete = cfg.ValorFrete;
+        }
+
         private void AtualizaDescontosAcrescimos(bool frete)
         {
+            AtualizaFrete();
+
             decimal valorFrete = 0;
 
             if (!frete)

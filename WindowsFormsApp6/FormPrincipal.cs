@@ -26,6 +26,10 @@ namespace WindowsFormsApp6
 
         public ToolStripMenuItem MenuCancelamentoSaida => cancelamentoSaidaToolStripMenuItem;
 
+        public ToolStripMenuItem MenuConfiguracoes => configuracoesToolStripMenuItem;
+
+
+
 
 
     }

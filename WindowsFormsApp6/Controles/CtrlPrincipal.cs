@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp6.Controles.Cadastros;
 using WindowsFormsApp6.Controles.Movimentacao;
+using WindowsFormsApp6.Controles.Utilitarios;
 
 namespace WindowsFormsApp6
 {
@@ -34,8 +35,15 @@ namespace WindowsFormsApp6
 
             Principal.MenuSaidas.Click += MenuSaidas_Click;
 
+            Principal.MenuConfiguracoes.Click += MenuConfiguracoes_Click;
+
             Principal.PrincipalView.FormClosing += FormClosing;
 
+        }
+
+        private void MenuConfiguracoes_Click(object sender, EventArgs e)
+        {
+            new CtrlConfiguracao(Principal);
         }
 
         private void MenuSaidas_Click(object sender, EventArgs e)

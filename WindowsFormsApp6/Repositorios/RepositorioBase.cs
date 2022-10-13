@@ -18,7 +18,7 @@ namespace WindowsFormsApp6.Repositorios
         {
             string conexao = File.ReadAllText(Environment.CurrentDirectory + "/Configuracao.json");
 
-            ModelConfiguracao cfg = JsonConvert.DeserializeObject<ModelConfiguracao>(conexao);
+            ModelConfiguracaoBancoDados cfg = JsonConvert.DeserializeObject<ModelConfiguracaoBancoDados>(conexao);
 
             Connection = new SqlConnection(cfg.StringConexao);
         }

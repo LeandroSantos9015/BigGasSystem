@@ -38,7 +38,7 @@ namespace WindowsFormsApp6
             this.saidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelamentoSaidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilitáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuracoesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,16 +107,16 @@ namespace WindowsFormsApp6
             // utilitáriosToolStripMenuItem
             // 
             this.utilitáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuraçõesToolStripMenuItem});
+            this.configuracoesToolStripMenuItem});
             this.utilitáriosToolStripMenuItem.Name = "utilitáriosToolStripMenuItem";
             this.utilitáriosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.utilitáriosToolStripMenuItem.Text = "Utilitários";
             // 
-            // configuraçõesToolStripMenuItem
+            // configuracoesToolStripMenuItem
             // 
-            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            this.configuracoesToolStripMenuItem.Name = "configuracoesToolStripMenuItem";
+            this.configuracoesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configuracoesToolStripMenuItem.Text = "Configurações";
             // 
             // FormPrincipal
             // 
@@ -146,7 +146,7 @@ namespace WindowsFormsApp6
         private System.Windows.Forms.ToolStripMenuItem saidaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelamentoSaidaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem utilitáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuracoesToolStripMenuItem;
     }
 }
 

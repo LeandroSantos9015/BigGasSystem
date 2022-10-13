@@ -62,6 +62,10 @@
     <Compile Include="Controles\Cadastros\CtrlCadastroMercadoria.cs" />
     <Compile Include="Controles\Cadastros\RegraMercadoria.cs" />
     <Compile Include="Controles\Cadastros\RegraCliente.cs" />
+    <Compile Include="Controles\Utilitarios\CtrlConfiguracao.cs" />
+    <Compile Include="Controles\Impressao\CtrlImpressao.cs" />
+    <Compile Include="Controles\Impressao\ImpressaoLPT.cs" />
+    <Compile Include="Controles\Impressao\ImprimeTexto.cs" />
     <Compile Include="Controles\Movimentacao\CtrlSaidaMercadoria.cs" />
     <Compile Include="Controles\Movimentacao\CtrlAddMercadoria.cs" />
     <Compile Include="Controles\Movimentacao\RegraAddEntrada.cs" />
@@ -86,6 +90,7 @@
     </Compile>
     <Compile Include="Interface\Cadastros\IMercadoriaCadastroView.cs" />
     <Compile Include="Interface\Cadastros\IClienteCadastroView.cs" />
+    <Compile Include="Interface\Utilitarios\IConfiguracao.cs" />
     <Compile Include="Interface\Movimentacao\IAddEntradaMercadoria.cs" />
     <Compile Include="Interface\Movimentacao\IAddVendaMercadoria.cs" />
     <Compile Include="Interface\Movimentacao\IMovimentacaoEntradaView.cs" />
@@ -131,9 +136,12 @@
     </Compile>
     <Compile Include="Modelos\Historico\ModelHistoricoCliente.cs" />
     <Compile Include="Modelos\Historico\ModelHistoricoMercadoria.cs" />
+    <Compile Include="Modelos\ModelConfiguracao.cs" />
+    <Compile Include="Modelos\ModelEmpresa.cs" />
+    <Compile Include="Modelos\ModelImpressao.cs" />
     <Compile Include="Modelos\ModelMercadoria.cs" />
     <Compile Include="Modelos\ModelCliente.cs" />
-    <Compile Include="Modelos\ModelConfiguracao.cs" />
+    <Compile Include="Modelos\ModelConfiguracaoBancoDados.cs" />
     <Compile Include="Modelos\ModelMercadoriaBase.cs" />
     <Compile Include="Modelos\ModeloCidade.cs" />
     <Compile Include="Menus\Movimentacao\FrmEntradas.cs">
@@ -158,6 +166,7 @@
     <Compile Include="Repositorios\IRepositoryBase.cs" />
     <Compile Include="Repositorios\Movimentacao\RepositorioMovimentacao.cs" />
     <Compile Include="Repositorios\RepositorioBase.cs" />
+    <Compile Include="Repositorios\Utilitarios\RepositorioConfiguracao.cs" />
     <Compile Include="Utilitarios\EnumPelaDescricao.cs" />
     <Compile Include="Utilitarios\Mascara.cs" />
     <Compile Include="Utilitarios\Util.cs" />

@@ -21,5 +21,7 @@ namespace WindowsFormsApp6
 
         ToolStripMenuItem MenuCancelamentoSaida { get; }
 
+        ToolStripMenuItem MenuConfiguracoes { get; }
+
     }
 }
