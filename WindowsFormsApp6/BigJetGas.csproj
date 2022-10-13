@@ -62,6 +62,7 @@
     <Compile Include="Controles\Cadastros\CtrlCadastroMercadoria.cs" />
     <Compile Include="Controles\Cadastros\RegraMercadoria.cs" />
     <Compile Include="Controles\Cadastros\RegraCliente.cs" />
+    <Compile Include="Controles\Movimentacao\CtrlCancelamentoSaida.cs" />
     <Compile Include="Controles\Utilitarios\CtrlConfiguracao.cs" />
     <Compile Include="Controles\Impressao\CtrlImpressao.cs" />
     <Compile Include="Controles\Impressao\ImpressaoLPT.cs" />
@@ -90,6 +91,7 @@
     </Compile>
     <Compile Include="Interface\Cadastros\IMercadoriaCadastroView.cs" />
     <Compile Include="Interface\Cadastros\IClienteCadastroView.cs" />
+    <Compile Include="Interface\Movimentacao\ICancelamentoSaida.cs" />
     <Compile Include="Interface\Utilitarios\IConfiguracao.cs" />
     <Compile Include="Interface\Movimentacao\IAddEntradaMercadoria.cs" />
     <Compile Include="Interface\Movimentacao\IAddVendaMercadoria.cs" />
@@ -122,6 +124,12 @@
     <Compile Include="Menus\Movimentacao\FrmAddMercadoria.Designer.cs">
       <DependentUpon>FrmAddMercadoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus\Movimentacao\FrmCancelamentoSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Movimentacao\FrmCancelamentoSaida.Designer.cs">
+      <DependentUpon>FrmCancelamentoSaida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus\Movimentacao\FrmSaidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +160,7 @@
     </Compile>
     <Compile Include="Modelos\Movimentacao\DapperDinamico.cs" />
     <Compile Include="Modelos\Movimentacao\ModelItemMovimentacao.cs" />
+    <Compile Include="Modelos\Movimentacao\ModelMovimentacaoPeriodo.cs" />
     <Compile Include="Modelos\Movimentacao\ModelMovimentacao.cs" />
     <Compile Include="Pesquisar\FrmPesquisar.cs">
       <SubType>Form</SubType>
@@ -188,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\Movimentacao\FrmAddMercadoria.resx">
       <DependentUpon>FrmAddMercadoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Movimentacao\FrmCancelamentoSaida.resx">
+      <DependentUpon>FrmCancelamentoSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\Movimentacao\FrmEntradas.resx">
       <DependentUpon>FrmEntradas.cs</DependentUpon>

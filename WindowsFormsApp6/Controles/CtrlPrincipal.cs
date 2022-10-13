@@ -35,10 +35,17 @@ namespace WindowsFormsApp6
 
             Principal.MenuSaidas.Click += MenuSaidas_Click;
 
+            Principal.MenuCancelamentoSaida.Click += MenuCancelamentoSaida_Click;
+
             Principal.MenuConfiguracoes.Click += MenuConfiguracoes_Click;
 
             Principal.PrincipalView.FormClosing += FormClosing;
 
+        }
+
+        private void MenuCancelamentoSaida_Click(object sender, EventArgs e)
+        {
+            new CtrlCancelamentoSaida(Principal);
         }
 
         private void MenuConfiguracoes_Click(object sender, EventArgs e)

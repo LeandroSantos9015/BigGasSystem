@@ -219,7 +219,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             decimal.TryParse(valorString, out decimal valorTotal);
 
             DateTime data = this.SaidaView.DteVenda.Value;
-            string numero = "Saída de mercdorias";
+            string numero = "Saída de mercadorias";
             string descricao = "Venda de mercadoria";
 
 

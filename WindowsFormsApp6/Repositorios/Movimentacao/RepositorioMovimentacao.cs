@@ -66,7 +66,27 @@ namespace WindowsFormsApp6.Repositorios.Movimentacao
             return consulta;
         }
 
+        public void CancelarNotaDeSaida(Int64 id)
+        {
+            try
+            {
+                var p = new DynamicParameters();
 
+                p.Add("@Id", id);
+                Conexao.Execute("CancelarNotaDeSaida", p, commandType: CommandType.StoredProcedure);
 
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public IList<ModelMovimentacaoPeriodo> ListarNotasPorPeriodo(EOperacaoMovimento operacao, EStatusMovimento status, string inicio, string fim)
+        {
+            var consulta = Conexao.Query<ModelMovimentacaoPeriodo>($"SELECT * FROM ConsultaNotasPorPeriodo({(byte)operacao},{(byte)status},'{inicio}','{fim}')").ToList();
+
+            return consulta;
+        }
     }
 }
