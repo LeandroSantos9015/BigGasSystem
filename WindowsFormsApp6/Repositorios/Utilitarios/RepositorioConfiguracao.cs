@@ -30,7 +30,7 @@ namespace WindowsFormsApp6.Repositorios.Utilitarios
             }
             catch (Exception e)
             {
-                throw e;
+                throw;
             }
         }
 

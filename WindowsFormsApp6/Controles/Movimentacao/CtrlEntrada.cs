@@ -232,6 +232,9 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 ModelMovimentacao movimentacao = TelaParaObjeto(eStatus);
                 IList<ModelItemMovimentacao> lista = this.MovimentacaoEntradaView.DgvMercadorias.DataSource as List<ModelItemMovimentacao>;
 
+                if (movimentacao is null)
+                    return 0;
+
                 bool naoValido = ValidacaoSalvar(movimentacao, lista);
 
                 if (naoValido) return 0;
@@ -351,7 +354,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 this.MovimentacaoEntradaView.TxtDescricao.Text = null;
                 this.MovimentacaoEntradaView.TxtValorTotal.Text = null;
 
-                this.MovimentacaoEntradaView.CbmFornecedor.SelectedIndex = 0;
+                if (this.MovimentacaoEntradaView.CbmFornecedor.SelectedIndex >= 0)
+                    this.MovimentacaoEntradaView.CbmFornecedor.SelectedIndex = 0;
 
                 this.MovimentacaoEntradaView.DgvMercadorias.DataSource = null;
 
@@ -405,6 +409,12 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             string descricao = this.MovimentacaoEntradaView.TxtDescricao.Text;
 
             ModelCliente fornec = MovimentacaoEntradaView.CbmFornecedor.SelectedItem as ModelCliente;
+
+            if (fornec is null)
+            {
+                MessageBox.Show("Cadastre um fornecedor antes de continuar");
+                return null;
+            }
 
             return new ModelMovimentacao
             {

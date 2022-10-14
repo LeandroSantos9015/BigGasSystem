@@ -28,7 +28,7 @@ namespace WindowsFormsApp6.Controles.Utilitarios
 
             DelegarEventos();
 
-            CarregarDadosTela();
+            //CarregarDadosTela();
 
             this.ConfiguracaoView.ConfiguracaoView.Show();
 
@@ -58,13 +58,20 @@ namespace WindowsFormsApp6.Controles.Utilitarios
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            ModelConfiguracao cfg = TelaParaObjeto();
+            try
+            {
+                ModelConfiguracao cfg = TelaParaObjeto();
 
-            repositorio.Salvar(cfg);
+                repositorio.Salvar(cfg);
 
-            MessageBox.Show("Configurações salves com sucesso");
+                MessageBox.Show("Configurações salves com sucesso");
 
-            this.ConfiguracaoView.ConfiguracaoView.Close();
+                this.ConfiguracaoView.ConfiguracaoView.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocorreu um problema ao tentar salvar\n" + ex.Message);
+            }
 
         }
 

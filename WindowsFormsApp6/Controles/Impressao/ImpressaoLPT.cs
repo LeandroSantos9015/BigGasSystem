@@ -128,7 +128,121 @@ namespace WindowsFormsApp6.Controles.Impressao
 
             ImprimeTexto imp = new ImprimeTexto();
 
-            int colunaTelefone = impressao.EmpresaNome.Length + 2;
+            int colunaTelefone = impressao.EmpresaNome.Length + 13;
+            int segundaVia = 42;
+
+            string separador2 = "- - - - - - - - - - - - - - - - - - --";
+            string separador = "--------------------------------------";
+            string contador = "12345678901234567890123456789012345678901234567890123456789012345678901234567890";
+            string campoAssinatura = "______________________________";
+
+
+            imp.Inicio(porta);
+
+
+            imp.Imp(imp.Fonte56 + imp.NegritoOn + imp.Expandido + impressao.EmpresaNome + imp.Normal);
+            imp.ImpCol(colunaTelefone, impressao.EmpresaTelefone);
+
+            imp.ImpCol(segundaVia, imp.Fonte56 + imp.NegritoOn + imp.Expandido + impressao.EmpresaNome + imp.Normal);
+            imp.ImpColLF(segundaVia + colunaTelefone, impressao.EmpresaTelefone);
+
+            imp.Pula(1);
+
+            imp.Imp(impressao.EmpresaEndereco);
+            imp.ImpColLF(segundaVia, impressao.EmpresaEndereco);
+
+            imp.Imp(impressao.EmpresaCidade);
+            imp.ImpColLF(segundaVia, impressao.EmpresaCidade);
+
+            imp.Imp(separador);
+            imp.ImpColLF(segundaVia, separador);
+
+            imp.ImpCol(3, "Hora:" + impressao.Hora);
+            imp.ImpCol(18, "Numero:" + impressao.NumeroPedido);
+
+            imp.ImpCol(segundaVia + 3, "Hora:" + impressao.Hora);
+            imp.ImpColLF(segundaVia + 18, "Numero:" + impressao.NumeroPedido);
+
+            imp.Imp(separador);
+            imp.ImpColLF(segundaVia, separador);
+
+            imp.ImpCol(1, "Cliente  : " + impressao.ClienteNome);
+            imp.ImpColLF(segundaVia + 1, "Cliente  : " + impressao.ClienteNome);
+
+            imp.ImpCol(1, "Bairro   : " + impressao.ClienteBairro);
+            imp.ImpColLF(segundaVia + 1, "Bairro   : " + impressao.ClienteBairro);
+
+            imp.ImpCol(1, "Endereco : " + impressao.ClienteEndereco);
+            imp.ImpColLF(segundaVia + 1, "Endereco : " + impressao.ClienteEndereco);
+
+            imp.ImpCol(1, "Complem. : " + impressao.ClienteComplemento);
+            imp.ImpColLF(segundaVia + 1, "Complem. : " + impressao.ClienteComplemento);
+
+            imp.ImpCol(1, "Cidade   : " + impressao.ClienteCidade);
+            imp.ImpColLF(segundaVia + 1, "Cidade   : " + impressao.ClienteCidade);
+
+            imp.ImpCol(1, "Telefone : " + impressao.ClienteTelefone);
+            imp.ImpColLF(segundaVia + 1, "Telefone : " + impressao.ClienteTelefone);
+
+            imp.ImpCol(1, "Cond. PG.: " + impressao.ClienteCondicaoPagamento);
+            imp.ImpCol(segundaVia + 1, "Cond. PG.: " + impressao.ClienteCondicaoPagamento);
+
+            imp.ImpCol(20, "Vcto.: " + impressao.ClienteVencimento);
+            imp.ImpColLF(segundaVia + 20, "Vcto.: " + impressao.ClienteVencimento);
+
+            imp.Imp(separador);
+            imp.ImpColLF(segundaVia, separador);
+
+            imp.Imp("QTDE  DESCRICAO         VALOR   TOTAL");
+            imp.ImpColLF(segundaVia, "QTDE  DESCRICAO         VALOR   TOTAL");
+
+            foreach (var item in impressao.Mercadorias)
+            {
+                imp.ImpCol(1, item.Quantidade.ToString());
+                imp.ImpCol(7, item.Descricao);
+                imp.ImpCol(24, item.PrecoVenda.ToString());
+                imp.ImpCol(32, (item.Quantidade * item.PrecoVenda).ToString());
+
+                imp.ImpCol(segundaVia + 1, item.Quantidade.ToString());
+                imp.ImpCol(segundaVia + 7, item.Descricao);
+                imp.ImpCol(segundaVia + 24, item.PrecoVenda.ToString());
+                imp.ImpColLF(segundaVia + 32, (item.Quantidade * item.PrecoVenda).ToString());
+                
+            }
+
+            imp.Imp(separador);
+            imp.ImpColLF(segundaVia, separador);
+
+            imp.ImpCol(8, "Total do Pedido:");
+            imp.ImpCol(25, imp.NegritoOn + impressao.TotalPedido);
+
+            imp.ImpCol(segundaVia + 8, "Total do Pedido:");
+            imp.ImpColLF(segundaVia + 25, imp.NegritoOn + impressao.TotalPedido);
+
+
+
+            imp.ImpCol(2, impressao.Data);
+            imp.ImpColLF(segundaVia + 2, impressao.Data);
+
+            imp.Pula(2);
+
+            imp.ImpCol(5, campoAssinatura);
+            imp.ImpColLF(segundaVia + 5, campoAssinatura);
+
+            imp.ImpCol(17, "Assinatura");
+            imp.ImpColLF(segundaVia + 17, "Assinatura");
+
+
+
+            imp.Fim();
+        }
+
+        public void Imprimir2(ModelImpressao impressao, string porta)
+        {
+
+            ImprimeTexto imp = new ImprimeTexto();
+
+            int colunaTelefone = impressao.EmpresaNome.Length + 14;
 
             string separador = "- - - - - - - - - - - - - - - - - ";
             string contador = "12345678901234567890123456789012345678901234567890123456789012345678901234567890";
@@ -140,11 +254,12 @@ namespace WindowsFormsApp6.Controles.Impressao
 
             imp.Imp(imp.Fonte56 + imp.NegritoOn + imp.Expandido + impressao.EmpresaNome + imp.Normal);
             imp.ImpColLF(colunaTelefone, impressao.EmpresaTelefone);
+            imp.ImpLF(impressao.EmpresaEndereco);
             imp.ImpLF("Vendedor:"); //Talvez não precise
             imp.ImpLF(impressao.EmpresaCidade);
             imp.ImpLF(separador);
             imp.ImpCol(3, "Hora:" + impressao.Hora);
-            imp.ImpColLF(15, "Hora:" + impressao.NumeroPedido);
+            imp.ImpColLF(15, "Numero:" + impressao.NumeroPedido);
             imp.ImpLF(separador);
 
             imp.ImpColLF(1, "Cliente  : " + impressao.ClienteNome);
@@ -157,14 +272,15 @@ namespace WindowsFormsApp6.Controles.Impressao
             imp.ImpColLF(20, "Vcto.: " + impressao.ClienteVencimento);
 
             imp.ImpLF(separador);
-            imp.ImpLF("QTDE  DESCRICAO        VALOR   TOTAL");
+            imp.ImpLF("QTDE  DESCRICAO          VALOR   TOTAL");
             imp.ImpLF(separador);
             imp.ImpLF(contador);
             imp.ImpCol(8, "Total do Pedido:");
-            imp.ImpColLF(25, impressao.TotalPedido);
+            imp.ImpColLF(25, imp.NegritoOn + impressao.TotalPedido);
 
             imp.ImpColLF(2, impressao.Data);
             imp.ImpColLF(5, campoAssinatura);
+            imp.Pula(2);
             imp.ImpColLF(17, "Assinatura");
 
 
