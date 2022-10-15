@@ -238,14 +238,12 @@
     <Compile Include="Relatorio\Controller\Abstrato\ARelatorios.cs" />
     <Compile Include="Relatorio\Controller\Abstrato\VerificaRelatorioVazio.cs" />
     <Compile Include="Relatorio\Controller\Cadastros\CtrlRelatorio01ListaCliente.cs" />
-    <Compile Include="Relatorio\Controller\Cadastros\CtrlRelatorio01ListaMercadorias.cs" />
+    <Compile Include="Relatorio\Controller\Cadastros\CtrlRelatorio02ListaMercadorias.cs" />
     <Compile Include="Relatorio\Controller\CtrlRelatorios.cs" />
     <Compile Include="Relatorio\Controller\Entrada\CtrlRelatorio03EntradaNotas.cs" />
-    <Compile Include="Relatorio\Controller\Venda\CtrlRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
-    <Compile Include="Relatorio\Controller\Venda\CtrlRelatorio03VendaMercadoriaPorTurnoPeriodo.cs" />
     <Compile Include="Relatorio\CtrlFiltros\Abstrato\ACtrlFiltroRelatorio.cs" />
     <Compile Include="Relatorio\CtrlFiltros\Cadastros\BehaviorFiltro001.cs" />
-    <Compile Include="Relatorio\CtrlFiltros\Venda\BehaviorFiltro002.cs" />
+    <Compile Include="Relatorio\CtrlFiltros\Cadastros\BehaviorFiltro002.cs" />
     <Compile Include="Relatorio\CtrlFiltros\Entrada\BehaviorFiltro003.cs" />
     <Compile Include="Relatorio\Enumeradores\EAtivo.cs" />
     <Compile Include="Relatorio\Enumeradores\ERelatorio.cs" />
@@ -261,28 +259,22 @@
     <Compile Include="Relatorio\Filtros\Abstrato\UCBotoesFiltro.Designer.cs">
       <DependentUpon>UCBotoesFiltro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Relatorio\Filtros\Cadastro\Filtro001.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Relatorio\Filtros\Cadastro\Filtro001.Designer.cs">
-      <DependentUpon>Filtro001.cs</DependentUpon>
-    </Compile>
     <Compile Include="Relatorio\Filtros\Cadastro\UCFiltro001.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Relatorio\Filtros\Cadastro\UCFiltro001.Designer.cs">
       <DependentUpon>UCFiltro001.cs</DependentUpon>
     </Compile>
-    <Compile Include="Relatorio\Filtros\Venda\UCFiltro002.cs">
+    <Compile Include="Relatorio\Filtros\Cadastro\UCFiltro002.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Relatorio\Filtros\Venda\UCFiltro002.Designer.cs">
+    <Compile Include="Relatorio\Filtros\Cadastro\UCFiltro002.Designer.cs">
       <DependentUpon>UCFiltro002.cs</DependentUpon>
     </Compile>
-    <Compile Include="Relatorio\Filtros\Venda\UCFiltro003.cs">
+    <Compile Include="Relatorio\Filtros\Entrada\UCFiltro003.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Relatorio\Filtros\Venda\UCFiltro003.Designer.cs">
+    <Compile Include="Relatorio\Filtros\Entrada\UCFiltro003.Designer.cs">
       <DependentUpon>UCFiltro003.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorio\FrmRelatorio.cs">
@@ -294,17 +286,14 @@
     <Compile Include="Relatorio\Interfaces\IBotoesRelatorio.cs" />
     <Compile Include="Relatorio\Interfaces\IFiltroRelatorio.cs" />
     <Compile Include="Relatorio\Interfaces\IRelatorio.cs" />
-    <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio01ListaMercadorias.cs" />
-    <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
-    <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio03VendaMercadoriaTurnoPeriodo.cs" />
+    <Compile Include="Relatorio\ModeloRelatorio\Relatorio02_ListaMercadorias.cs" />
     <Compile Include="Relatorio\ModeloRelatorio\Relatorio01_ListaCliente.cs" />
     <Compile Include="Relatorio\ModeloRelatorio\Relatorio03_NotaDeEntrada.cs" />
     <Compile Include="Relatorio\Properties\Resources.Designer.cs" />
     <Compile Include="Relatorio\Properties\Settings.Designer.cs" />
+    <Compile Include="Relatorio\Query\Cadastros\QueryRelatorio02ListaMercadoriasEstoque.cs" />
     <Compile Include="Relatorio\Query\Cadastros\QueryRelatorio01ListaCliente.cs" />
     <Compile Include="Relatorio\Query\Entrada\QueryRelatorio03NotasEntrada.cs" />
-    <Compile Include="Relatorio\Query\Venda\QueryRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
-    <Compile Include="Relatorio\Query\Venda\QueryRelatorio03VendaMercadoriaTurnoPeriodo.cs" />
     <Compile Include="Relatorio\View\Base\RelatorioBase.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -317,11 +306,17 @@
     <Compile Include="Relatorio\View\Cadastros\Relatorio01ListaClientes.Designer.cs">
       <DependentUpon>Relatorio01ListaClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Relatorio\View\Cadastros\Relatorio01ListaMercadorias.cs">
+    <Compile Include="Relatorio\View\Cadastros\Relatorio02EstoqueMercadorias.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Relatorio\View\Cadastros\Relatorio01ListaMercadorias.Designer.cs">
-      <DependentUpon>Relatorio01ListaMercadorias.cs</DependentUpon>
+    <Compile Include="Relatorio\View\Cadastros\Relatorio02EstoqueMercadorias.Designer.cs">
+      <DependentUpon>Relatorio02EstoqueMercadorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\View\Cadastros\RelatorioModelo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorio\View\Cadastros\RelatorioModelo.Designer.cs">
+      <DependentUpon>RelatorioModelo.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorio\View\Entrada\Relatorio03NotasDeEntrada.cs">
       <SubType>Component</SubType>
@@ -401,16 +396,13 @@
     <EmbeddedResource Include="Relatorio\Filtros\Abstrato\UCBotoesFiltro.resx">
       <DependentUpon>UCBotoesFiltro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorio\Filtros\Cadastro\Filtro001.resx">
-      <DependentUpon>Filtro001.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\Filtros\Cadastro\UCFiltro001.resx">
       <DependentUpon>UCFiltro001.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorio\Filtros\Venda\UCFiltro002.resx">
+    <EmbeddedResource Include="Relatorio\Filtros\Cadastro\UCFiltro002.resx">
       <DependentUpon>UCFiltro002.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorio\Filtros\Venda\UCFiltro003.resx">
+    <EmbeddedResource Include="Relatorio\Filtros\Entrada\UCFiltro003.resx">
       <DependentUpon>UCFiltro003.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\FrmRelatorio.resx">
@@ -423,8 +415,11 @@
     <EmbeddedResource Include="Relatorio\View\Cadastros\Relatorio01ListaClientes.resx">
       <DependentUpon>Relatorio01ListaClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorio\View\Cadastros\Relatorio01ListaMercadorias.resx">
-      <DependentUpon>Relatorio01ListaMercadorias.cs</DependentUpon>
+    <EmbeddedResource Include="Relatorio\View\Cadastros\Relatorio02EstoqueMercadorias.resx">
+      <DependentUpon>Relatorio02EstoqueMercadorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\View\Cadastros\RelatorioModelo.resx">
+      <DependentUpon>RelatorioModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\View\Entrada\Relatorio03NotasDeEntrada.resx">
       <DependentUpon>Relatorio03NotasDeEntrada.cs</DependentUpon>

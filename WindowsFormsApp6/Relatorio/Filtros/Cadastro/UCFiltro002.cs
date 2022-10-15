@@ -12,16 +12,11 @@ namespace Relatorios.Filtros.Venda
 {
     public partial class UCFiltro002 : UserControl
     {
-        public UCFiltro002()
-        {
-            InitializeComponent();
-        }
+        public UCFiltro002() { InitializeComponent(); }
 
         public UserControl UCFiltro { get { return this; } }
 
-        public DateTimePicker DateInicio { get { return this.dteInicio; } }
-
-        public DateTimePicker DateFim { get { return this.dteFim; } }
+        public ComboBox Situacao { get { return this.cbmSituacao; } }
 
     }
 }

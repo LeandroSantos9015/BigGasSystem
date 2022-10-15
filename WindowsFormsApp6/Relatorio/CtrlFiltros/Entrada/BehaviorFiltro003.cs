@@ -1,13 +1,8 @@
 ﻿using Relatorios.Controller.Cadastros;
-using Relatorios.Controller.Venda;
+
 using Relatorios.ControllerFiltros;
 using Relatorios.Enumeradores;
 using Relatorios.Filtros.Venda;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Relatorios.CtrlFiltros.Entrada

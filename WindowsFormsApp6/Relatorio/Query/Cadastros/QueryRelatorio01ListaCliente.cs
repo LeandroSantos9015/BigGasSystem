@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Relatorios.ModeloRelatorio;
 using System;
 using System.Collections.Generic;
 using System.Data;

@@ -40,12 +40,12 @@
             this.lstRelatorios.ItemHeight = 16;
             this.lstRelatorios.Location = new System.Drawing.Point(10, 12);
             this.lstRelatorios.Name = "lstRelatorios";
-            this.lstRelatorios.Size = new System.Drawing.Size(302, 196);
+            this.lstRelatorios.Size = new System.Drawing.Size(434, 196);
             this.lstRelatorios.TabIndex = 1;
             // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(10, 214);
+            this.btnAbrir.Location = new System.Drawing.Point(182, 214);
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(128, 23);
             this.btnAbrir.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(184, 214);
+            this.btnFechar.Location = new System.Drawing.Point(316, 214);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(128, 23);
             this.btnFechar.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 258);
+            this.ClientSize = new System.Drawing.Size(456, 258);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.lstRelatorios);

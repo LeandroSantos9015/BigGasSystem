@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DevExpress.XtraReports.UI;
 using Relatorios.Enumeradores;
-using Relatorios.ModeloRelatorio;
 using Relatorios.Controller.Abstrato;
 using Relatorios.Query.Entrada;
 using WindowsFormsApp6.Relatorio.ModeloRelatorio;

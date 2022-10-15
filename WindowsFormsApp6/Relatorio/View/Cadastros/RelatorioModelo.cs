@@ -12,9 +12,9 @@ using Relatorios.View.Cadastros.Venda;
 namespace Relatorios.View.Cadastros.Mercadorias
 {
     [Serializable]
-    public partial class Relatorio01ListaMercadorias : RelatorioBase
+    public partial class RelatorioModelo : RelatorioBase
     {
-        public Relatorio01ListaMercadorias(ERelatorio relatorio) : base(relatorio)
+        public RelatorioModelo(ERelatorio relatorio) : base(relatorio)
         {
             InitializeComponent();
 
