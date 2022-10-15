@@ -21,9 +21,9 @@ namespace Relatorios.Controller
 
             switch (relatorio)
             {
-                //case ERelatorio.NotaEntadaPeriodo03:
-                //    new BehaviorFiltro001(ERelatorio.NotaEntadaPeriodo03);
-                //    break;
+                case ERelatorio.ListaClientes01:
+                    new BehaviorFiltro001(ERelatorio.ListaClientes01);
+                    break;
 
                 case ERelatorio.NotaEntadaPeriodo03:
                     new BehaviorFiltro003(ERelatorio.NotaEntadaPeriodo03);

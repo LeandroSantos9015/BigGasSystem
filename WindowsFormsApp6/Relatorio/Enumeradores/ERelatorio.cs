@@ -13,8 +13,8 @@ namespace Relatorios.Enumeradores
     /// </summary>
     public enum ERelatorio
     {
-        //[Description("01 - Lista de Mercadorias e seu estoque"), Category("Cadastro")]
-        //ERelatorio01ListaMercadorias = 1,
+        [Description("Relatório 01 - Lista de Parceiros (Clientes e Fornecedores)"), Category("Cadastro")]
+        ListaClientes01 = 1,
 
         //[Description("02 - Venda Por Finalizadora Por Turno"), Category("Venda")]
         //ERelatorio02VendaPorFinalizadoraPorTurno = 2,

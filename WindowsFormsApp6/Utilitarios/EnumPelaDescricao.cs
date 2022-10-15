@@ -61,6 +61,7 @@ namespace WindowsFormsApp6.Utilitarios
             return lista;
         }
 
+    
         public static string Descricao(this System.Enum currentEnum)
         {
             string description;

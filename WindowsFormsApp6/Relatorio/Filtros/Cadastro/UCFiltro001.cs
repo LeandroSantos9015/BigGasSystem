@@ -18,5 +18,9 @@ namespace Relatorios.Filtros.Cadastro
         }
 
         public ComboBox Situacao { get { return this.cbmSituacao; } }
+
+        public CheckBox Fornecedores { get { return this.chkForn; } }
+
+        public CheckBox Clientes { get { return this.chkCli; } }
     }
 }
