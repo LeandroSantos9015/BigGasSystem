@@ -50,18 +50,18 @@
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.lblTitulo});
-            this.TopMargin.HeightF = 50.00001F;
+            this.TopMargin.HeightF = 70.83334F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 22.50001F);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblTitulo.SizeF = new System.Drawing.SizeF(650.0001F, 27.5F);
+            this.lblTitulo.SizeF = new System.Drawing.SizeF(650.0001F, 48.33333F);
             this.lblTitulo.StylePriority.UseFont = false;
             this.lblTitulo.StylePriority.UseTextAlignment = false;
             this.lblTitulo.Text = "00 - Nome do Relatório";
@@ -104,7 +104,7 @@
             this.TopMargin,
             this.BottomMargin,
             this.PageHeader});
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 50, 48);
+            this.Margins = new System.Drawing.Printing.Margins(100, 100, 71, 48);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.xrControlStyle1,
             this.xrControlStyle2,

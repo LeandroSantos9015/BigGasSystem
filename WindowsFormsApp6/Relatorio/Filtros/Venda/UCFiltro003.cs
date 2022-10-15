@@ -23,7 +23,5 @@ namespace Relatorios.Filtros.Venda
 
         public DateTimePicker DateFim { get { return this.dteFim; } }
 
-        public CheckBox ChkTurno { get { return this.chkTurno; } }
-
     }
 }

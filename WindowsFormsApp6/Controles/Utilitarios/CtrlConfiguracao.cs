@@ -64,7 +64,7 @@ namespace WindowsFormsApp6.Controles.Utilitarios
 
                 repositorio.Salvar(cfg);
 
-                MessageBox.Show("Configurações salves com sucesso");
+                MessageBox.Show("Configurações salvas com sucesso");
 
                 this.ConfiguracaoView.ConfiguracaoView.Close();
             }

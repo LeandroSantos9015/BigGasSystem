@@ -32,7 +32,6 @@
             this.dteInicio = new System.Windows.Forms.DateTimePicker();
             this.dteFim = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.chkTurno = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -69,21 +68,10 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Fim:";
             // 
-            // cbmTurno
-            // 
-            this.chkTurno.AutoSize = true;
-            this.chkTurno.Location = new System.Drawing.Point(35, 74);
-            this.chkTurno.Name = "cbmTurno";
-            this.chkTurno.Size = new System.Drawing.Size(108, 17);
-            this.chkTurno.TabIndex = 11;
-            this.chkTurno.Text = "Agrupar por turno";
-            this.chkTurno.UseVisualStyleBackColor = true;
-            // 
             // UCFiltro003
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.chkTurno);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dteInicio);
             this.Controls.Add(this.dteFim);
@@ -101,6 +89,5 @@
         private System.Windows.Forms.DateTimePicker dteInicio;
         private System.Windows.Forms.DateTimePicker dteFim;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox chkTurno;
     }
 }

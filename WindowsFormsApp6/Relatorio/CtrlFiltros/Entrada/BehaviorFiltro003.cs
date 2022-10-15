@@ -1,4 +1,5 @@
-﻿using Relatorios.Controller.Venda;
+﻿using Relatorios.Controller.Cadastros;
+using Relatorios.Controller.Venda;
 using Relatorios.ControllerFiltros;
 using Relatorios.Enumeradores;
 using Relatorios.Filtros.Venda;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Relatorios.CtrlFiltros.Venda
+namespace Relatorios.CtrlFiltros.Entrada
 {
     public class BehaviorFiltro003 : ACtrlFiltroRelatorio
     {
@@ -17,11 +18,11 @@ namespace Relatorios.CtrlFiltros.Venda
 
         public BehaviorFiltro003(ERelatorio relatorio) : base(relatorio) { }
 
-        public override object[] dadosFiltro => new object[] { this.filtroRelatorio.DateInicio.Value, this.filtroRelatorio.DateFim.Value, this.filtroRelatorio.ChkTurno.Checked };
+        public override object[] dadosFiltro => new object[] { this.filtroRelatorio.DateInicio.Value, this.filtroRelatorio.DateFim.Value };
 
         public override UserControl Controle => filtroRelatorio;
 
-        public override object ControlRelatorio() => new CtrlRelatorio03VendaMercadoriaPorTurnoPeriodo(dadosFiltro);
+        public override object ControlRelatorio() => new CtrlRelatorio03EntradaNotas(dadosFiltro);
 
 
     }

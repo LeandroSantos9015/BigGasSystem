@@ -163,7 +163,7 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmConfiguracoes";
-            this.Text = "Cfg";
+            this.Text = "Configurações";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

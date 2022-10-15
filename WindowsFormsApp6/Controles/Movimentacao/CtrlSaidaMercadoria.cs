@@ -97,29 +97,21 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             this.mercadoriaCarregada = (sender as ComboBox).SelectedItem as ModelItemMovimentacao;
 
             if (this.mercadoriaCarregada != null)
-            {
                 SaidaMercadoriaView.TxtPreco.Text = this.mercadoriaCarregada.PrecoVenda.ToString();
-            }
             else
-            {
                 SaidaMercadoriaView.TxtPreco.Text = null;
                 
-            }
-
             AtualizacaoValores();
         }
 
         private void BtnExc_Click(object sender, EventArgs e)
         {
-
+            SaidaMercadoriaView.SaidaMercadoriaView.DialogResult = DialogResult.Cancel;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-
             SaidaMercadoriaView.SaidaMercadoriaView.DialogResult = DialogResult.OK;
-
-            //RetornaObjetoSelecionado();
         }
 
 

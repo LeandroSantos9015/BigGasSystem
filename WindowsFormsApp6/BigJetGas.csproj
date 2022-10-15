@@ -239,12 +239,13 @@
     <Compile Include="Relatorio\Controller\Abstrato\VerificaRelatorioVazio.cs" />
     <Compile Include="Relatorio\Controller\Cadastros\CtrlRelatorio01ListaMercadorias.cs" />
     <Compile Include="Relatorio\Controller\CtrlRelatorios.cs" />
+    <Compile Include="Relatorio\Controller\Entrada\CtrlRelatorio03EntradaNotas.cs" />
     <Compile Include="Relatorio\Controller\Venda\CtrlRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
     <Compile Include="Relatorio\Controller\Venda\CtrlRelatorio03VendaMercadoriaPorTurnoPeriodo.cs" />
     <Compile Include="Relatorio\CtrlFiltros\Abstrato\ACtrlFiltroRelatorio.cs" />
     <Compile Include="Relatorio\CtrlFiltros\Cadastros\BehaviorFiltro001.cs" />
     <Compile Include="Relatorio\CtrlFiltros\Venda\BehaviorFiltro002.cs" />
-    <Compile Include="Relatorio\CtrlFiltros\Venda\BehaviorFiltro003.cs" />
+    <Compile Include="Relatorio\CtrlFiltros\Entrada\BehaviorFiltro003.cs" />
     <Compile Include="Relatorio\Enumeradores\EAtivo.cs" />
     <Compile Include="Relatorio\Enumeradores\ERelatorio.cs" />
     <Compile Include="Relatorio\Filtros\Abstrato\FrmFiltro.cs">
@@ -295,9 +296,10 @@
     <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio01ListaMercadorias.cs" />
     <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
     <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio03VendaMercadoriaTurnoPeriodo.cs" />
+    <Compile Include="Relatorio\ModeloRelatorio\Relatorio03_NotaDeEntrada.cs" />
     <Compile Include="Relatorio\Properties\Resources.Designer.cs" />
     <Compile Include="Relatorio\Properties\Settings.Designer.cs" />
-    <Compile Include="Relatorio\Query\Cadastros\QueryRelatorio01ListaMercadorias.cs" />
+    <Compile Include="Relatorio\Query\Entrada\QueryRelatorio03NotasEntrada.cs" />
     <Compile Include="Relatorio\Query\Venda\QueryRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
     <Compile Include="Relatorio\Query\Venda\QueryRelatorio03VendaMercadoriaTurnoPeriodo.cs" />
     <Compile Include="Relatorio\View\Base\RelatorioBase.cs">
@@ -311,6 +313,12 @@
     </Compile>
     <Compile Include="Relatorio\View\Cadastros\Mercadorias\Relatorio01ListaMercadorias.Designer.cs">
       <DependentUpon>Relatorio01ListaMercadorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\View\Entrada\Relatorio03NotasDeEntrada.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorio\View\Entrada\Relatorio03NotasDeEntrada.Designer.cs">
+      <DependentUpon>Relatorio03NotasDeEntrada.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorio\View\Venda\Relatorio02VendaPorFinalizadoraSinteticoPorTurno.cs">
       <SubType>Component</SubType>
@@ -367,6 +375,7 @@
     <EmbeddedResource Include="Pesquisar\FrmPesquisar.resx">
       <DependentUpon>FrmPesquisar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -404,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\View\Cadastros\Mercadorias\Relatorio01ListaMercadorias.resx">
       <DependentUpon>Relatorio01ListaMercadorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\View\Entrada\Relatorio03NotasDeEntrada.resx">
+      <DependentUpon>Relatorio03NotasDeEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\View\Venda\Relatorio02VendaPorFinalizadoraSinteticoPorTurno.resx">
       <DependentUpon>Relatorio02VendaPorFinalizadoraSinteticoPorTurno.cs</DependentUpon>
@@ -472,6 +484,9 @@
     <Content Include="DllsDev\DevExpress.XtraTreeList.v13.2.dll" />
     <Content Include="DllsDev\DevExpress.XtraTreeList.v13.2.xml" />
     <Content Include="Scripts\Script.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatorio\Query\Cadastros\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

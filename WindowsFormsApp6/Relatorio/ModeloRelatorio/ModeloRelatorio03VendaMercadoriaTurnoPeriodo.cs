@@ -25,7 +25,7 @@ namespace Relatorios.ModeloRelatorio
     }
 
     [Serializable]
-    public class AgrupadorRelatorio03
+    public class AgrupadorRelatorio03___
     {
         public Int64? IdTurno { get; set; }
 

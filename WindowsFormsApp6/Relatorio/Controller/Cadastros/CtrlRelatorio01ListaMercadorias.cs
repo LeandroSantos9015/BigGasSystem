@@ -1,4 +1,4 @@
-﻿using Relatorios.Query.Cadastros;
+﻿
 using Relatorios.View.Cadastros.Mercadorias;
 using System;
 using System.Collections.Generic;
@@ -14,41 +14,41 @@ namespace Relatorios.Controller.Cadastros
 {
     public class CtrlRelatorio01ListaMercadorias : IDisposable
     {
-        QueryRelatorio01ListaMercadorias QueryRelatorio01 = new QueryRelatorio01ListaMercadorias();
+        //QueryRelatorio01ListaMercadorias QueryRelatorio01 = new QueryRelatorio01ListaMercadorias();
 
-        Relatorio01ListaMercadorias Relatorio = new Relatorio01ListaMercadorias(ERelatorio.ERelatorio01ListaMercadorias);
+      //  Relatorio01ListaMercadorias Relatorio = new Relatorio01ListaMercadorias(ERelatorio.ERelatorio01ListaMercadorias);
 
         IList<ModeloRelatorio01ListaMercadorias> Lista = null;
 
         public void Dispose()
         {
-            if (Relatorio != null)
-            {
-                Relatorio.Dispose();
-                Relatorio = null;
-            }
+            //if (Relatorio != null)
+            //{
+            //    Relatorio.Dispose();
+            //    Relatorio = null;
+            //}
         }
         public CtrlRelatorio01ListaMercadorias(object[] parametros)
         {
-            Lista = QueryRelatorio01.QueryRelatorio01ListaTodasMercadoriasDapper(parametros);
+            Lista = null;// QueryRelatorio01.QueryRelatorio(parametros);
 
             if (VerificaRelatorioVazio.Verificar(Lista))
                 return;
 
 
-            this.Relatorio.DataSource = Lista;
+           // this.Relatorio.DataSource = Lista;
 
             Inicializacao();
 
-            Relatorio.ShowPreview();
+           // Relatorio.ShowPreview();
         }
 
         private void Inicializacao()
         {
 
-            Relatorio.LblPrecoVenda.DataBindings.Add(new XRBinding("Text", null, "PrecoVenda", "{0:C2}"));
+          //  Relatorio.LblPrecoVenda.DataBindings.Add(new XRBinding("Text", null, "PrecoVenda", "{0:C2}"));
 
-            Relatorio.LblEstoque.DataBindings.Add(new XRBinding("Text", null, "QtdEstoque", "{0:N3}"));
+          //  Relatorio.LblEstoque.DataBindings.Add(new XRBinding("Text", null, "QtdEstoque", "{0:N3}"));
         }
        
 

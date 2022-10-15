@@ -14,7 +14,7 @@ namespace Relatorios.Controller.Venda
     {
         QueryRelatorio02VendaPorFinalizadoraSinteticoPorTurno QueryRelatorio = new QueryRelatorio02VendaPorFinalizadoraSinteticoPorTurno();
 
-        Relatorio02VendaPorFinalizadoraSinteticoPorTurno Relatorio = new Relatorio02VendaPorFinalizadoraSinteticoPorTurno(ERelatorio.ERelatorio02VendaPorFinalizadoraPorTurno);
+      //  Relatorio02VendaPorFinalizadoraSinteticoPorTurno Relatorio = new Relatorio02VendaPorFinalizadoraSinteticoPorTurno(ERelatorio.ERelatorio02VendaPorFinalizadoraPorTurno);
 
         IList<ModeloRelatorio02VendaPorFinalizadoraSinteticoPorTurno> lista = null;
 
@@ -22,11 +22,11 @@ namespace Relatorios.Controller.Venda
 
         public void Dispose()
         {
-            if (Relatorio != null)
-            {
-                Relatorio.Dispose();
-                Relatorio = null;
-            }
+            //if (Relatorio != null)
+            //{
+            //    Relatorio.Dispose();
+            //    Relatorio = null;
+            //}
         }
         public CtrlRelatorio02VendaPorFinalizadoraSinteticoPorTurno(object[] parametros)
         {
@@ -39,20 +39,20 @@ namespace Relatorios.Controller.Venda
 
             if (VerificaRelatorioVazio.Verificar(Lista))
                 return;
-            this.Relatorio.DataSource = this.Lista;
+           // this.Relatorio.DataSource = this.Lista;
 
             this.Inicializacao();
 
-            this.Relatorio.ShowPreview();
+          //  this.Relatorio.ShowPreview();
         }
 
         public void Inicializacao()
         {
-            this.Relatorio.LblId.DataBindings.Add(new XRBinding("Text", null, "IdTurno", ""));
-            this.Relatorio.LblEntrada.DataBindings.Add(new XRBinding("Text", null, "Entrada", "{0:dd/MM/yy HH:mm}"));
-            this.Relatorio.LblSaida.DataBindings.Add(new XRBinding("Text", null, "ProxySaida", "{0:dd/MM/yy HH:mm}"));
-            this.Relatorio.LblFinalizadora.DataBindings.Add(new XRBinding("Text", null, "Lista.ProxyFinalizadora", ""));
-            this.Relatorio.LblTotal.DataBindings.Add(new XRBinding("Text", null, "Lista.Total", "{0:C2}"));
+            //this.Relatorio.LblId.DataBindings.Add(new XRBinding("Text", null, "IdTurno", ""));
+            //this.Relatorio.LblEntrada.DataBindings.Add(new XRBinding("Text", null, "Entrada", "{0:dd/MM/yy HH:mm}"));
+            //this.Relatorio.LblSaida.DataBindings.Add(new XRBinding("Text", null, "ProxySaida", "{0:dd/MM/yy HH:mm}"));
+            //this.Relatorio.LblFinalizadora.DataBindings.Add(new XRBinding("Text", null, "Lista.ProxyFinalizadora", ""));
+            //this.Relatorio.LblTotal.DataBindings.Add(new XRBinding("Text", null, "Lista.Total", "{0:C2}"));
         }
 
         private void MontaRelatorio()

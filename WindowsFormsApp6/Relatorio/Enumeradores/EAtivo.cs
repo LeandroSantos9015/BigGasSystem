@@ -13,10 +13,10 @@ namespace Relatorios.Enumeradores
     /// </summary>
     public enum EAtivo
     {
-        [Description("Sim")]
+        [Description("Ativo")]
         Sim = 1,
 
-        [Description("Não")]
+        [Description("Inativo")]
         Nao = 2
 
     }

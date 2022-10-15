@@ -1,4 +1,5 @@
 ﻿using Relatorios.CtrlFiltros.Cadastro;
+using Relatorios.CtrlFiltros.Entrada;
 using Relatorios.CtrlFiltros.Venda;
 using Relatorios.Enumeradores;
 using WindowsFormsApp6;
@@ -20,17 +21,25 @@ namespace Relatorios.Controller
 
             switch (relatorio)
             {
-                case ERelatorio.ERelatorio01ListaMercadorias:
-                    new BehaviorFiltro001(ERelatorio.ERelatorio01ListaMercadorias);
+                //case ERelatorio.NotaEntadaPeriodo03:
+                //    new BehaviorFiltro001(ERelatorio.NotaEntadaPeriodo03);
+                //    break;
+
+                case ERelatorio.NotaEntadaPeriodo03:
+                    new BehaviorFiltro003(ERelatorio.NotaEntadaPeriodo03);
                     break;
 
-                case ERelatorio.ERelatorio02VendaPorFinalizadoraPorTurno:
-                    new BehaviorFiltro002(ERelatorio.ERelatorio02VendaPorFinalizadoraPorTurno);
-                    break;
+                //case ERelatorio.ERelatorio01ListaMercadorias:
+                //    new BehaviorFiltro001(ERelatorio.ERelatorio01ListaMercadorias);
+                //    break;
 
-                case ERelatorio.ERelatorio03VendaDeMercadorias:
-                    new BehaviorFiltro003(ERelatorio.ERelatorio03VendaDeMercadorias);
-                    break;
+                //case ERelatorio.ERelatorio02VendaPorFinalizadoraPorTurno:
+                //    new BehaviorFiltro002(ERelatorio.ERelatorio02VendaPorFinalizadoraPorTurno);
+                //    break;
+
+                //case ERelatorio.ERelatorio03VendaDeMercadorias:
+                //    new BehaviorFiltro003(ERelatorio.ERelatorio03VendaDeMercadorias);
+                //    break;
 
                 default:
                     //Alerta("Relatório", "Relatório ainda não foi implementado");
