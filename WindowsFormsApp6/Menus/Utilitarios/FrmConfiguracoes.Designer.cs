@@ -35,11 +35,14 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTestar = new System.Windows.Forms.Button();
             this.txtPortaImp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnTestar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkMostrar = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -48,7 +51,7 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(8, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(159, 61);
+            this.groupBox1.Size = new System.Drawing.Size(159, 84);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Venda";
@@ -72,7 +75,7 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(92, 160);
+            this.btnCancelar.Location = new System.Drawing.Point(257, 125);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 1;
@@ -81,7 +84,7 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(8, 160);
+            this.btnSalvar.Location = new System.Drawing.Point(173, 125);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 1;
@@ -93,12 +96,21 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.groupBox2.Controls.Add(this.btnTestar);
             this.groupBox2.Controls.Add(this.txtPortaImp);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(8, 70);
+            this.groupBox2.Location = new System.Drawing.Point(173, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(159, 84);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Impressão";
+            // 
+            // btnTestar
+            // 
+            this.btnTestar.Location = new System.Drawing.Point(71, 49);
+            this.btnTestar.Name = "btnTestar";
+            this.btnTestar.Size = new System.Drawing.Size(75, 23);
+            this.btnTestar.TabIndex = 1;
+            this.btnTestar.Text = "Testar";
+            this.btnTestar.UseVisualStyleBackColor = true;
             // 
             // txtPortaImp
             // 
@@ -117,23 +129,35 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.label2.TabIndex = 1;
             this.label2.Text = "Porta:";
             // 
-            // btnTestar
+            // groupBox3
             // 
-            this.btnTestar.Location = new System.Drawing.Point(71, 49);
-            this.btnTestar.Name = "btnTestar";
-            this.btnTestar.Size = new System.Drawing.Size(75, 23);
-            this.btnTestar.TabIndex = 1;
-            this.btnTestar.Text = "Testar";
-            this.btnTestar.UseVisualStyleBackColor = true;
+            this.groupBox3.Controls.Add(this.chkMostrar);
+            this.groupBox3.Location = new System.Drawing.Point(8, 87);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(159, 61);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Cadastros";
+            // 
+            // chkMostrar
+            // 
+            this.chkMostrar.AutoSize = true;
+            this.chkMostrar.Location = new System.Drawing.Point(16, 25);
+            this.chkMostrar.Name = "chkMostrar";
+            this.chkMostrar.Size = new System.Drawing.Size(110, 17);
+            this.chkMostrar.TabIndex = 2;
+            this.chkMostrar.Text = "Mostrar excluídos";
+            this.chkMostrar.UseVisualStyleBackColor = true;
             // 
             // FrmConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(176, 192);
+            this.ClientSize = new System.Drawing.Size(341, 164);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -144,6 +168,8 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -159,5 +185,7 @@ namespace WindowsFormsApp6.Menus.Utilitarios
         private System.Windows.Forms.TextBox txtPortaImp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTestar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox chkMostrar;
     }
 }

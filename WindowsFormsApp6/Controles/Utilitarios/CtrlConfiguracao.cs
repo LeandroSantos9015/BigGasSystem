@@ -28,11 +28,11 @@ namespace WindowsFormsApp6.Controles.Utilitarios
 
             DelegarEventos();
 
-            //CarregarDadosTela();
+            CarregarDadosTela();
 
             this.ConfiguracaoView.ConfiguracaoView.Show();
 
-            
+
         }
 
         private void CarregarDadosTela()
@@ -68,7 +68,7 @@ namespace WindowsFormsApp6.Controles.Utilitarios
 
                 this.ConfiguracaoView.ConfiguracaoView.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um problema ao tentar salvar\n" + ex.Message);
             }
@@ -87,7 +87,9 @@ namespace WindowsFormsApp6.Controles.Utilitarios
             return new ModelConfiguracao
             {
                 PortaImpressora = this.ConfiguracaoView.TxtPortaImpressora.Text,
-                ValorFrete = valorFrete
+                ValorFrete = valorFrete,
+                MostrarExcluidos = this.ConfiguracaoView.ChkMostrarExc.Checked
+
             };
         }
 
@@ -97,11 +99,13 @@ namespace WindowsFormsApp6.Controles.Utilitarios
             {
                 this.ConfiguracaoView.TxtValorFrete.Text = cfg.ValorFrete.ToString();
                 this.ConfiguracaoView.TxtPortaImpressora.Text = cfg.PortaImpressora;
+                this.ConfiguracaoView.ChkMostrarExc.Checked = cfg.MostrarExcluidos;
             }
             else
             {
                 this.ConfiguracaoView.TxtValorFrete.Text = null;
                 this.ConfiguracaoView.TxtPortaImpressora.Text = null;
+                this.ConfiguracaoView.ChkMostrarExc.Checked = false;
             }
 
         }

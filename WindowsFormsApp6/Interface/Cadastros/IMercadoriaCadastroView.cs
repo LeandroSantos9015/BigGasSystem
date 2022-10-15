@@ -31,6 +31,7 @@ namespace WindowsFormsApp6.Interface.Cadastros
 
         DataGridView DgvHistorico { get; }
 
+        Label LblAtivo { get; }
 
     }
 }

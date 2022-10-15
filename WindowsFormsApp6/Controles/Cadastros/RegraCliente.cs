@@ -20,8 +20,9 @@ namespace WindowsFormsApp6.Controles.Cadastros
             {
                 repositorio.Salvar(cliente);
 
-                MessageBox.Show("Salvo com sucesso");
-                
+                string salvarExc = cliente.Ativo ? "Salvo" : "Excluido";
+
+                MessageBox.Show($"{salvarExc} com sucesso");
                 return true;
 
             }
@@ -56,7 +57,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
             cidades.Add(new ModeloCidade { Id = 7, Nome = "Sapopema" });
             cidades.Add(new ModeloCidade { Id = 8, Nome = "Londrina" });
             cidades.Add(new ModeloCidade { Id = 9, Nome = "Cambé" });
-            
+
             return cidades;
         }
     }

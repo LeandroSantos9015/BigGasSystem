@@ -24,7 +24,7 @@ namespace WindowsFormsApp6.Repositorios.Cliente
         {
             try
             {
-                var p = cli.Salvar;
+                var p = cli.Save;
                 Conexao.Execute("SalvarCliente", p, commandType: CommandType.StoredProcedure);
                 var b = p.Get<object>("@Return");
                 b.ToString();

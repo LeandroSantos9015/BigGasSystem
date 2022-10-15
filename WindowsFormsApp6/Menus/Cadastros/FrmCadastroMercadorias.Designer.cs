@@ -47,6 +47,7 @@ namespace WindowsFormsApp6.Menus
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvHistorico = new System.Windows.Forms.DataGridView();
+            this.lblAtivo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -65,6 +66,7 @@ namespace WindowsFormsApp6.Menus
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblAtivo);
             this.tabPage1.Controls.Add(this.btnExcluir);
             this.tabPage1.Controls.Add(this.btnSalvar);
             this.tabPage1.Controls.Add(this.txtId);
@@ -229,6 +231,17 @@ namespace WindowsFormsApp6.Menus
             this.dgvHistorico.Size = new System.Drawing.Size(336, 145);
             this.dgvHistorico.TabIndex = 1;
             // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtivo.ForeColor = System.Drawing.Color.Green;
+            this.lblAtivo.Location = new System.Drawing.Point(75, 130);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(43, 16);
+            this.lblAtivo.TabIndex = 2;
+            this.lblAtivo.Text = "Ativo";
+            // 
             // FrmCadastroMercadorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,5 +282,6 @@ namespace WindowsFormsApp6.Menus
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label lblAtivo;
     }
 }

@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp6.Interface;
+using WindowsFormsApp6.Modelos.Movimentacao;
 
 namespace WindowsFormsApp6.Modelos
 {
-    public class ModelCliente : IModeloGenerico
+    public class ModelCliente : DapperDinamico, IModeloGenerico
     {
         public long Id { get; set; }
         public string Nome { get; set; }
@@ -23,12 +24,13 @@ namespace WindowsFormsApp6.Modelos
         public long Cidade { get; set; }
         public string Obs { get; set; }
         public bool Fornecedor { get; set; }
+        public bool Ativo { get; set; }
 
         [Browsable(false)]
         public string Consulta => Nome;
 
         [Browsable(false)]
-        public ModelClienteDapper Salvar => new ModelClienteDapper(this);
+        public DynamicParameters Save => Salvar(this);
 
     }
 

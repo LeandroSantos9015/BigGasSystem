@@ -43,6 +43,8 @@ namespace WindowsFormsApp6.Interface.Cadastros
 
         CheckBox ChkFornecedor { get; }
 
+        Label LblAtivo { get; }
+
 
     }
 }

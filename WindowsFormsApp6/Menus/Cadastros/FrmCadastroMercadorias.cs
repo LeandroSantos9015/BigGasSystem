@@ -36,5 +36,7 @@ namespace WindowsFormsApp6.Menus
         public Button BtnSalvar => btnSalvar;
 
         public DataGridView DgvHistorico => dgvHistorico;
+
+        public Label LblAtivo => lblAtivo;
     }
 }

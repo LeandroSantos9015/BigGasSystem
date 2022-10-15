@@ -14,6 +14,7 @@ namespace WindowsFormsApp6.Modelos
 
         public string PortaImpressora { get; set; }
 
+        public bool MostrarExcluidos { get; set; }
 
         public DynamicParameters Save => Salvar(this);
 

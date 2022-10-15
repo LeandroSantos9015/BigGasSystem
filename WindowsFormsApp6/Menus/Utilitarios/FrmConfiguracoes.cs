@@ -26,5 +26,8 @@ namespace WindowsFormsApp6.Menus.Utilitarios
         public Button BtnSalvar => btnSalvar;
 
         public Button BtnCancelar => btnCancelar;
+
+        public CheckBox ChkMostrarExc => chkMostrar;
+
     }
 }

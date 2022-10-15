@@ -27,6 +27,8 @@ namespace WindowsFormsApp6.Modelos
         [DisplayName("Qtd")]
         public decimal Quantidade { get; set; }
 
+        public bool Ativo { get; set; }
+
         [Browsable(false)]
         public string Consulta => Descricao;
 

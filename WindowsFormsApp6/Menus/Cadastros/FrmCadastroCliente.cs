@@ -47,5 +47,7 @@ namespace WindowsFormsApp6.Menus
         public RichTextBox RchObs => rchObs;
 
         public CheckBox ChkFornecedor => checkBox1;
+
+        public Label LblAtivo => lblAtivo;
     }
 }

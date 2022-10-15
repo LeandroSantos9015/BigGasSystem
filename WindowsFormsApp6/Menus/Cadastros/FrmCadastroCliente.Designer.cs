@@ -58,6 +58,7 @@ namespace WindowsFormsApp6.Menus
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvHistorico = new System.Windows.Forms.DataGridView();
+            this.lblAtivo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -271,6 +272,7 @@ namespace WindowsFormsApp6.Menus
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.lblAtivo);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label7);
@@ -340,6 +342,17 @@ namespace WindowsFormsApp6.Menus
             this.dgvHistorico.Size = new System.Drawing.Size(358, 318);
             this.dgvHistorico.TabIndex = 0;
             // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtivo.ForeColor = System.Drawing.Color.Green;
+            this.lblAtivo.Location = new System.Drawing.Point(70, 303);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(43, 16);
+            this.lblAtivo.TabIndex = 1;
+            this.lblAtivo.Text = "Ativo";
+            // 
             // FrmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,5 +405,6 @@ namespace WindowsFormsApp6.Menus
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lblAtivo;
     }
 }

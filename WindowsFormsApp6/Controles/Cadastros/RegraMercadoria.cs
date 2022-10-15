@@ -22,14 +22,16 @@ namespace WindowsFormsApp6.Controles.Cadastros
             {
                 repositorio.Salvar(mercadoria);
 
-                MessageBox.Show("Salvo com sucesso");
+                string salvarExc = mercadoria.Ativo ? "Salvo" : "Excluido";
+
+                MessageBox.Show($"{salvarExc} com sucesso");
 
                 return true;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro na hora de salvar\n\n\n\n" + ex.Message.ToString());
+                MessageBox.Show("Ocorreu um erro na hora de salvar/excluir\n\n\n\n" + ex.Message.ToString());
 
                 return false;
             }
@@ -42,7 +44,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
         public IList<ModelHistoricoMercadoria> ListaNotasHistoricas(Int64 id)
         {
-            return repositorio.ListaNotasHistoricas(id).OrderByDescending(x=> x.Data).ThenByDescending(y=> y.Nota).ToList();
+            return repositorio.ListaNotasHistoricas(id).OrderByDescending(x => x.Data).ThenByDescending(y => y.Nota).ToList();
         }
 
         public IList<ModelItemMovimentacao> ListaMercadoriasEntrada()

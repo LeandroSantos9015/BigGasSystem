@@ -21,5 +21,7 @@ namespace WindowsFormsApp6.Interface.Utilitarios
 
         Button BtnCancelar { get; }
 
+        CheckBox ChkMostrarExc { get; }
+
     }
 }

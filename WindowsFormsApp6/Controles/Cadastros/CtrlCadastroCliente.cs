@@ -78,31 +78,24 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
-
             var lista = regraCliente.ListaClientes().Cast<Object>().ToList();
 
             CtrlPesquisar Pesquisa = new CtrlPesquisar(Pai, lista, 690, "Pesquisa de Clientes");
 
             ObjetoParaTela(Pesquisa.RetornaObjetoSelecionado() as ModelCliente);
 
-
-
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-
+            SalvarExcluir(false);
         }
 
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-
-            ObjetoParaTela();
-        }
-
-        private void BtnSalvar_Click(object sender, EventArgs e)
+        private void SalvarExcluir(bool ativo)
         {
             ModelCliente cliente = TelaParaObjeto();
+
+            cliente.Ativo = ativo;
 
             bool camposObrig = CamposObrigatorios(cliente);
 
@@ -113,7 +106,16 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 if (salvou)
                     ObjetoParaTela();
             }
+        }
 
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            ObjetoParaTela();
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e)
+        {
+            SalvarExcluir(true);
         }
 
         public bool CamposObrigatorios(ModelCliente cliente)
@@ -189,6 +191,8 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 ClienteCadastroView.TxtTelefone.Text = null;
                 ClienteCadastroView.TxtNumero.Text = null;
 
+                ClienteCadastroView.LblAtivo.Text = null;
+
                 this.ClienteCadastroView.TxtBairro.BackColor = Color.White;
                 this.ClienteCadastroView.CbmCidade.BackColor = Color.White;
                 this.ClienteCadastroView.TxtCPF.BackColor = Color.White;
@@ -222,6 +226,10 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 this.ClienteCadastroView.DgvHistorico.Columns["Nota"].Width = 160;
                 this.ClienteCadastroView.DgvHistorico.Columns["Data"].Width = 70;
                 this.ClienteCadastroView.DgvHistorico.Columns["EOperacao"].Width = 70;
+
+                ClienteCadastroView.LblAtivo.Text = cliente.Ativo ? "Ativo" : "Inativo";
+
+                ClienteCadastroView.LblAtivo.ForeColor = cliente.Ativo ? Color.DarkGreen : Color.Red;
 
             }
         }

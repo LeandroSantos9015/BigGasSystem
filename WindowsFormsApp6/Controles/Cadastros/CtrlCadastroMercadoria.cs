@@ -53,7 +53,15 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
+            SalvarExcluir(true);
+        }
+
+        private void SalvarExcluir(bool ativo)
+        {
+
             ModelMercadoria mercadoria = TelaParaObjeto();
+
+            mercadoria.Ativo = ativo;
 
             bool camposObrig = CamposObrigatorios(mercadoria);
 
@@ -65,7 +73,6 @@ namespace WindowsFormsApp6.Controles.Cadastros
                     ObjetoParaTela();
             }
         }
-
         private bool CamposObrigatorios(ModelMercadoria mercadoria)
         {
 
@@ -93,11 +100,12 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
-
+            ObjetoParaTela();
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
+            SalvarExcluir(false);
 
         }
 
@@ -121,6 +129,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 MercadoriaView.TxtPrecoCusto.Text = null;
                 MercadoriaView.TxtPrecoVenda.Text = null;
                 MercadoriaView.TxtQtd.Text = null;
+                MercadoriaView.LblAtivo.Text = null;
 
                 MercadoriaView.DgvHistorico.DataSource = null;
 
@@ -138,6 +147,8 @@ namespace WindowsFormsApp6.Controles.Cadastros
                 MercadoriaView.TxtPrecoVenda.Text = mercadoria.PrecoVenda.ToString();
                 MercadoriaView.TxtQtd.Text = mercadoria.Quantidade.ToString();
 
+                MercadoriaView.LblAtivo.Text = mercadoria.Ativo ? "Ativo" : "Inativo";
+                MercadoriaView.LblAtivo.ForeColor = mercadoria.Ativo ? Color.DarkGreen : Color.Red;
 
                 MercadoriaView.DgvHistorico.DataSource = regraMercadoria.ListaNotasHistoricas(mercadoria.Id);
 
