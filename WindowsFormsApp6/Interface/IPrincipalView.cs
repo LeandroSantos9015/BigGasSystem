@@ -23,5 +23,7 @@ namespace WindowsFormsApp6
 
         ToolStripMenuItem MenuConfiguracoes { get; }
 
+        ToolStripMenuItem MenuRelatorios { get; }
+
     }
 }

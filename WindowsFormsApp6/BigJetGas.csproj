@@ -39,6 +39,70 @@
     <Reference Include="Dapper.SimpleCRUD, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.SimpleCRUD.2.3.0\lib\netstandard2.0\Dapper.SimpleCRUD.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.Charts.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.Data.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.Office.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.PivotGrid.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.Printing.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.RichEdit.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.Sparkline.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.Utils.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.XtraBars.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.XtraCharts.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.XtraEditors.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.XtraGrid.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.XtraLayout.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.XtraPrinting.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.XtraReports.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllsDev\DevExpress.XtraTreeList.v13.2.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -171,6 +235,95 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorio\Controller\Abstrato\ARelatorios.cs" />
+    <Compile Include="Relatorio\Controller\Abstrato\VerificaRelatorioVazio.cs" />
+    <Compile Include="Relatorio\Controller\Cadastros\CtrlRelatorio01ListaMercadorias.cs" />
+    <Compile Include="Relatorio\Controller\CtrlRelatorios.cs" />
+    <Compile Include="Relatorio\Controller\Venda\CtrlRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
+    <Compile Include="Relatorio\Controller\Venda\CtrlRelatorio03VendaMercadoriaPorTurnoPeriodo.cs" />
+    <Compile Include="Relatorio\CtrlFiltros\Abstrato\ACtrlFiltroRelatorio.cs" />
+    <Compile Include="Relatorio\CtrlFiltros\Cadastros\BehaviorFiltro001.cs" />
+    <Compile Include="Relatorio\CtrlFiltros\Venda\BehaviorFiltro002.cs" />
+    <Compile Include="Relatorio\CtrlFiltros\Venda\BehaviorFiltro003.cs" />
+    <Compile Include="Relatorio\Enumeradores\EAtivo.cs" />
+    <Compile Include="Relatorio\Enumeradores\ERelatorio.cs" />
+    <Compile Include="Relatorio\Filtros\Abstrato\FrmFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Abstrato\FrmFiltro.Designer.cs">
+      <DependentUpon>FrmFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Abstrato\UCBotoesFiltro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Abstrato\UCBotoesFiltro.Designer.cs">
+      <DependentUpon>UCBotoesFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Cadastro\Filtro001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Cadastro\Filtro001.Designer.cs">
+      <DependentUpon>Filtro001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Cadastro\UCFiltro001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Cadastro\UCFiltro001.Designer.cs">
+      <DependentUpon>UCFiltro001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Venda\UCFiltro002.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Venda\UCFiltro002.Designer.cs">
+      <DependentUpon>UCFiltro002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Venda\UCFiltro003.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Relatorio\Filtros\Venda\UCFiltro003.Designer.cs">
+      <DependentUpon>UCFiltro003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\FrmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\FrmRelatorio.Designer.cs">
+      <DependentUpon>FrmRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\Interfaces\IBotoesRelatorio.cs" />
+    <Compile Include="Relatorio\Interfaces\IFiltroRelatorio.cs" />
+    <Compile Include="Relatorio\Interfaces\IRelatorio.cs" />
+    <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio01ListaMercadorias.cs" />
+    <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
+    <Compile Include="Relatorio\ModeloRelatorio\ModeloRelatorio03VendaMercadoriaTurnoPeriodo.cs" />
+    <Compile Include="Relatorio\Properties\Resources.Designer.cs" />
+    <Compile Include="Relatorio\Properties\Settings.Designer.cs" />
+    <Compile Include="Relatorio\Query\Cadastros\QueryRelatorio01ListaMercadorias.cs" />
+    <Compile Include="Relatorio\Query\Venda\QueryRelatorio02VendaPorFinalizadoraSinteticoPorTurno.cs" />
+    <Compile Include="Relatorio\Query\Venda\QueryRelatorio03VendaMercadoriaTurnoPeriodo.cs" />
+    <Compile Include="Relatorio\View\Base\RelatorioBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorio\View\Base\RelatorioBase.Designer.cs">
+      <DependentUpon>RelatorioBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\View\Cadastros\Mercadorias\Relatorio01ListaMercadorias.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorio\View\Cadastros\Mercadorias\Relatorio01ListaMercadorias.Designer.cs">
+      <DependentUpon>Relatorio01ListaMercadorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\View\Venda\Relatorio02VendaPorFinalizadoraSinteticoPorTurno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorio\View\Venda\Relatorio02VendaPorFinalizadoraSinteticoPorTurno.Designer.cs">
+      <DependentUpon>Relatorio02VendaPorFinalizadoraSinteticoPorTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\View\Venda\Relatorio03VendaMercadoriaTurno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorio\View\Venda\Relatorio03VendaMercadoriaTurno.Designer.cs">
+      <DependentUpon>Relatorio03VendaMercadoriaTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorios\Cadastros\RepositorioMercadoria.cs" />
     <Compile Include="Repositorios\Cadastros\RepositorioCliente.cs" />
     <Compile Include="Repositorios\IRepositoryBase.cs" />
@@ -224,6 +377,40 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatorio\Filtros\Abstrato\FrmFiltro.resx">
+      <DependentUpon>FrmFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\Filtros\Abstrato\UCBotoesFiltro.resx">
+      <DependentUpon>UCBotoesFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\Filtros\Cadastro\Filtro001.resx">
+      <DependentUpon>Filtro001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\Filtros\Cadastro\UCFiltro001.resx">
+      <DependentUpon>UCFiltro001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\Filtros\Venda\UCFiltro002.resx">
+      <DependentUpon>UCFiltro002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\Filtros\Venda\UCFiltro003.resx">
+      <DependentUpon>UCFiltro003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\FrmRelatorio.resx">
+      <DependentUpon>FrmRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\Properties\Resources.resx" />
+    <EmbeddedResource Include="Relatorio\View\Base\RelatorioBase.resx">
+      <DependentUpon>RelatorioBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\View\Cadastros\Mercadorias\Relatorio01ListaMercadorias.resx">
+      <DependentUpon>Relatorio01ListaMercadorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\View\Venda\Relatorio02VendaPorFinalizadoraSinteticoPorTurno.resx">
+      <DependentUpon>Relatorio02VendaPorFinalizadoraSinteticoPorTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\View\Venda\Relatorio03VendaMercadoriaTurno.resx">
+      <DependentUpon>Relatorio03VendaMercadoriaTurno.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -234,6 +421,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Relatorio\Properties\Settings.settings" />
     <None Include="Scripts\Configuracao.json" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +440,37 @@
     <None Include="Resources\lupa2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DllsDev\DevExpress.Charts.v13.2.Core.dll" />
+    <Content Include="DllsDev\DevExpress.Data.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.Data.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.Office.v13.2.Core.dll" />
+    <Content Include="DllsDev\DevExpress.Office.v13.2.Core.xml" />
+    <Content Include="DllsDev\DevExpress.PivotGrid.v13.2.Core.dll" />
+    <Content Include="DllsDev\DevExpress.PivotGrid.v13.2.Core.xml" />
+    <Content Include="DllsDev\DevExpress.Printing.v13.2.Core.dll" />
+    <Content Include="DllsDev\DevExpress.Printing.v13.2.Core.xml" />
+    <Content Include="DllsDev\DevExpress.RichEdit.v13.2.Core.dll" />
+    <Content Include="DllsDev\DevExpress.RichEdit.v13.2.Core.xml" />
+    <Content Include="DllsDev\DevExpress.Sparkline.v13.2.Core.dll" />
+    <Content Include="DllsDev\DevExpress.Sparkline.v13.2.Core.xml" />
+    <Content Include="DllsDev\DevExpress.Utils.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.Utils.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.XtraBars.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.XtraBars.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.XtraCharts.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.XtraCharts.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.XtraEditors.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.XtraEditors.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.XtraGrid.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.XtraGrid.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.XtraLayout.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.XtraLayout.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.XtraPrinting.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.XtraPrinting.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.XtraReports.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.XtraReports.v13.2.xml" />
+    <Content Include="DllsDev\DevExpress.XtraTreeList.v13.2.dll" />
+    <Content Include="DllsDev\DevExpress.XtraTreeList.v13.2.xml" />
     <Content Include="Scripts\Script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

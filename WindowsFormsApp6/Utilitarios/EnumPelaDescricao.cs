@@ -79,6 +79,19 @@ namespace WindowsFormsApp6.Utilitarios
             return description;
         }
 
+        public static String PegarCategoria(this Enum en)
+        {
+            //Verifica se o parâmetro é null
+            FieldInfo elementEnum = (en != null) ? en.GetType().GetField(en.ToString()) : null;
+            //Se o Length for 0, significa que o Enum não tem nenhum elemento
+            if (elementEnum != null)
+            {
+                object[] customDescription = elementEnum.GetCustomAttributes(typeof(CategoryAttribute), false);
+                return (customDescription.Length == 0) ? en.ToString() : ((CategoryAttribute)customDescription[0]).Category;
+            }
+            else
+                return null;
+        }
 
 
         //public static IEnumerable<string> GetDescriptions(Enum value)

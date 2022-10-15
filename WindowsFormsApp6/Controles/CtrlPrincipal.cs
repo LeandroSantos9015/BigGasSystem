@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Relatorios.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,8 +40,15 @@ namespace WindowsFormsApp6
 
             Principal.MenuConfiguracoes.Click += MenuConfiguracoes_Click;
 
+            Principal.MenuRelatorios.Click += MenuRelatorios_Click;
+
             Principal.PrincipalView.FormClosing += FormClosing;
 
+        }
+
+        private void MenuRelatorios_Click(object sender, EventArgs e)
+        {
+            new CtrlRelatorios(Principal, null);
         }
 
         private void MenuCancelamentoSaida_Click(object sender, EventArgs e)

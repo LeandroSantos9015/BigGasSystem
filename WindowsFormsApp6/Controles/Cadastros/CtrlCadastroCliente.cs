@@ -26,9 +26,9 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
             ClienteCadastroView = new FrmCadastroCliente();
 
-            ClienteCadastroView.ClienteView.MdiParent = pai.PrincipalView;
+            ClienteCadastroView.ClienteView.StartPosition = FormStartPosition.CenterScreen;
 
-            ClienteCadastroView.ClienteView.StartPosition = FormStartPosition.CenterParent;
+            ClienteCadastroView.ClienteView.MdiParent = pai.PrincipalView;
 
             ClienteCadastroView.ClienteView.Show();
 

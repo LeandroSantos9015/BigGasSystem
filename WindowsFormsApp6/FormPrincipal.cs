@@ -28,6 +28,7 @@ namespace WindowsFormsApp6
 
         public ToolStripMenuItem MenuConfiguracoes => configuracoesToolStripMenuItem;
 
+        public ToolStripMenuItem MenuRelatorios => relatoriosToolStripMenuItem;
 
 
 
