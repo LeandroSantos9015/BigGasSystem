@@ -140,7 +140,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
         private void BtnExc_Click(object sender, EventArgs e)
         {
-
+            EntradaMercadoriaView.AddMercadoriaView.DialogResult = DialogResult.Cancel;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)

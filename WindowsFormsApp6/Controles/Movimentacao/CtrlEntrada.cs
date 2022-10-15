@@ -439,7 +439,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             bool descAcres = entrada.DescAcres * -1 > entrada.ValorTotal;
             bool desc = string.IsNullOrEmpty(entrada.Descricao);
             bool num = string.IsNullOrEmpty(entrada.NumeroNota);
-            bool qtdItem = itens?.Count < 1;
+            bool qtdItem = itens is null || itens?.Count < 1;
 
             bool retorno = desc || num || qtdItem;
 
