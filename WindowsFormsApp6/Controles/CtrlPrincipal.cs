@@ -42,8 +42,15 @@ namespace WindowsFormsApp6
 
             Principal.MenuRelatorios.Click += MenuRelatorios_Click;
 
+            Principal.MenuImportar.Click += MenuImportar_Click;
+
             Principal.PrincipalView.FormClosing += FormClosing;
 
+        }
+
+        private void MenuImportar_Click(object sender, EventArgs e)
+        {
+            new CtrlImportacao(Principal);
         }
 
         private void MenuRelatorios_Click(object sender, EventArgs e)

@@ -30,6 +30,8 @@ namespace WindowsFormsApp6
 
         public ToolStripMenuItem MenuRelatorios => relatoriosToolStripMenuItem;
 
+        public ToolStripMenuItem MenuImportar => importarToolStripMenuItem;
+
 
 
 

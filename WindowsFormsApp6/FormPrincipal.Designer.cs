@@ -40,6 +40,7 @@ namespace WindowsFormsApp6
             this.utilitáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracoesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +110,8 @@ namespace WindowsFormsApp6
             // 
             this.utilitáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configuracoesToolStripMenuItem,
-            this.relatoriosToolStripMenuItem});
+            this.relatoriosToolStripMenuItem,
+            this.importarToolStripMenuItem});
             this.utilitáriosToolStripMenuItem.Name = "utilitáriosToolStripMenuItem";
             this.utilitáriosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.utilitáriosToolStripMenuItem.Text = "Utilitários";
@@ -117,14 +119,20 @@ namespace WindowsFormsApp6
             // configuracoesToolStripMenuItem
             // 
             this.configuracoesToolStripMenuItem.Name = "configuracoesToolStripMenuItem";
-            this.configuracoesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.configuracoesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.configuracoesToolStripMenuItem.Text = "Configurações";
             // 
             // relatoriosToolStripMenuItem
             // 
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.relatoriosToolStripMenuItem.Text = "Relatórios";
+            // 
+            // importarToolStripMenuItem
+            // 
+            this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importarToolStripMenuItem.Text = "Importar";
             // 
             // FormPrincipal
             // 
@@ -158,6 +166,7 @@ namespace WindowsFormsApp6
         private System.Windows.Forms.ToolStripMenuItem utilitáriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracoesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatoriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importarToolStripMenuItem;
     }
 }
 
