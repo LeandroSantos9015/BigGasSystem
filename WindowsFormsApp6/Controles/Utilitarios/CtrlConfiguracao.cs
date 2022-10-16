@@ -26,6 +26,8 @@ namespace WindowsFormsApp6.Controles.Utilitarios
 
             this.ConfiguracaoView.ConfiguracaoView.MdiParent = Pai.PrincipalView;
 
+            this.ConfiguracaoView.ConfiguracaoView.StartPosition = FormStartPosition.CenterScreen;
+
             DelegarEventos();
 
             CarregarDadosTela();

@@ -28,7 +28,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
             MercadoriaView.MercadoriaView.MdiParent = Pai.PrincipalView;
 
-            MercadoriaView.MercadoriaView.StartPosition = FormStartPosition.CenterParent;
+            MercadoriaView.MercadoriaView.StartPosition = FormStartPosition.CenterScreen;
 
             MercadoriaView.MercadoriaView.Show();
 

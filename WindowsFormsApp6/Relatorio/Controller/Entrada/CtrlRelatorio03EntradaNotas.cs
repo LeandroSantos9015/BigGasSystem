@@ -59,14 +59,14 @@ namespace Relatorios.Controller.Cadastros
             this.Lista =
 
                 lista
-                .GroupBy(x => new { x.Id, x.Fornecedor, x.DescricaoNota, x.Data, x.ValorLiquidoTotal, x.DescAcresc, x.ValorTotal }).Select(agrupado => new AgrupadorRelatorio03()
+                .GroupBy(x => new { x.Id, x.Fornecedor, x.DescricaoNota, x.Data, x.ValorLiquidoTotal, x.DescAcres, x.ValorTotal }).Select(agrupado => new AgrupadorRelatorio03()
                 {
                     Id = agrupado.Key.Id,
                     DescricaoNota = agrupado.Key.DescricaoNota,
                     Fornecedor = agrupado.Key.Fornecedor,
                     ValorLiquidoTotal = agrupado.Key.ValorLiquidoTotal.ToString("C2"),
                     ValorTotal = agrupado.Key.ValorTotal,
-                    DescAcresc = agrupado.Key.DescAcresc,
+                    DescAcres = agrupado.Key.DescAcres,
                     Data = agrupado.Key.Data.ToString("dd/MM/yyyy"),
                     Lista = lista.Where(x => x.Id == agrupado.Key.Id)
                          .ToList<Relatorio03_NotaDeEntrada>()

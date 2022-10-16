@@ -125,7 +125,7 @@
             this.lblId.StylePriority.UseFont = false;
             this.lblId.StylePriority.UseTextAlignment = false;
             this.lblId.Text = "Preço Venda";
-            this.lblId.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lblId.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrControlStyle1
             // 
@@ -167,27 +167,27 @@
             this.xrLabel13.StylePriority.UseFont = false;
             this.xrLabel13.StylePriority.UseTextAlignment = false;
             this.xrLabel13.Text = "[ProxyValorTotal]";
-            this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel12
             // 
             this.xrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel12.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(440.4581F, 0F);
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(427.9581F, 0F);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel12.SizeF = new System.Drawing.SizeF(77.29181F, 23F);
+            this.xrLabel12.SizeF = new System.Drawing.SizeF(89.79184F, 23F);
             this.xrLabel12.StylePriority.UseBorders = false;
             this.xrLabel12.StylePriority.UseFont = false;
             this.xrLabel12.StylePriority.UseTextAlignment = false;
-            this.xrLabel12.Text = "[ProxyDescAcresc]";
-            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel12.Text = "[ProxyDescAcres]";
+            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // lblEntrada
             // 
             this.lblEntrada.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.lblEntrada.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntrada.LocationFloat = new DevExpress.Utils.PointFloat(132.1246F, 0F);
+            this.lblEntrada.LocationFloat = new DevExpress.Utils.PointFloat(119.6246F, 0F);
             this.lblEntrada.Name = "lblEntrada";
             this.lblEntrada.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblEntrada.SizeF = new System.Drawing.SizeF(229.1668F, 23F);
@@ -204,7 +204,7 @@
             this.lblTurnoId.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.lblTurnoId.Name = "lblTurnoId";
             this.lblTurnoId.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblTurnoId.SizeF = new System.Drawing.SizeF(132.1246F, 23F);
+            this.lblTurnoId.SizeF = new System.Drawing.SizeF(119.6246F, 23F);
             this.lblTurnoId.StylePriority.UseBorders = false;
             this.lblTurnoId.StylePriority.UseFont = false;
             this.lblTurnoId.StylePriority.UseTextAlignment = false;
@@ -215,7 +215,7 @@
             // 
             this.lblSaida.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.lblSaida.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaida.LocationFloat = new DevExpress.Utils.PointFloat(361.2914F, 0F);
+            this.lblSaida.LocationFloat = new DevExpress.Utils.PointFloat(348.9996F, 0F);
             this.lblSaida.Name = "lblSaida";
             this.lblSaida.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblSaida.SizeF = new System.Drawing.SizeF(78.95853F, 23F);
@@ -229,10 +229,10 @@
             // 
             this.lblTotalTurno.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.lblTotalTurno.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTurno.LocationFloat = new DevExpress.Utils.PointFloat(632.75F, 0F);
+            this.lblTotalTurno.LocationFloat = new DevExpress.Utils.PointFloat(632.7499F, 0F);
             this.lblTotalTurno.Name = "lblTotalTurno";
             this.lblTotalTurno.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblTotalTurno.SizeF = new System.Drawing.SizeF(116.25F, 23F);
+            this.lblTotalTurno.SizeF = new System.Drawing.SizeF(116.2501F, 23F);
             this.lblTotalTurno.StylePriority.UseBorders = false;
             this.lblTotalTurno.StylePriority.UseFont = false;
             this.lblTotalTurno.StylePriority.UseTextAlignment = false;
@@ -268,23 +268,23 @@
             this.xrLabel11.StylePriority.UseFont = false;
             this.xrLabel11.StylePriority.UseTextAlignment = false;
             this.xrLabel11.Text = "Valor Bruto";
-            this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel7
             // 
             this.xrLabel7.BackColor = System.Drawing.Color.Transparent;
             this.xrLabel7.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.xrLabel7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(440.4581F, 10.00002F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(427.9581F, 10.00002F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(77.29175F, 23F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(89.79184F, 23F);
             this.xrLabel7.StylePriority.UseBackColor = false;
             this.xrLabel7.StylePriority.UseBorders = false;
             this.xrLabel7.StylePriority.UseFont = false;
             this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.Text = "Desc/Acré";
-            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel3
             // 
@@ -294,7 +294,7 @@
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(632.7499F, 10.00001F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(116.2501F, 23F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(116.2502F, 23F);
             this.xrLabel3.StylePriority.UseBackColor = false;
             this.xrLabel3.StylePriority.UseBorders = false;
             this.xrLabel3.StylePriority.UseFont = false;
@@ -310,7 +310,7 @@
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10.00001F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(132.1246F, 23F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(119.6246F, 23F);
             this.xrLabel8.StylePriority.UseBackColor = false;
             this.xrLabel8.StylePriority.UseBorders = false;
             this.xrLabel8.StylePriority.UseFont = false;
@@ -323,7 +323,7 @@
             this.xrLabel9.BackColor = System.Drawing.Color.Transparent;
             this.xrLabel9.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(132.1246F, 10.00001F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(119.6246F, 10.00001F);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel9.SizeF = new System.Drawing.SizeF(229.1668F, 23F);
@@ -339,7 +339,7 @@
             this.xrLabel10.BackColor = System.Drawing.Color.Transparent;
             this.xrLabel10.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.xrLabel10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(361.2914F, 10.00002F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(348.7914F, 10.00002F);
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel10.SizeF = new System.Drawing.SizeF(79.16672F, 23F);
@@ -380,7 +380,7 @@
             this.xrLabel6.StylePriority.UseFont = false;
             this.xrLabel6.StylePriority.UseTextAlignment = false;
             this.xrLabel6.Text = "[PrecoCusto]";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // lblMercadoria
             // 
@@ -416,7 +416,7 @@
             this.lblPrecoUnit.StylePriority.UseFont = false;
             this.lblPrecoUnit.StylePriority.UseTextAlignment = false;
             this.lblPrecoUnit.Text = "[PrecoVenda]";
-            this.lblPrecoUnit.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lblPrecoUnit.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // lblTotal
             // 
@@ -440,7 +440,7 @@
             this.lblId,
             this.xrLabel2,
             this.xrLabel1});
-            this.GroupHeader1.HeightF = 23F;
+            this.GroupHeader1.HeightF = 23.00002F;
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.StylePriority.UseBackColor = false;
             // 
@@ -469,7 +469,7 @@
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
             this.xrLabel5.Text = "Preço Custo";
-            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel2
             // 

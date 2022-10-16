@@ -16,7 +16,7 @@ namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
         public decimal ValorLiquidoTotal { get; set; }
 
         public decimal ValorTotal { get; set; }
-        public decimal DescAcresc { get; set; }
+        public decimal DescAcres { get; set; }
 
 
         public string Mercadoria { get; set; }
@@ -38,10 +38,10 @@ namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
         public string Fornecedor { get; set; }
 
         public decimal ValorTotal { get; set; }
-        public decimal DescAcresc { get; set; }
+        public decimal DescAcres { get; set; }
 
         public string ProxyValorTotal => ValorTotal.ToString("C2");
-        public string ProxyDescAcresc => DescAcresc.ToString("C2");
+        public string ProxyDescAcres => DescAcres.ToString("C2");
 
         public string Data { get; set; }
         public string ValorLiquidoTotal { get; set; }

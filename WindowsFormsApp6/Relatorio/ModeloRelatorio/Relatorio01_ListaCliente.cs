@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp6.Utilitarios;
 
 namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
 {
@@ -26,5 +27,9 @@ namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
         public string ProxyAtivo => Ativo ? "Sim" : "Não";
 
         public string ProxyFornecedor => Fornecedor ? "Sim" : "Não";
+
+        public string ProxyTel => Telefone.TelefoneMascara();
+
+        public string ProxyCpf => Cpf.CpfCnpjMascara();
     }
 }

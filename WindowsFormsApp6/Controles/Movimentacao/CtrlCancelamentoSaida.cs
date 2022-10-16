@@ -24,6 +24,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
             CancelamentoSaidaView.CancelamentoView.MdiParent = pai.PrincipalView;
 
+            CancelamentoSaidaView.CancelamentoView.StartPosition = FormStartPosition.CenterScreen;
+
             CancelamentoSaidaView.CancelamentoView.Show();
 
             DelegarEventos();
@@ -55,7 +57,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 RealizarBusca();
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao tentar realizar cancelamento\n\n" + ex.Message);
             }

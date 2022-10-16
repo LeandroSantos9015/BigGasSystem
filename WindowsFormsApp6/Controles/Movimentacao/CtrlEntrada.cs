@@ -35,6 +35,10 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
             MovimentacaoEntradaView.MovimentacaoEntradaView.MdiParent = Pai.PrincipalView;
 
+
+            MovimentacaoEntradaView.MovimentacaoEntradaView.StartPosition = FormStartPosition.CenterScreen;
+
+
             MovimentacaoEntradaView.MovimentacaoEntradaView.Show();
 
             DelegarEventos();

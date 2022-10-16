@@ -28,7 +28,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
         {
             SaidaMercadoriaView = new FrmAddMercadoriaSaida();
 
-            SaidaMercadoriaView.SaidaMercadoriaView.StartPosition = FormStartPosition.CenterParent;
+            SaidaMercadoriaView.SaidaMercadoriaView.StartPosition = FormStartPosition.CenterScreen;
 
             DelegarEventos();
 

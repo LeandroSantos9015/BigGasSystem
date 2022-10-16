@@ -113,10 +113,10 @@
             this.xrNome.BackColor = System.Drawing.Color.Transparent;
             this.xrNome.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.xrNome.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrNome.LocationFloat = new DevExpress.Utils.PointFloat(0F, 14.58335F);
+            this.xrNome.LocationFloat = new DevExpress.Utils.PointFloat(0F, 14.58333F);
             this.xrNome.Name = "xrNome";
             this.xrNome.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrNome.SizeF = new System.Drawing.SizeF(632.7499F, 23F);
+            this.xrNome.SizeF = new System.Drawing.SizeF(580.6666F, 23F);
             this.xrNome.StylePriority.UseBackColor = false;
             this.xrNome.StylePriority.UseBorders = false;
             this.xrNome.StylePriority.UseFont = false;
@@ -128,10 +128,10 @@
             this.xrTotal.BackColor = System.Drawing.Color.Transparent;
             this.xrTotal.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.xrTotal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTotal.LocationFloat = new DevExpress.Utils.PointFloat(632.7499F, 14.58333F);
+            this.xrTotal.LocationFloat = new DevExpress.Utils.PointFloat(580.6666F, 14.58333F);
             this.xrTotal.Name = "xrTotal";
             this.xrTotal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrTotal.SizeF = new System.Drawing.SizeF(118.2502F, 23F);
+            this.xrTotal.SizeF = new System.Drawing.SizeF(170.3334F, 23F);
             this.xrTotal.StylePriority.UseBackColor = false;
             this.xrTotal.StylePriority.UseBorders = false;
             this.xrTotal.StylePriority.UseFont = false;

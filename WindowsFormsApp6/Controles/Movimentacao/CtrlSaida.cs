@@ -43,6 +43,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
             SaidaView.SaidaView.MdiParent = Pai.PrincipalView;
 
+            SaidaView.SaidaView.StartPosition = FormStartPosition.CenterScreen;
+
             SaidaView.SaidaView.Show();
 
             DelegarEventos();
