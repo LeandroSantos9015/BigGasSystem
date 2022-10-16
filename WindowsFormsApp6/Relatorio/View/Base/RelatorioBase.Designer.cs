@@ -36,6 +36,9 @@
             this.xrControlStyle2 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.xrControlStyle3 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrNome = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrTotal = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -50,7 +53,7 @@
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.lblTitulo});
-            this.TopMargin.HeightF = 70.83334F;
+            this.TopMargin.HeightF = 71F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -61,7 +64,7 @@
             this.lblTitulo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 22.50001F);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblTitulo.SizeF = new System.Drawing.SizeF(650.0001F, 48.33333F);
+            this.lblTitulo.SizeF = new System.Drawing.SizeF(750.9999F, 48.33333F);
             this.lblTitulo.StylePriority.UseFont = false;
             this.lblTitulo.StylePriority.UseTextAlignment = false;
             this.lblTitulo.Text = "00 - Nome do Relatório";
@@ -69,7 +72,7 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 47.74997F;
+            this.BottomMargin.HeightF = 48F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -97,14 +100,53 @@
             this.PageHeader.HeightF = 30.20833F;
             this.PageHeader.Name = "PageHeader";
             // 
+            // ReportFooter
+            // 
+            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrNome,
+            this.xrTotal});
+            this.ReportFooter.HeightF = 37.58335F;
+            this.ReportFooter.Name = "ReportFooter";
+            // 
+            // xrNome
+            // 
+            this.xrNome.BackColor = System.Drawing.Color.Transparent;
+            this.xrNome.Borders = DevExpress.XtraPrinting.BorderSide.Top;
+            this.xrNome.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrNome.LocationFloat = new DevExpress.Utils.PointFloat(0F, 14.58335F);
+            this.xrNome.Name = "xrNome";
+            this.xrNome.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrNome.SizeF = new System.Drawing.SizeF(632.7499F, 23F);
+            this.xrNome.StylePriority.UseBackColor = false;
+            this.xrNome.StylePriority.UseBorders = false;
+            this.xrNome.StylePriority.UseFont = false;
+            this.xrNome.StylePriority.UseTextAlignment = false;
+            this.xrNome.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // xrTotal
+            // 
+            this.xrTotal.BackColor = System.Drawing.Color.Transparent;
+            this.xrTotal.Borders = DevExpress.XtraPrinting.BorderSide.Top;
+            this.xrTotal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTotal.LocationFloat = new DevExpress.Utils.PointFloat(632.7499F, 14.58333F);
+            this.xrTotal.Name = "xrTotal";
+            this.xrTotal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTotal.SizeF = new System.Drawing.SizeF(118.2502F, 23F);
+            this.xrTotal.StylePriority.UseBackColor = false;
+            this.xrTotal.StylePriority.UseBorders = false;
+            this.xrTotal.StylePriority.UseFont = false;
+            this.xrTotal.StylePriority.UseTextAlignment = false;
+            this.xrTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
             // RelatorioBase
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
             this.TopMargin,
             this.BottomMargin,
-            this.PageHeader});
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 71, 48);
+            this.PageHeader,
+            this.ReportFooter});
+            this.Margins = new System.Drawing.Printing.Margins(50, 49, 71, 48);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.xrControlStyle1,
             this.xrControlStyle2,
@@ -124,5 +166,8 @@
         private DevExpress.XtraReports.UI.XRControlStyle xrControlStyle2;
         private DevExpress.XtraReports.UI.XRControlStyle xrControlStyle3;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
+        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
+        private DevExpress.XtraReports.UI.XRLabel xrNome;
+        private DevExpress.XtraReports.UI.XRLabel xrTotal;
     }
 }

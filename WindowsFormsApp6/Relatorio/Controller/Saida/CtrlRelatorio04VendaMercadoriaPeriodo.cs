@@ -14,15 +14,15 @@ using Relatorios.View.Cadastros.Entrada;
 
 namespace Relatorios.Controller.Cadastros
 {
-    public class CtrlRelatorio03EntradaNotas : IDisposable
+    public class CtrlRelatorio04VendaMercadoriaPeriodo : IDisposable
     {
-        QueryRelatorio03NotasEntrada QueryRelatorio01 = new QueryRelatorio03NotasEntrada();
+        QueryRelatorio04VendaMercadoriaPeriodo QueryRelatorio01 = new QueryRelatorio04VendaMercadoriaPeriodo();
 
-        Relatorio03NotasDeEntrada Relatorio = null;
+        Relatorio04VendaDeMercadoriaPorPeriodo Relatorio = null;
 
-        IList<Relatorio03_NotaDeEntrada> lista = null;
+        IList<Relatorio04_VendaMercadoriaPeriodo> lista = null;
 
-        IList<AgrupadorRelatorio03> Lista = null;
+        IList<AgrupadorRelatorio04> Lista = null;
 
         public void Dispose()
         {
@@ -32,7 +32,7 @@ namespace Relatorios.Controller.Cadastros
                 Relatorio = null;
             }
         }
-        public CtrlRelatorio03EntradaNotas(object[] parametros)
+        public CtrlRelatorio04VendaMercadoriaPeriodo(object[] parametros)
         {
             lista = QueryRelatorio01.QueryRelatorio(parametros);
 
@@ -42,10 +42,10 @@ namespace Relatorios.Controller.Cadastros
                 return;
 
 
-            string nomeFooter = "Valor Total das Notas:";
-            string valor = lista.Sum(x => x.ValorLiquidoTotal).ToString("C2");
+            string nomeFooter = "Valor Total das Vendas:";
+            string valor = lista.Sum(x => x.Valor).ToString("C2");
 
-            this.Relatorio = new Relatorio03NotasDeEntrada(ERelatorio.NotaEntadaPeriodo03, nomeFooter, valor);
+            this.Relatorio = new Relatorio04VendaDeMercadoriaPorPeriodo(ERelatorio.VendaDeMercadoriaPorPeriodo04, nomeFooter, valor);
 
             this.Relatorio.DataSource = Lista;
 
@@ -59,17 +59,13 @@ namespace Relatorios.Controller.Cadastros
             this.Lista =
 
                 lista
-                .GroupBy(x => new { x.Id, x.Fornecedor, x.DescricaoNota, x.Data, x.ValorLiquidoTotal, x.DescAcresc, x.ValorTotal }).Select(agrupado => new AgrupadorRelatorio03()
+                .GroupBy(x => new { x.Data }).Select(agrupado => new AgrupadorRelatorio04()
                 {
-                    Id = agrupado.Key.Id,
-                    DescricaoNota = agrupado.Key.DescricaoNota,
-                    Fornecedor = agrupado.Key.Fornecedor,
-                    ValorLiquidoTotal = agrupado.Key.ValorLiquidoTotal.ToString("C2"),
-                    ValorTotal = agrupado.Key.ValorTotal,
-                    DescAcresc = agrupado.Key.DescAcresc,
                     Data = agrupado.Key.Data.ToString("dd/MM/yyyy"),
-                    Lista = lista.Where(x => x.Id == agrupado.Key.Id)
-                         .ToList<Relatorio03_NotaDeEntrada>()
+                    Lista = lista.Where(x => x.Data == agrupado.Key.Data)
+                          .ToList<Relatorio04_VendaMercadoriaPeriodo>(),
+                    
+                    
 
                 }).ToList();
 

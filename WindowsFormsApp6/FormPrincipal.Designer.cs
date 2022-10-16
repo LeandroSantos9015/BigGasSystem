@@ -117,13 +117,13 @@ namespace WindowsFormsApp6
             // configuracoesToolStripMenuItem
             // 
             this.configuracoesToolStripMenuItem.Name = "configuracoesToolStripMenuItem";
-            this.configuracoesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configuracoesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.configuracoesToolStripMenuItem.Text = "Configurações";
             // 
             // relatoriosToolStripMenuItem
             // 
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.relatoriosToolStripMenuItem.Text = "Relatórios";
             // 
             // FormPrincipal
@@ -135,7 +135,9 @@ namespace WindowsFormsApp6
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Big Jet Gás";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

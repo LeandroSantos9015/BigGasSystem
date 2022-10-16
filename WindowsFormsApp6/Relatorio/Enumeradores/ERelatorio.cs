@@ -20,7 +20,10 @@ namespace Relatorios.Enumeradores
         ListaMercadorias02 = 2,
 
         [Description("Relatório 03 - Notas de Entrada por período"), Category("Entrada")]
-        NotaEntadaPeriodo03 = 3
+        NotaEntadaPeriodo03 = 3,
+
+        [Description("Relatório 04 - Venda de Mercadorias por período"), Category("Saida")]
+        VendaDeMercadoriaPorPeriodo04 = 4
 
 
     }

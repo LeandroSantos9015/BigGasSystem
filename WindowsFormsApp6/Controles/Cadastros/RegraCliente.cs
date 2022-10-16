@@ -46,19 +46,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
         public IList<ModeloCidade> ListarCidades()
         {
-            IList<ModeloCidade> cidades = new List<ModeloCidade>();
-
-            cidades.Add(new ModeloCidade { Id = 1, Nome = "Assaí" });
-            cidades.Add(new ModeloCidade { Id = 2, Nome = "São Sebastião da Amoreira" });
-            cidades.Add(new ModeloCidade { Id = 3, Nome = "Santa Cecília do Pavão" });
-            cidades.Add(new ModeloCidade { Id = 4, Nome = "Nova Santa Bárbara" });
-            cidades.Add(new ModeloCidade { Id = 5, Nome = "Jataízinho" });
-            cidades.Add(new ModeloCidade { Id = 6, Nome = "São Jerônimo da Serra" });
-            cidades.Add(new ModeloCidade { Id = 7, Nome = "Sapopema" });
-            cidades.Add(new ModeloCidade { Id = 8, Nome = "Londrina" });
-            cidades.Add(new ModeloCidade { Id = 9, Nome = "Cambé" });
-
-            return cidades;
+            return repositorio.ListaCidades().ToList();
         }
     }
 }

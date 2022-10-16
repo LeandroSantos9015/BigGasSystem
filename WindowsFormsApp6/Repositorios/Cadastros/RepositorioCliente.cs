@@ -48,6 +48,12 @@ namespace WindowsFormsApp6.Repositorios.Cliente
 
             return consulta;
         }
+        public IList<ModeloCidade> ListaCidades()
+        {
+            var consulta = Conexao.Query<ModeloCidade>($"SELECT * FROM Cidade").ToList();
+
+            return consulta;
+        }
 
         //public List<TTipo> Consulta<TTipo>(string consulta)
         //{

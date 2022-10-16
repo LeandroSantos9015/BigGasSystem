@@ -15,14 +15,18 @@ namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
         public string Fornecedor { get; set; }
         public decimal ValorLiquidoTotal { get; set; }
 
+        public decimal ValorTotal { get; set; }
+        public decimal DescAcresc { get; set; }
+
 
         public string Mercadoria { get; set; }
         public decimal PrecoVenda { get; set; }
         public decimal PrecoCusto { get; set; }
         public decimal Quantidade { get; set; }
 
-
         public string QtdTotal => (PrecoCusto * Quantidade).ToString("C2");
+
+     
 
 
     }
@@ -33,8 +37,16 @@ namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
         public string DescricaoNota { get; set; }
         public string Fornecedor { get; set; }
 
+        public decimal ValorTotal { get; set; }
+        public decimal DescAcresc { get; set; }
+
+        public string ProxyValorTotal => ValorTotal.ToString("C2");
+        public string ProxyDescAcresc => DescAcresc.ToString("C2");
+
         public string Data { get; set; }
         public string ValorLiquidoTotal { get; set; }
+
+        public string TotalTotal => Lista?.Sum(x=> x.ValorLiquidoTotal).ToString("C2");
 
         public IList<Relatorio03_NotaDeEntrada> Lista { get; set; }
     }
