@@ -131,7 +131,7 @@
             this.xrTotal.LocationFloat = new DevExpress.Utils.PointFloat(580.6666F, 14.58333F);
             this.xrTotal.Name = "xrTotal";
             this.xrTotal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrTotal.SizeF = new System.Drawing.SizeF(170.3334F, 23F);
+            this.xrTotal.SizeF = new System.Drawing.SizeF(160.3333F, 23F);
             this.xrTotal.StylePriority.UseBackColor = false;
             this.xrTotal.StylePriority.UseBorders = false;
             this.xrTotal.StylePriority.UseFont = false;
