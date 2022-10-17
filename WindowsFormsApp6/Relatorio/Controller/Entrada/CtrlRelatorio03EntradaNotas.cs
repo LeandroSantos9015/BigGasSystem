@@ -43,7 +43,8 @@ namespace Relatorios.Controller.Cadastros
 
 
             string nomeFooter = "Valor Total das Notas:";
-            string valor = lista.Sum(x => x.ValorLiquidoTotal).ToString("C2");
+
+            string valor = lista.GroupBy(x => new { x.Id, x.ValorLiquidoTotal}).ToList().Sum(x => x.Key.ValorLiquidoTotal).ToString("C2");
 
             this.Relatorio = new Relatorio03NotasDeEntrada(ERelatorio.NotaEntadaPeriodo03, nomeFooter, valor);
 

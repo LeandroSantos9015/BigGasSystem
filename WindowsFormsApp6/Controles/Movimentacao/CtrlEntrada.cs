@@ -105,6 +105,9 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             if (this.MovimentacaoEntradaView.DgvMercadorias.RowCount < 1)
                 return;
 
+            if (this.MovimentacaoEntradaView.DgvMercadorias.CurrentRow is null)
+                this.MovimentacaoEntradaView.DgvMercadorias.Focus();
+
             ModelItemMovimentacao mercadoriaSelecionada = this.MovimentacaoEntradaView.DgvMercadorias.CurrentRow.DataBoundItem as ModelItemMovimentacao;
 
             AtualizaListaMercadoria(mercadoriaSelecionada, false);
