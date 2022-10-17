@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp6.Controles;
 
 namespace WindowsFormsApp6
 {
@@ -16,6 +17,8 @@ namespace WindowsFormsApp6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            new ExecCMD().Execute("sqllocaldb start venda");
 
             CtrlPrincipal ctrl = new CtrlPrincipal();
 

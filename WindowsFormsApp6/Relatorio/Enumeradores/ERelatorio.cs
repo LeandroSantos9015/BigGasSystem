@@ -16,7 +16,7 @@ namespace Relatorios.Enumeradores
         [Description("Relatório 01 - Lista de Parceiros (Clientes e Fornecedores)"), Category("Cadastro")]
         ListaClientes01 = 1,
 
-        [Description("Relatório 02 - Lista de Mercadores e estoque"), Category("Cadastro")]
+        [Description("Relatório 02 - Lista de Mercadorias e estoque"), Category("Cadastro")]
         ListaMercadorias02 = 2,
 
         [Description("Relatório 03 - Notas de Entrada por período"), Category("Entrada")]

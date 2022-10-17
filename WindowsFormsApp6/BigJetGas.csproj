@@ -136,6 +136,7 @@
     <Compile Include="Controles\Cadastros\CtrlCadastroMercadoria.cs" />
     <Compile Include="Controles\Cadastros\RegraMercadoria.cs" />
     <Compile Include="Controles\Cadastros\RegraCliente.cs" />
+    <Compile Include="Controles\ExecCMD.cs" />
     <Compile Include="Controles\Impressao\ModelCidade.cs" />
     <Compile Include="Controles\Movimentacao\CtrlCancelamentoSaida.cs" />
     <Compile Include="Controles\Utilitarios\CtrlConfiguracao.cs" />
