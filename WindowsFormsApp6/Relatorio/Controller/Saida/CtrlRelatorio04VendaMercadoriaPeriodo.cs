@@ -41,11 +41,12 @@ namespace Relatorios.Controller.Cadastros
             if (VerificaRelatorioVazio.Verificar(Lista))
                 return;
 
-
             string nomeFooter = "Valor Total das Vendas:";
-            string valor = lista.Sum(x => x.Valor).ToString("C2");
+            decimal valor = lista.Sum(x => x.Valor);
 
-            this.Relatorio = new Relatorio04VendaDeMercadoriaPorPeriodo(ERelatorio.VendaDeMercadoriaPorPeriodo04, nomeFooter, valor);
+            string valorString = (valor).ToString("C2");
+
+            this.Relatorio = new Relatorio04VendaDeMercadoriaPorPeriodo(ERelatorio.VendaDeMercadoriaPorPeriodo04, nomeFooter, valorString);
 
             this.Relatorio.DataSource = Lista;
 
@@ -64,11 +65,15 @@ namespace Relatorios.Controller.Cadastros
                     Data = agrupado.Key.Data.ToString("dd/MM/yyyy"),
                     Lista = lista.Where(x => x.Data == agrupado.Key.Data)
                           .ToList<Relatorio04_VendaMercadoriaPeriodo>(),
-                    
-                    
-
                 }).ToList();
 
+            foreach (var item in Lista)
+            {
+                item.Lista.LastOrDefault().ValorDia = item.Lista.Sum(x => x.Valor);
+            }
+
+
+            //this.Lista.FirstOrDefault().Lista.LastOrDefault().ValorDia = lista.Sum(x => x.Valor);
 
         }
 

@@ -98,7 +98,7 @@
             this.xrlabel99.LocationFloat = new DevExpress.Utils.PointFloat(445.2085F, 0F);
             this.xrlabel99.Name = "xrlabel99";
             this.xrlabel99.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlabel99.SizeF = new System.Drawing.SizeF(96.24982F, 23F);
+            this.xrlabel99.SizeF = new System.Drawing.SizeF(104.5831F, 23F);
             this.xrlabel99.StylePriority.UseBackColor = false;
             this.xrlabel99.StylePriority.UseFont = false;
             this.xrlabel99.StylePriority.UseTextAlignment = false;
@@ -174,7 +174,7 @@
             this.lblTurnoId.LocationFloat = new DevExpress.Utils.PointFloat(132.1246F, 10.00002F);
             this.lblTurnoId.Name = "lblTurnoId";
             this.lblTurnoId.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblTurnoId.SizeF = new System.Drawing.SizeF(409.3337F, 23F);
+            this.lblTurnoId.SizeF = new System.Drawing.SizeF(417.6669F, 23F);
             this.lblTurnoId.StylePriority.UseBorders = false;
             this.lblTurnoId.StylePriority.UseFont = false;
             this.lblTurnoId.StylePriority.UseTextAlignment = false;
@@ -243,7 +243,7 @@
             this.lblTotal.LocationFloat = new DevExpress.Utils.PointFloat(445.2085F, 6.357829E-05F);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblTotal.SizeF = new System.Drawing.SizeF(96.24988F, 23F);
+            this.lblTotal.SizeF = new System.Drawing.SizeF(104.5831F, 23F);
             this.lblTotal.StylePriority.UseFont = false;
             this.lblTotal.StylePriority.UseTextAlignment = false;
             this.lblTotal.Text = "[Valor]";
@@ -316,10 +316,10 @@
             this.xrTotalDia.BackColor = System.Drawing.Color.Transparent;
             this.xrTotalDia.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.xrTotalDia.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTotalDia.LocationFloat = new DevExpress.Utils.PointFloat(445.2086F, 0F);
+            this.xrTotalDia.LocationFloat = new DevExpress.Utils.PointFloat(415.0002F, 0F);
             this.xrTotalDia.Name = "xrTotalDia";
             this.xrTotalDia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrTotalDia.SizeF = new System.Drawing.SizeF(96.24982F, 23F);
+            this.xrTotalDia.SizeF = new System.Drawing.SizeF(134.7914F, 23F);
             this.xrTotalDia.StylePriority.UseBackColor = false;
             this.xrTotalDia.StylePriority.UseBorders = false;
             this.xrTotalDia.StylePriority.UseFont = false;
@@ -327,7 +327,7 @@
             xrSummary1.FormatString = "{0:R$ 0.00}";
             xrSummary1.IgnoreNullValues = true;
             this.xrTotalDia.Summary = xrSummary1;
-            this.xrTotalDia.Text = "[ValorTotal]";
+            this.xrTotalDia.Text = "[ProxyValorDia]";
             this.xrTotalDia.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel3
@@ -335,10 +335,10 @@
             this.xrLabel3.BackColor = System.Drawing.Color.Transparent;
             this.xrLabel3.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(6.357829E-05F, 0F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(1.589457E-05F, 0F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(445.2085F, 23F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(415.0002F, 23F);
             this.xrLabel3.StylePriority.UseBackColor = false;
             this.xrLabel3.StylePriority.UseBorders = false;
             this.xrLabel3.StylePriority.UseFont = false;

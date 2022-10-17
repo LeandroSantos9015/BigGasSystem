@@ -16,6 +16,11 @@ namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
 
         public decimal ValorTotal { get; set; }
 
+        public decimal Frete { get; set; }
+
+        public string ProxyValorDia => ValorDia.ToString("C2");
+
+        public decimal ValorDia { get; set; }
     }
 
     public class AgrupadorRelatorio04
@@ -26,6 +31,10 @@ namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
         public string Data { get; set; }
 
         public decimal Valor { get; set; }
+
+        public decimal Frete { get; set; }
+
+      
 
         public IList<Relatorio04_VendaMercadoriaPeriodo> Lista { get; set; }
     }

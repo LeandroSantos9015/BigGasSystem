@@ -82,7 +82,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.btnExc.Location = new System.Drawing.Point(180, 107);
             this.btnExc.Name = "btnExc";
             this.btnExc.Size = new System.Drawing.Size(83, 23);
-            this.btnExc.TabIndex = 6;
+            this.btnExc.TabIndex = 4;
             this.btnExc.Text = "Cancelar";
             this.btnExc.UseVisualStyleBackColor = true;
             // 
@@ -91,7 +91,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.btnAdd.Location = new System.Drawing.Point(82, 107);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 23);
-            this.btnAdd.TabIndex = 5;
+            this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Adicionar";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
@@ -107,6 +107,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // txtPreco
             // 
+            this.txtPreco.Enabled = false;
             this.txtPreco.Location = new System.Drawing.Point(205, 45);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(58, 20);
