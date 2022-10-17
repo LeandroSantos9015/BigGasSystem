@@ -8,6 +8,7 @@ using WindowsFormsApp6.Controles.Impressao;
 using WindowsFormsApp6.Interface.Utilitarios;
 using WindowsFormsApp6.Menus.Utilitarios;
 using WindowsFormsApp6.Modelos;
+using WindowsFormsApp6.Modelos.Movimentacao;
 using WindowsFormsApp6.Repositorios.Utilitarios;
 using WindowsFormsApp6.Utilitarios;
 
@@ -126,26 +127,26 @@ namespace WindowsFormsApp6.Controles.Utilitarios
                 Telefone = "1234567890".TelefoneMascara()
             };
 
-            ModelMercadoria mercadoria1 = new ModelMercadoria
+            ModelItemMovimentacao mercadoria1 = new ModelItemMovimentacao
             {
                 Descricao = "Mercadoria 1",
                 PrecoVenda = 10.25M,
                 Quantidade = 5
             };
-            ModelMercadoria mercadoria2 = new ModelMercadoria
+            ModelItemMovimentacao mercadoria2 = new ModelItemMovimentacao
             {
                 Descricao = "Mercadoria 2",
                 PrecoVenda = 123.45M,
                 Quantidade = 2
             };
-            ModelMercadoria mercadoria3 = new ModelMercadoria
+            ModelItemMovimentacao mercadoria3 = new ModelItemMovimentacao
             {
                 Descricao = "Mercadoria 3",
                 PrecoVenda = 34.54M,
                 Quantidade = 3
             };
 
-            IList<ModelMercadoria> lista = new List<ModelMercadoria>();
+            IList<ModelItemMovimentacao> lista = new List<ModelItemMovimentacao>();
 
             lista.Add(mercadoria1);
             lista.Add(mercadoria2);

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp6.Controles.Cadastros;
+using WindowsFormsApp6.Controles.Impressao;
 using WindowsFormsApp6.Enumeradores;
 using WindowsFormsApp6.Interface.Movimentacao;
 using WindowsFormsApp6.Menus.Movimentacao;
@@ -34,6 +35,9 @@ namespace WindowsFormsApp6.Controles.Movimentacao
         private RepositorioMovimentacao repositorio = new RepositorioMovimentacao();
 
         decimal adicionalFrete = 0;
+
+
+        ModelCliente clienteGlobal = null;
 
         public CtrlSaida(IPrincipalView Pai)
         {
@@ -128,7 +132,18 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 return;
 
             ObjetoParaTela();
+
+
         }
+
+        private void Imprimir(Int64 idPedido, decimal totalPedido, IList<ModelItemMovimentacao> lista)
+        {
+
+            string porta = "LPT1";
+
+            new CtrlImpressao(clienteGlobal, lista, idPedido, totalPedido, porta);
+        }
+
 
         private Int64 GravacaoNota(EStatusMovimento eStatus)
         {
@@ -154,6 +169,10 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 repositorio.SalvarItens(listaAtualizada);
 
                 MessageBox.Show($"Venda realizada com sucesso!");
+
+                decimal totalPedido = movimentacao.ValorTotal + movimentacao.DescAcres + adicionalFrete;
+
+                Imprimir(idDocumento, totalPedido, lista);
 
                 return idDocumento;
 
@@ -236,7 +255,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 Operacao = EOperacaoMovimento.Saida,
                 Status = status,
                 ValorTotal = valorTotal,
-                NumeroNota = numero
+                NumeroNota = numero,
+                Frete = adicionalFrete
             };
         }
 
@@ -327,6 +347,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 SaidaView.LblCidade.Text = "Cidade: " + cidade.Nome;
 
                 idCliente = modelCliente.Id;
+
+                clienteGlobal = modelCliente;
             }
             else
             {
@@ -339,6 +361,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
                 this.SaidaView.TxtValorBruto.Text = "0,00";
                 this.SaidaView.TxtDescAcres.Text = "0,00";
+
+                clienteGlobal = null;
 
                 AtualizaDescontosAcrescimos(true);
             }

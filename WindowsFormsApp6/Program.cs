@@ -18,7 +18,9 @@ namespace WindowsFormsApp6
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            new ExecCMD().Execute("sqllocaldb start venda");
+            try { new ExecCMD().Execute("sqllocaldb start venda"); }
+
+            catch { MessageBox.Show("Problema ao startar a instancia venda"); }
 
             CtrlPrincipal ctrl = new CtrlPrincipal();
 

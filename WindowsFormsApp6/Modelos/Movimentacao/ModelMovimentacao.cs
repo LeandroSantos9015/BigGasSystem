@@ -21,6 +21,8 @@ namespace WindowsFormsApp6.Modelos.Movimentacao
         public EOperacaoMovimento Operacao { get; set; }
         public decimal DescAcres { get; set; }
         public decimal ValorTotal { get; set; }
+
+        public decimal Frete { get; set; }
         public decimal ValorLiquidoTotal { get; set; }
         public string NumeroNota { get; set; }
 

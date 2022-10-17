@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp6.Modelos.Movimentacao;
 
 namespace WindowsFormsApp6.Modelos
 {
@@ -26,7 +27,7 @@ namespace WindowsFormsApp6.Modelos
         public string ClienteCondicaoPagamento { get; set; }
         public string ClienteVencimento { get; set; }
 
-        public IList<ModelMercadoria> Mercadorias { get; set; }
+        public IList<ModelItemMovimentacao> Mercadorias { get; set; }
 
         public string TotalPedido { get; set; }
 

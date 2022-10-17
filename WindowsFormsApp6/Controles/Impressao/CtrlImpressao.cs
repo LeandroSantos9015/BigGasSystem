@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp6.Controles.Cadastros;
 using WindowsFormsApp6.Modelos;
+using WindowsFormsApp6.Modelos.Movimentacao;
 
 namespace WindowsFormsApp6.Controles.Impressao
 {
     public class CtrlImpressao
     {
         ModelCliente cliente;
-        IList<ModelMercadoria> mercadorias;
+        IList<ModelItemMovimentacao> mercadorias;
         string idPedido;
         string totalPedido;
         string porta;
@@ -19,7 +20,7 @@ namespace WindowsFormsApp6.Controles.Impressao
 
         RegraCliente cli = new RegraCliente();
 
-        public CtrlImpressao(ModelCliente cliente, IList<ModelMercadoria> mercadorias, int idPedido, decimal totalPedido, string porta)
+        public CtrlImpressao(ModelCliente cliente, IList<ModelItemMovimentacao> mercadorias, Int64 idPedido, decimal totalPedido, string porta)
         {
             this.cliente = cliente;
             this.mercadorias = mercadorias;
