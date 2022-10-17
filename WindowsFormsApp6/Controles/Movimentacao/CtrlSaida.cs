@@ -138,8 +138,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
         private void Imprimir(Int64 idPedido, decimal totalPedido, IList<ModelItemMovimentacao> lista)
         {
-
-            string porta = "LPT1";
+            string porta = repCfg.Listar().PortaImpressora;
 
             new CtrlImpressao(clienteGlobal, lista, idPedido, totalPedido, porta);
         }

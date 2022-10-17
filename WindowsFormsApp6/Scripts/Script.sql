@@ -1,7 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[CancelarNotaDeSaida]
 @Id BIGINT
-
-
 AS BEGIN
 	UPDATE [dbo].[Documento]
 		SET 
@@ -40,8 +38,9 @@ AS BEGIN
 		-- Finalizado o cursor
 		DEALLOCATE cursor1
 END
+
 GO
-/****** Object:  StoredProcedure [dbo].[SalvarCliente]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  StoredProcedure [dbo].[SalvarCliente]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,8 +120,9 @@ DECLARE @Return BIGINT;
 
 	
 
+
 GO
-/****** Object:  StoredProcedure [dbo].[SalvarConfiguracoes]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  StoredProcedure [dbo].[SalvarConfiguracoes]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,8 +151,9 @@ END
 
 
 
+
 GO
-/****** Object:  StoredProcedure [dbo].[SalvarItemMovimentacao]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  StoredProcedure [dbo].[SalvarItemMovimentacao]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,8 +199,9 @@ END
 
 
 
+
 GO
-/****** Object:  StoredProcedure [dbo].[SalvarMercadoria]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  StoredProcedure [dbo].[SalvarMercadoria]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -252,8 +254,9 @@ SET NOCOUNT ON;
 	END
 
 
+
 GO
-/****** Object:  StoredProcedure [dbo].[SalvarMovimentacao]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  StoredProcedure [dbo].[SalvarMovimentacao]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -268,15 +271,16 @@ CREATE  PROCEDURE [dbo].[SalvarMovimentacao]
 @DescAcres DECIMAL(11,2),
 @ValorTotal DECIMAL(11,2),
 @ValorLiquidoTotal DECIMAL(11,2),
-@NumeroNota VARCHAR(MAX)
+@NumeroNota VARCHAR(MAX),
+@Frete DECIMAL(11,2)
 
 AS BEGIN
 	IF(@Id IS NULL OR @Id = 0)
 	BEGIN
 		INSERT INTO [dbo].[Documento]
-				   ([Descricao],[IdParceiro],[Data],[Status],[Operacao],[DescAcres],[ValorTotal],[NumeroNota])
+				   ([Descricao],[IdParceiro],[Data],[Status],[Operacao],[DescAcres],[ValorTotal],[NumeroNota], [Frete])
 			 VALUES
-				   (@Descricao, @IdParceiro, @Data, @Status, @Operacao, @DescAcres, @ValorTotal, @NumeroNota)
+				   (@Descricao, @IdParceiro, @Data, @Status, @Operacao, @DescAcres, @ValorTotal, @NumeroNota, @Frete )
 
 		  RETURN SCOPE_IDENTITY()
 	END
@@ -292,6 +296,7 @@ AS BEGIN
 			  ,[DescAcres] =  @DescAcres
 			  ,[ValorTotal] = @ValorTotal
 			  ,[NumeroNota] = @NumeroNota
+			  ,[Frete]		= @Frete 
 		 WHERE Id = @id
 
 	END
@@ -301,8 +306,9 @@ END
 
 
 
+
 GO
-/****** Object:  Table [dbo].[Cidade]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  Table [dbo].[Cidade]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -317,7 +323,7 @@ CREATE TABLE [dbo].[Cidade](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Cliente]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  Table [dbo].[Cliente]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -346,7 +352,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Configuracoes]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  Table [dbo].[Configuracoes]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -362,7 +368,7 @@ CREATE TABLE [dbo].[Configuracoes](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Documento]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  Table [dbo].[Documento]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -380,6 +386,7 @@ CREATE TABLE [dbo].[Documento](
 	[ValorTotal] [decimal](11, 2) NOT NULL,
 	[NumeroNota] [varchar](max) NOT NULL,
 	[ValorLiquidoTotal]  AS ([ValorTotal]+[DescAcres]),
+	[Frete] [decimal](11, 2) NOT NULL DEFAULT ((0)),
 PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -389,7 +396,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ItemDocumento]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  Table [dbo].[ItemDocumento]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -416,7 +423,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Mercadoria]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  Table [dbo].[Mercadoria]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -443,7 +450,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  UserDefinedFunction [dbo].[ConsultaNotas]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[ConsultaNotas]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -469,8 +476,9 @@ SELECT [Id]
 
 
 
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[ConsultaNotasPorPeriodo]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[ConsultaNotasPorPeriodo]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -502,8 +510,9 @@ SELECT
 
 
 
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[ConsultarCliente]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[ConsultarCliente]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -531,8 +540,9 @@ SELECT [Id]
 			AND ((@ApenasUnitarios = 1 AND mer.Unidade = 2) OR @ApenasUnitarios = 0)
 			OR (@Ativo = 2 AND Ativo = 0)
 			OR (@Ativo = 4)*/
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[ConsultarConfiguracoes]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[ConsultarConfiguracoes]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -546,8 +556,9 @@ SELECT [ValorFrete]
 
 
 
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[ConsultarMercadoria]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[ConsultarMercadoria]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -566,8 +577,9 @@ SELECT [Id]
 
 
 
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[ListaMercadoriasNotas]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[ListaMercadoriasNotas]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -590,8 +602,9 @@ SELECT [Id]
 	 OR (@Status = 7)) AND IdDocumento = @idDocumento
 
 
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[ListarNotasPorCliente]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[ListarNotasPorCliente]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -614,8 +627,9 @@ AND item.IdMercadoria = @IdCliente
 GROUP BY doc.Id, doc.NumeroNota,
 doc.Data, doc.Operacao
 
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[ListarNotasPorMercadoria]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[ListarNotasPorMercadoria]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -636,8 +650,9 @@ WHERE doc.Status = 2 AND doc.Operacao = 1
 AND item.IdMercadoria = @IdMercadoria
 GROUP BY doc.Id, doc.NumeroNota, doc.Data
 
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[Relatorio01_ListaClientes]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[Relatorio01_ListaClientes]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -671,8 +686,9 @@ SELECT cli.Id
 	   AND (Fornecedor = @Fornecedor OR @Fornecedor = 4)
    
 	
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[Relatorio02_EstoqueMercadorias]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[Relatorio02_EstoqueMercadorias]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -690,8 +706,9 @@ SELECT [Id]
    (Ativo = @Ativo OR @Ativo = 4)
 
   
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[Relatorio03_ListaNotasDeEntradaComItens]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[Relatorio03_ListaNotasDeEntradaComItens]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -721,8 +738,9 @@ INNER JOIN Cliente pn
 ON pn.id = doc.IdParceiro
 WHERE doc.Data BETWEEN @Inicio AND @Fim
 AND doc.Operacao = 1 AND doc.Status = 2
+
 GO
-/****** Object:  UserDefinedFunction [dbo].[Relatorio04_VendaMercadoriaPorPeriodo]    Script Date: 17/10/2022 10:23:50 ******/
+/****** Object:  UserDefinedFunction [dbo].[Relatorio04_VendaMercadoriaPorPeriodo]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -739,7 +757,8 @@ item.PrecoVenda,
 sum(item.Quantidade) Quantidade,
 sum(item.ValorTotal) Valor,
 sum(doc.ValorLiquidoTotal) ValorTotal,
-CONVERT(DATE, doc.Data) Data
+CONVERT(DATE, doc.Data) Data,
+doc.Frete
 from ItemDocumento item
 INNER JOIN Mercadoria mer
 ON item.IdMercadoria = mer.Id
@@ -747,7 +766,8 @@ INNER JOIN Documento doc
 ON doc.Id = item.IdDocumento
 WHERE doc.Data BETWEEN @Inicio AND @Fim
 AND doc.Operacao = 2 AND doc.Status = 2
-group by mer.Nome, CONVERT(DATE, doc.Data), item.PrecoVenda
+group by mer.Nome, CONVERT(DATE, doc.Data), item.PrecoVenda, doc.Frete
+
 
 
 
