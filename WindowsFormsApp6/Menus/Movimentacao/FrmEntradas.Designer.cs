@@ -153,7 +153,7 @@ namespace WindowsFormsApp6.Movimentacao
             // 
             // btnRem
             // 
-            this.btnRem.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_menos;
+            this.btnRem.BackgroundImage = global::BigJetGas.Properties.Resources.botao_menos;
             this.btnRem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRem.Location = new System.Drawing.Point(292, 50);
             this.btnRem.Name = "btnRem";
@@ -163,7 +163,7 @@ namespace WindowsFormsApp6.Movimentacao
             // 
             // btnAdd
             // 
-            this.btnAdd.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_mais;
+            this.btnAdd.BackgroundImage = global::BigJetGas.Properties.Resources.botao_mais;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Location = new System.Drawing.Point(292, 19);
             this.btnAdd.Name = "btnAdd";

@@ -12,6 +12,7 @@ using WindowsFormsApp6.Interface.Movimentacao;
 using WindowsFormsApp6.Menus.Movimentacao;
 using WindowsFormsApp6.Modelos;
 using WindowsFormsApp6.Modelos.Movimentacao;
+using WindowsFormsApp6.Relatorio.Impressao;
 using WindowsFormsApp6.Repositorios.Movimentacao;
 using WindowsFormsApp6.Repositorios.Utilitarios;
 using WindowsFormsApp6.Utilitarios;
@@ -140,7 +141,9 @@ namespace WindowsFormsApp6.Controles.Movimentacao
         {
             string porta = repCfg.Listar().PortaImpressora;
 
-            new CtrlImpressao(clienteGlobal, lista, idPedido, totalPedido, porta);
+            // new CtrlImpressao(clienteGlobal, lista, idPedido, totalPedido, porta);
+
+            new CtrlImpressaoReport(clienteGlobal, lista, idPedido, totalPedido, porta);
         }
 
 

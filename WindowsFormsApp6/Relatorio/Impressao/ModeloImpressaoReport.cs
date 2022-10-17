@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp6.Modelos.Movimentacao;
 
-namespace WindowsFormsApp6.Modelos
+namespace WindowsFormsApp6.Relatorio.Impressao
 {
-    public class ModelImpressao
+    public class ModeloImpressaoReport
     {
         public string EmpresaNome { get; set; }
         public string EmpresaTelefone { get; set; }
@@ -27,7 +27,7 @@ namespace WindowsFormsApp6.Modelos
         public string ClienteCondicaoPagamento { get; set; }
         public string ClienteVencimento { get; set; }
 
-        public IList<ModelItemImpressao> Mercadorias { get; set; }
+        public IList<ModelItemImpressao> Lista { get; set; }
 
         public string TotalPedido { get; set; }
 
@@ -50,4 +50,6 @@ namespace WindowsFormsApp6.Modelos
             return dataDeHoje;
         }
     }
+
+    
 }

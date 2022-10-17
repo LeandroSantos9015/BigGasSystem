@@ -39,4 +39,9 @@ namespace WindowsFormsApp6.Modelos.Movimentacao
         [Browsable(false)]
         public DynamicParameters Save => Salvar(this);
     }
+
+    public class ModelItemImpressao : ModelItemMovimentacao
+    {
+        public string ProxyValorTotal => ValorTotal.ToString("C2");
+    }
 }

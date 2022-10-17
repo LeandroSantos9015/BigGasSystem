@@ -99,7 +99,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // btnRem
             // 
-            this.btnRem.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_menos;
+            this.btnRem.BackgroundImage = global::BigJetGas.Properties.Resources.botao_menos;
             this.btnRem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRem.Location = new System.Drawing.Point(291, 46);
             this.btnRem.Name = "btnRem";
@@ -109,7 +109,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // btnAdd
             // 
-            this.btnAdd.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.botao_mais;
+            this.btnAdd.BackgroundImage = global::BigJetGas.Properties.Resources.botao_mais;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Location = new System.Drawing.Point(291, 15);
             this.btnAdd.Name = "btnAdd";
@@ -235,7 +235,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.lupa2;
+            this.btnPesquisar.BackgroundImage = global::BigJetGas.Properties.Resources.lupa2;
             this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPesquisar.Location = new System.Drawing.Point(299, 7);
             this.btnPesquisar.Name = "btnPesquisar";

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{23F326C9-D607-4748-B49D-102431F59C03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp6</RootNamespace>
-    <AssemblyName>WindowsFormsApp6</AssemblyName>
+    <RootNamespace>BigJetGas</RootNamespace>
+    <AssemblyName>BigJetGas</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="Modelos\Historico\ModelHistoricoCliente.cs" />
     <Compile Include="Modelos\Historico\ModelHistoricoMercadoria.cs" />
+    <Compile Include="Modelos\ModelImpressora.cs" />
     <Compile Include="Modelos\ModelConfiguracao.cs" />
     <Compile Include="Modelos\ModelEmpresa.cs" />
     <Compile Include="Modelos\ModelImpressao.cs" />
@@ -310,6 +311,14 @@
     <Compile Include="Relatorio\FrmRelatorio.Designer.cs">
       <DependentUpon>FrmRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorio\Impressao\CtrlImpressaoReport.cs" />
+    <Compile Include="Relatorio\Impressao\ImpressaoSaida.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorio\Impressao\ImpressaoSaida.Designer.cs">
+      <DependentUpon>ImpressaoSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\Impressao\ModeloImpressaoReport.cs" />
     <Compile Include="Relatorio\Interfaces\IBotoesRelatorio.cs" />
     <Compile Include="Relatorio\Interfaces\IFiltroRelatorio.cs" />
     <Compile Include="Relatorio\Interfaces\IRelatorio.cs" />
@@ -417,6 +426,7 @@
     <EmbeddedResource Include="Pesquisar\FrmPesquisar.resx">
       <DependentUpon>FrmPesquisar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -447,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\FrmRelatorio.resx">
       <DependentUpon>FrmRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\Impressao\ImpressaoSaida.resx">
+      <DependentUpon>ImpressaoSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\Properties\Resources.resx" />
     <EmbeddedResource Include="Relatorio\View\Base\RelatorioBase.resx">

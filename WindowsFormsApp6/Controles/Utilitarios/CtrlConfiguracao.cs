@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using WindowsFormsApp6.Interface.Utilitarios;
 using WindowsFormsApp6.Menus.Utilitarios;
 using WindowsFormsApp6.Modelos;
 using WindowsFormsApp6.Modelos.Movimentacao;
+using WindowsFormsApp6.Relatorio.Impressao;
 using WindowsFormsApp6.Repositorios.Utilitarios;
 using WindowsFormsApp6.Utilitarios;
 
@@ -51,6 +53,12 @@ namespace WindowsFormsApp6.Controles.Utilitarios
             ConfiguracaoView.BtnCancelar.Click += BtnCancelar_Click;
             ConfiguracaoView.BtnSalvar.Click += BtnSalvar_Click;
             ConfiguracaoView.BtnTesteImpressao.Click += BtnTesteImpressao_Click;
+            ConfiguracaoView.DgvImpressora.DoubleClick += DgvImpressora_DoubleClick;
+        }
+
+        private void DgvImpressora_DoubleClick(object sender, EventArgs e)
+        {
+            this.ConfiguracaoView.TxtPortaImpressora.Text = ((sender as DataGridView).CurrentRow.DataBoundItem as ModelImpressora).Nome;
         }
 
         private void BtnTesteImpressao_Click(object sender, EventArgs e)
@@ -103,6 +111,7 @@ namespace WindowsFormsApp6.Controles.Utilitarios
                 this.ConfiguracaoView.TxtValorFrete.Text = cfg.ValorFrete.ToString();
                 this.ConfiguracaoView.TxtPortaImpressora.Text = cfg.PortaImpressora;
                 this.ConfiguracaoView.ChkMostrarExc.Checked = cfg.MostrarExcluidos;
+
             }
             else
             {
@@ -110,7 +119,23 @@ namespace WindowsFormsApp6.Controles.Utilitarios
                 this.ConfiguracaoView.TxtPortaImpressora.Text = null;
                 this.ConfiguracaoView.ChkMostrarExc.Checked = false;
             }
+            this.ConfiguracaoView.DgvImpressora.DataSource = ListaImpressoras();
 
+            this.ConfiguracaoView.DgvImpressora.Columns["Nome"].Width = 180;
+        }
+
+        private IList<ModelImpressora> ListaImpressoras()
+        {
+            IList<ModelImpressora> impressoras = new List<ModelImpressora>();
+
+            String pkInstalledPrinters;
+            for (int i = 0; i < PrinterSettings.InstalledPrinters.Count; i++)
+            {
+                pkInstalledPrinters = PrinterSettings.InstalledPrinters[i];
+                impressoras.Add(new ModelImpressora { Nome = pkInstalledPrinters });
+            }
+
+            return impressoras;
         }
 
         private void TesteDeImpressao()
@@ -131,19 +156,22 @@ namespace WindowsFormsApp6.Controles.Utilitarios
             {
                 Descricao = "Mercadoria 1",
                 PrecoVenda = 10.25M,
-                Quantidade = 5
+                Quantidade = 5,
+                ValorTotal = 123
             };
             ModelItemMovimentacao mercadoria2 = new ModelItemMovimentacao
             {
                 Descricao = "Mercadoria 2",
                 PrecoVenda = 123.45M,
-                Quantidade = 2
+                Quantidade = 2,
+                ValorTotal = 123
             };
             ModelItemMovimentacao mercadoria3 = new ModelItemMovimentacao
             {
                 Descricao = "Mercadoria 3",
                 PrecoVenda = 34.54M,
-                Quantidade = 3
+                Quantidade = 3,
+                ValorTotal = 123
             };
 
             IList<ModelItemMovimentacao> lista = new List<ModelItemMovimentacao>();
@@ -158,7 +186,10 @@ namespace WindowsFormsApp6.Controles.Utilitarios
 
             string porta = this.ConfiguracaoView.TxtPortaImpressora.Text;
 
-            var testes = new CtrlImpressao(cliente, lista, idPedido, total, porta);
+
+            new CtrlImpressaoReport(cliente, lista, idPedido, total, porta);
+
+            // var testes = new CtrlImpressao(cliente, lista, idPedido, total, porta);
 
         }
     }
