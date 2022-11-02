@@ -23,8 +23,10 @@ namespace Relatorios.Enumeradores
         NotaEntadaPeriodo03 = 3,
 
         [Description("Relatório 04 - Venda de Mercadorias por período"), Category("Saida")]
-        VendaDeMercadoriaPorPeriodo04 = 4
+        VendaDeMercadoriaPorPeriodo04 = 4,
 
+        [Description("Relatório 05 - Venda por finalizadora por período"), Category("Saida")]
+        VendaFinalizadoraPorPeriodo05 = 5
 
     }
 }

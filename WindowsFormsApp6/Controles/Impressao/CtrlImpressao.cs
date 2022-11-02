@@ -16,17 +16,18 @@ namespace WindowsFormsApp6.Controles.Impressao
         string idPedido;
         string totalPedido;
         string porta;
-
+        string finalizadora;
 
         RegraCliente cli = new RegraCliente();
 
-        public CtrlImpressao(ModelCliente cliente, IList<ModelItemMovimentacao> mercadorias, Int64 idPedido, decimal totalPedido, string porta)
+        public CtrlImpressao(ModelCliente cliente, IList<ModelItemMovimentacao> mercadorias, Int64 idPedido, decimal totalPedido, string porta, string finalizadora)
         {
             this.cliente = cliente;
             this.mercadorias = mercadorias;
             this.idPedido = idPedido.ToString();
             this.totalPedido = totalPedido.ToString("C2");
             this.porta = porta;
+            this.finalizadora = finalizadora;
 
             Imprimir();
 
@@ -84,11 +85,13 @@ namespace WindowsFormsApp6.Controles.Impressao
                 ClienteTelefone = cliente.Telefone,
                 ClienteEndereco = cliente.Endereco,
                 ClienteNome = cliente.Nome,
+                ClienteNumero = cliente.Numero,
                 ClienteVencimento = "30 dias",
                 Hora = DateTime.Now.ToString("HH:mm"),
                 Mercadorias = listaModel,
                 NumeroPedido = idPedido,
-                TotalPedido = totalPedido
+                TotalPedido = totalPedido,
+                Finalizadora = finalizadora
             };
 
             imprimir.Imprimir(impressao, porta);

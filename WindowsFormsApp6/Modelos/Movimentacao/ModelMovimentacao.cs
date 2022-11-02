@@ -25,8 +25,7 @@ namespace WindowsFormsApp6.Modelos.Movimentacao
         public decimal Frete { get; set; }
         public decimal ValorLiquidoTotal { get; set; }
         public string NumeroNota { get; set; }
-
-        
+        public Int64 Finalizadora { get; set; }
 
 
         [Browsable(false)]

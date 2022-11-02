@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp6.Modelos.Movimentacao;
+using WindowsFormsApp6.Utilitarios;
 
 namespace WindowsFormsApp6.Relatorio.Impressao
 {
@@ -21,7 +22,10 @@ namespace WindowsFormsApp6.Relatorio.Impressao
         public string ClienteNome { get; set; }
         public string ClienteBairro { get; set; }
         public string ClienteTelefone { get; set; }
+
+        public string ProxyClienteTelefone => ClienteTelefone.TelefoneMascara();
         public string ClienteEndereco { get; set; }
+        public string ClienteNumero { get; set; }
         public string ClienteComplemento { get; set; }
         public string ClienteCidade { get; set; }
         public string ClienteCondicaoPagamento { get; set; }
@@ -30,6 +34,8 @@ namespace WindowsFormsApp6.Relatorio.Impressao
         public IList<ModelItemImpressao> Lista { get; set; }
 
         public string TotalPedido { get; set; }
+
+        public string Finalizadora { get; set; }
 
         public string Data => DataPorExtenso();
 
@@ -51,5 +57,5 @@ namespace WindowsFormsApp6.Relatorio.Impressao
         }
     }
 
-    
+
 }

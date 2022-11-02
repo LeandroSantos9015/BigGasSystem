@@ -36,6 +36,10 @@ namespace Relatorios.Controller
                     new BehaviorFiltro004(ERelatorio.VendaDeMercadoriaPorPeriodo04);
                     break;
 
+                case ERelatorio.VendaFinalizadoraPorPeriodo05:
+                    new BehaviorFiltro005(ERelatorio.VendaFinalizadoraPorPeriodo05);
+                    break;
+
                 default:
                     //Alerta("Relatório", "Relatório ainda não foi implementado");
                     break;

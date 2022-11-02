@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp6.Menus.Movimentacao
 {
-    partial class FrmCancelamentoSaida
+    partial class FrmManutencaoSaida
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.dteFim = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReimprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             this.btnExecutar.Location = new System.Drawing.Point(10, 346);
             this.btnExecutar.Name = "btnExecutar";
-            this.btnExecutar.Size = new System.Drawing.Size(433, 23);
+            this.btnExecutar.Size = new System.Drawing.Size(221, 23);
             this.btnExecutar.TabIndex = 4;
             this.btnExecutar.Text = "Realizar o Cancelamento";
             this.btnExecutar.UseVisualStyleBackColor = true;
@@ -103,6 +104,15 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.label2.TabIndex = 4;
             this.label2.Text = "Fim:";
             // 
+            // btnReimprimir
+            // 
+            this.btnReimprimir.Location = new System.Drawing.Point(237, 346);
+            this.btnReimprimir.Name = "btnReimprimir";
+            this.btnReimprimir.Size = new System.Drawing.Size(206, 23);
+            this.btnReimprimir.TabIndex = 4;
+            this.btnReimprimir.Text = "Reimprimir";
+            this.btnReimprimir.UseVisualStyleBackColor = true;
+            // 
             // FrmCancelamentoSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,13 +123,14 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.Controls.Add(this.dteFim);
             this.Controls.Add(this.dteInicio);
             this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnReimprimir);
             this.Controls.Add(this.btnExecutar);
             this.Controls.Add(this.dgvLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCancelamentoSaida";
-            this.Text = "Cancelamento de Vendas";
+            this.Text = "Manutenção de documento de Vendas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,5 +146,6 @@ namespace WindowsFormsApp6.Menus.Movimentacao
         private System.Windows.Forms.DateTimePicker dteFim;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnReimprimir;
     }
 }

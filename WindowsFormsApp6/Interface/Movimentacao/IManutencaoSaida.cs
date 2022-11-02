@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp6.Interface.Movimentacao
 {
-    public interface ICancelamentoSaida
+    public interface IManutencaoSaida
     {
         Form CancelamentoView { get; }
 
@@ -15,8 +15,7 @@ namespace WindowsFormsApp6.Interface.Movimentacao
 
         Button BtnExecutar { get; }
 
-
-
+        Button BtnReimprimir { get; }
         DateTimePicker DteInicio { get; }
 
         DateTimePicker DteFim { get; }

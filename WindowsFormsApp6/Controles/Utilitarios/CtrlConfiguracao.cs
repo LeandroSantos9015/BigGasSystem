@@ -187,7 +187,7 @@ namespace WindowsFormsApp6.Controles.Utilitarios
             string porta = this.ConfiguracaoView.TxtPortaImpressora.Text;
 
 
-            new CtrlImpressaoReport(cliente, lista, idPedido, total, porta);
+            new CtrlImpressaoReport(cliente, lista, idPedido, total, porta, "TESTE", true);
 
             // var testes = new CtrlImpressao(cliente, lista, idPedido, total, porta);
 

@@ -305,11 +305,14 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 string textoProc = "Memória";
                 bool somenteLeitura = false;
 
+                bool estornoIrreversivel = false;
+
                 switch (modelMovimentacao.Status)
                 {
                     case EStatusMovimento.E:
                         cor = Color.Red;
                         textoProc = "Estornada";
+                        estornoIrreversivel = true;
                         break;
                     case EStatusMovimento.P:
                         cor = Color.Green;
@@ -345,6 +348,26 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 this.MovimentacaoEntradaView.BtnSalvar.Enabled = !somenteLeitura;
                 this.MovimentacaoEntradaView.BtnEstornar.Enabled = somenteLeitura;
                 this.MovimentacaoEntradaView.BtnPesquisar.Enabled = !somenteLeitura;
+
+                if (estornoIrreversivel)
+                {
+                    this.MovimentacaoEntradaView.BtnProcessar.Enabled = false;
+                    this.MovimentacaoEntradaView.BtnSalvar.Enabled = false;
+                    this.MovimentacaoEntradaView.BtnEstornar.Enabled = false;
+
+                    this.MovimentacaoEntradaView.TxtId.ReadOnly = false;
+                    this.MovimentacaoEntradaView.TxtDescAcres.ReadOnly = false;
+
+                    this.MovimentacaoEntradaView.DteData.Enabled = false;
+                    this.MovimentacaoEntradaView.TxtNumeroNota.ReadOnly = false;
+                    this.MovimentacaoEntradaView.TxtDescricao.ReadOnly = false;
+
+                    this.MovimentacaoEntradaView.CbmFornecedor.Enabled = false;
+
+                    this.MovimentacaoEntradaView.BtnAdd.Enabled = false;
+                    this.MovimentacaoEntradaView.BtnRemove.Enabled = false;
+
+                }
 
 
 
@@ -433,7 +456,9 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 Operacao = EOperacaoMovimento.Entrada,
                 Status = status,
                 ValorTotal = valorTotal,
-                NumeroNota = numero
+                NumeroNota = numero,
+                Frete = 0,
+                Finalizadora = 1
             };
         }
 

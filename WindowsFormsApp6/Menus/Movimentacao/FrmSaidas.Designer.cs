@@ -49,6 +49,9 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkNaoImprimir = new System.Windows.Forms.CheckBox();
+            this.cbmFinal = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMercadorias)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -253,11 +256,41 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.checkBox1.Text = "Sem frete";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // chkNaoImprimir
+            // 
+            this.chkNaoImprimir.AutoSize = true;
+            this.chkNaoImprimir.Location = new System.Drawing.Point(160, 376);
+            this.chkNaoImprimir.Name = "chkNaoImprimir";
+            this.chkNaoImprimir.Size = new System.Drawing.Size(83, 17);
+            this.chkNaoImprimir.TabIndex = 54;
+            this.chkNaoImprimir.Text = "Não imprimir";
+            this.chkNaoImprimir.UseVisualStyleBackColor = true;
+            // 
+            // cbmFinal
+            // 
+            this.cbmFinal.FormattingEnabled = true;
+            this.cbmFinal.Location = new System.Drawing.Point(234, 134);
+            this.cbmFinal.Name = "cbmFinal";
+            this.cbmFinal.Size = new System.Drawing.Size(100, 21);
+            this.cbmFinal.TabIndex = 55;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(165, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Finalizadora:";
+            // 
             // FrmSaidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 400);
+            this.Controls.Add(this.cbmFinal);
+            this.Controls.Add(this.chkNaoImprimir);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dateTimePicker1);
@@ -268,6 +301,7 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             this.Controls.Add(this.lblValorLiquidoTotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -304,5 +338,8 @@ namespace WindowsFormsApp6.Menus.Movimentacao
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkNaoImprimir;
+        private System.Windows.Forms.ComboBox cbmFinal;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -39,5 +39,9 @@ namespace WindowsFormsApp6.Interface.Movimentacao
 
         CheckBox SemFrete { get; }
 
+        CheckBox NaoImprimir { get; }
+
+        ComboBox CbmFinalizadora { get; }
+
     }
 }

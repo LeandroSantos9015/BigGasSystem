@@ -47,5 +47,9 @@ namespace WindowsFormsApp6.Menus.Movimentacao
         public DataGridView DgvMercadorias => dgvMercadorias;
 
         public CheckBox SemFrete => checkBox1;
+
+        public CheckBox NaoImprimir => chkNaoImprimir;
+
+        public ComboBox CbmFinalizadora => cbmFinal;
     }
 }

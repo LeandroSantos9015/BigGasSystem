@@ -52,6 +52,8 @@ namespace WindowsFormsApp6.Controles.Cadastros
             ClienteCadastroView.CbmCidade.ValueMember = "Id";
             ClienteCadastroView.CbmCidade.DisplayMember = "Nome";
 
+            ClienteCadastroView.CbmCidade.DropDownStyle = ComboBoxStyle.DropDownList;
+
             ClienteCadastroView.TxtCPF.KeyPress += Validadores.ApenasNumeros;
             ClienteCadastroView.TxtCPF.LostFocus += TxtCPF_LostFocus;
             ClienteCadastroView.TxtTelefone.LostFocus += TxtTelefone_LostFocus;

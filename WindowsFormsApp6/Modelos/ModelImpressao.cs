@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp6.Modelos.Movimentacao;
+using WindowsFormsApp6.Utilitarios;
 
 namespace WindowsFormsApp6.Modelos
 {
@@ -19,13 +20,19 @@ namespace WindowsFormsApp6.Modelos
         public string NumeroPedido { get; set; }
 
         public string ClienteNome { get; set; }
+        public string ClienteNumero { get; set; }
+
         public string ClienteBairro { get; set; }
         public string ClienteTelefone { get; set; }
+
+        public string ProxyClienteTelefone => ClienteTelefone.TelefoneMascara();
         public string ClienteEndereco { get; set; }
         public string ClienteComplemento { get; set; }
         public string ClienteCidade { get; set; }
         public string ClienteCondicaoPagamento { get; set; }
         public string ClienteVencimento { get; set; }
+
+        public string Finalizadora { get; set; }
 
         public IList<ModelItemImpressao> Mercadorias { get; set; }
 

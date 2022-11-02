@@ -39,7 +39,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
         public IList<ModelMercadoria> ListaMercadorias()
         {
-            return repositorio.Listar();
+            return repositorio.Listar().OrderBy(x => x.Descricao).ToList();
         }
 
         public IList<ModelHistoricoMercadoria> ListaNotasHistoricas(Int64 id)

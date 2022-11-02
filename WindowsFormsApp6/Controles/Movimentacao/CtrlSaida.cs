@@ -78,6 +78,10 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
             listaCidades = regraCliente.ListarCidades();
 
+            SaidaView.CbmFinalizadora.DataSource = repositorio.ListarFinalizadoras().ToList();
+            SaidaView.CbmFinalizadora.DisplayMember = "Descricao";
+            SaidaView.CbmFinalizadora.ValueMember = "Id";
+
         }
 
         private void SemFrete_CheckedChanged(object sender, EventArgs e)
@@ -137,13 +141,13 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
         }
 
-        private void Imprimir(Int64 idPedido, decimal totalPedido, IList<ModelItemMovimentacao> lista)
+        private void Imprimir(Int64 idPedido, decimal totalPedido, IList<ModelItemMovimentacao> lista, string finalizadora)
         {
             string porta = repCfg.Listar().PortaImpressora;
 
             // new CtrlImpressao(clienteGlobal, lista, idPedido, totalPedido, porta);
 
-            new CtrlImpressaoReport(clienteGlobal, lista, idPedido, totalPedido, porta);
+            new CtrlImpressaoReport(clienteGlobal, lista, idPedido, totalPedido, porta, finalizadora.ToUpper(), false);
         }
 
 
@@ -174,7 +178,12 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
                 decimal totalPedido = movimentacao.ValorTotal + movimentacao.DescAcres + adicionalFrete;
 
-                Imprimir(idDocumento, totalPedido, lista);
+                bool naoImprmir = this.SaidaView.NaoImprimir.Checked;
+
+                string finalizadora = (this.SaidaView.CbmFinalizadora.SelectedItem as ModelFinalizadora).Descricao;
+
+                if (!naoImprmir)
+                    Imprimir(idDocumento, totalPedido, lista, finalizadora);
 
                 return idDocumento;
 
@@ -245,7 +254,9 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             string numero = "Saída de mercadorias";
             string descricao = "Venda de mercadoria";
 
+            Int64 idFinalizadora = (Int64)this.SaidaView.CbmFinalizadora.SelectedValue;
 
+            bool semFrete = this.SaidaView.SemFrete.Checked;
 
             return new ModelMovimentacao
             {
@@ -258,7 +269,8 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 Status = status,
                 ValorTotal = valorTotal,
                 NumeroNota = numero,
-                Frete = adicionalFrete
+                Frete = semFrete ? 0 : adicionalFrete,
+                Finalizadora = idFinalizadora
             };
         }
 
@@ -363,6 +375,9 @@ namespace WindowsFormsApp6.Controles.Movimentacao
 
                 this.SaidaView.TxtValorBruto.Text = "0,00";
                 this.SaidaView.TxtDescAcres.Text = "0,00";
+                this.SaidaView.CbmFinalizadora.SelectedIndex = 0;
+                this.SaidaView.NaoImprimir.Checked = false;
+                this.SaidaView.DteVenda.Value = DateTime.Now;
 
                 clienteGlobal = null;
 

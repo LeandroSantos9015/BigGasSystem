@@ -90,21 +90,21 @@ namespace WindowsFormsApp6
             // entradaToolStripMenuItem
             // 
             this.entradaToolStripMenuItem.Name = "entradaToolStripMenuItem";
-            this.entradaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.entradaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.entradaToolStripMenuItem.Text = "Entrada";
             // 
             // saidaToolStripMenuItem
             // 
             this.saidaToolStripMenuItem.Name = "saidaToolStripMenuItem";
-            this.saidaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.saidaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saidaToolStripMenuItem.Text = "Saída";
             // 
             // cancelamentoSaidaToolStripMenuItem
             // 
-            this.cancelamentoSaidaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.cancelamentoSaidaToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.cancelamentoSaidaToolStripMenuItem.Name = "cancelamentoSaidaToolStripMenuItem";
-            this.cancelamentoSaidaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.cancelamentoSaidaToolStripMenuItem.Text = "Cancelamento Saída";
+            this.cancelamentoSaidaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cancelamentoSaidaToolStripMenuItem.Text = "Manutenção Saída";
             // 
             // utilitáriosToolStripMenuItem
             // 
@@ -119,20 +119,21 @@ namespace WindowsFormsApp6
             // configuracoesToolStripMenuItem
             // 
             this.configuracoesToolStripMenuItem.Name = "configuracoesToolStripMenuItem";
-            this.configuracoesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configuracoesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.configuracoesToolStripMenuItem.Text = "Configurações";
             // 
             // relatoriosToolStripMenuItem
             // 
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.relatoriosToolStripMenuItem.Text = "Relatórios";
             // 
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.importarToolStripMenuItem.Text = "Importar";
+            this.importarToolStripMenuItem.Visible = false;
             // 
             // FormPrincipal
             // 

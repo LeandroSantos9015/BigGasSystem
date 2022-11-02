@@ -11,15 +11,17 @@ using WindowsFormsApp6.Interface.Movimentacao;
 
 namespace WindowsFormsApp6.Menus.Movimentacao
 {
-    public partial class FrmCancelamentoSaida : Form, ICancelamentoSaida
+    public partial class FrmManutencaoSaida : Form, IManutencaoSaida
     {
-        public FrmCancelamentoSaida() { InitializeComponent(); }
+        public FrmManutencaoSaida() { InitializeComponent(); }
 
         public Form CancelamentoView => this;
 
         public Button BtnBuscar => btnBuscar;
 
         public Button BtnExecutar => btnExecutar;
+
+        public Button BtnReimprimir => btnReimprimir;
 
         public DateTimePicker DteInicio => dteInicio;
 

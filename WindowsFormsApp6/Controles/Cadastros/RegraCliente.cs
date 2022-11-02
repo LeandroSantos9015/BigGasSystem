@@ -36,7 +36,7 @@ namespace WindowsFormsApp6.Controles.Cadastros
 
         public IList<ModelCliente> ListaClientes()
         {
-            return repositorio.Listar();
+            return repositorio.Listar().OrderBy(x => x.Nome).ToList();
         }
 
         public IList<ModelHistoricoCliente> ListaNotasHistoricas(Int64 id)
@@ -48,5 +48,6 @@ namespace WindowsFormsApp6.Controles.Cadastros
         {
             return repositorio.ListaCidades().ToList();
         }
+
     }
 }

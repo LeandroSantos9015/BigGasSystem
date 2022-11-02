@@ -944,3 +944,168 @@ insert cidade
 select 'Londrina'
 insert cidade
 select 'Cambe'
+
+
+-- Nova implementação 
+
+GO
+
+CREATE TABLE [dbo].[Finalizadora](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Descricao] [varchar](max) NOT NULL,
+	[Taxa] [decimal](11, 2) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+
+GO
+
+INSERT INTO Finalizadora
+SELECT 'Vista', 0
+
+INSERT INTO Finalizadora
+SELECT 'Prazo', 0
+
+GO
+
+ALTER TABLE Documento ADD Finalizadora BIGINT NOT NULL DEFAULT 1 CONSTRAINT FK_Finalizadora FOREIGN KEY REFERENCES Finalizadora(Id)
+
+GO
+
+
+CREATE FUNCTION [dbo].[Relatorio05_FinalizadoraPorPeriodo]
+(
+	@Inicio VARCHAR(MAX), @Fim VARCHAR(MAX)
+)
+RETURNS TABLE AS RETURN
+select CONVERT(DATE, doc.Data) Data,
+fin.Descricao Finalizadora,
+sum(doc.ValorLiquidoTotal) Valor,
+sum(doc.Frete) Frete
+from Documento doc
+INNER JOIN Finalizadora fin
+on fin.Id = doc.Finalizadora
+WHERE doc.Data BETWEEN @Inicio AND @Fim
+AND doc.Operacao = 2 AND doc.Status = 2
+GROUP BY CONVERT(DATE, doc.Data), fin.Descricao
+
+GO
+
+CREATE FUNCTION [dbo].[ListarFinalizadoras] ()
+RETURNS TABLE AS RETURN
+SELECT * 
+  FROM [dbo].[Finalizadora]
+
+GO
+
+ALTER  PROCEDURE [dbo].[SalvarMovimentacao]
+@Id BIGINT,
+@Descricao VARCHAR(MAX),
+@IdParceiro BIGINT,
+@Data DATETIME,
+@Status TINYINT,
+@Operacao TINYINT,
+@DescAcres DECIMAL(11,2),
+@ValorTotal DECIMAL(11,2),
+@ValorLiquidoTotal DECIMAL(11,2),
+@NumeroNota VARCHAR(MAX),
+@Frete DECIMAL(11,2),
+@Finalizadora BIGINT
+
+AS BEGIN
+	IF(@Id IS NULL OR @Id = 0)
+	BEGIN
+		INSERT INTO [dbo].[Documento]
+				   ([Descricao],[IdParceiro],[Data],[Status],[Operacao],[DescAcres],[ValorTotal],[NumeroNota], [Frete], [Finalizadora])
+			 VALUES
+				   (@Descricao, @IdParceiro, @Data, @Status, @Operacao, @DescAcres, @ValorTotal, @NumeroNota, @Frete, @Finalizadora  )
+
+		  RETURN SCOPE_IDENTITY()
+	END
+	ELSE
+	BEGIN
+
+		UPDATE [dbo].[Documento]
+		   SET [Descricao]  = @Descricao
+			  ,[IdParceiro] = @IdParceiro
+			  ,[Data] = 	  @Data
+			  ,[Status] =	  @Status
+			  ,[Operacao] =	  @Operacao
+			  ,[DescAcres] =  @DescAcres
+			  ,[ValorTotal] = @ValorTotal
+			  ,[NumeroNota] = @NumeroNota
+			  ,[Frete]		= @Frete
+			  ,Finalizadora  = @Finalizadora 
+
+		 WHERE Id = @id
+
+	END
+	RETURN @Id
+END
+
+GO
+
+CREATE FUNCTION Reimpressao(@Id BIGINT)
+RETURNS TABLE AS RETURN
+select 
+doc.Id,
+cli.Nome,
+cli.Bairro Bairro,
+cli.Endereco,
+cli.Numero,
+cli.Complemento,
+cli.Cidade,
+cli.Telefone,
+fin.Descricao Finalizadora,
+item.Descricao,
+item.PrecoVenda,
+item.ValorTotal,
+doc.Data,
+item.Quantidade,
+doc.ValorLiquidoTotal + doc.Frete ValorLiquidoTotal,
+doc.DescAcres
+
+from Documento doc
+inner join Cliente cli
+on doc.IdParceiro = cli.Id
+inner join ItemDocumento item
+on item.IdDocumento = doc.id
+inner join Finalizadora fin
+on fin.id = doc.Finalizadora
+where doc.id= @id
+
+
+-- correções
+
+GO
+
+ALTER FUNCTION [dbo].[ConsultaNotasPorPeriodo]
+(
+	@Operacao TINYINT,
+	@Status TINYINT, 
+	@inicio VARCHAR(MAX), 
+	@fim VARCHAR(MAX)
+)
+RETURNS TABLE AS RETURN
+SELECT
+	doc.Id,
+	cli.Nome,
+	doc.Data,
+	doc.ValorLiquidoTotal + doc.Frete ValorLiquidoTotal
+
+  FROM [dbo].[Documento] doc
+  INNER JOIN Cliente cli
+  ON cli.id = doc.IdParceiro
+  WHERE
+	Data BETWEEN @inicio AND @fim
+	AND (@Status = 1 AND Status = 1
+	 OR (@Status = 2 AND Status= 2)
+	 OR (@Status = 4 AND Status= 4)
+	 OR (@Status = 7)) AND Operacao = @Operacao
+
+
+
+

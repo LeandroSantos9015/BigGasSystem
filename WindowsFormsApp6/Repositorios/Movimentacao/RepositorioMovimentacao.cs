@@ -59,6 +59,13 @@ namespace WindowsFormsApp6.Repositorios.Movimentacao
             return consulta;
         }
 
+        public IList<ModelFinalizadora> ListarFinalizadoras()
+        {
+            var consulta = Conexao.Query<ModelFinalizadora>($"SELECT * FROM ListarFinalizadoras()").ToList();
+
+            return consulta;
+        }
+
         public IList<ModelItemMovimentacao> ListaMercadoriasNotas(Int64 Id, EOperacaoMovimento operacao, EStatusMovimento status)
         {
             var consulta = Conexao.Query<ModelItemMovimentacao>($"SELECT * FROM ListaMercadoriasNotas({Id},{(byte)operacao},{(byte)status})").ToList();
@@ -80,6 +87,13 @@ namespace WindowsFormsApp6.Repositorios.Movimentacao
             {
                 throw e;
             }
+        }
+
+        public IList<ModelReimpressao> Reimpressao(Int64 id)
+        {
+            var consulta = Conexao.Query<ModelReimpressao>($"SELECT * FROM Reimpressao({id})").ToList();
+
+            return consulta;
         }
 
         public IList<ModelMovimentacaoPeriodo> ListarNotasPorPeriodo(EOperacaoMovimento operacao, EStatusMovimento status, string inicio, string fim)

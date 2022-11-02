@@ -6,6 +6,7 @@ using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WindowsFormsApp6.Controles.Cadastros;
 using WindowsFormsApp6.Modelos;
 using WindowsFormsApp6.Modelos.Movimentacao;
@@ -20,13 +21,13 @@ namespace WindowsFormsApp6.Relatorio.Impressao
 
         RegraCliente cli = new RegraCliente();
 
-        public CtrlImpressaoReport(ModelCliente cliente, IList<ModelItemMovimentacao> mercadorias, Int64 idPedido, decimal totalPedido, string nomeImp)
+        public CtrlImpressaoReport(ModelCliente cliente, IList<ModelItemMovimentacao> mercadorias, Int64 idPedido, decimal totalPedido, string nomeImp, string finalizadora, bool reimp)
         {
-            Imprimir(cliente, mercadorias, idPedido.ToString(), totalPedido.ToString("C2"), nomeImp);
+            Imprimir(cliente, mercadorias, idPedido.ToString(), totalPedido.ToString("C2"), nomeImp, finalizadora, reimp);
 
         }
 
-        private void Imprimir(ModelCliente cliente, IList<ModelItemMovimentacao> mercadorias, string idPedido, string totalPedido, string nomeImp)
+        private void Imprimir(ModelCliente cliente, IList<ModelItemMovimentacao> mercadorias, string idPedido, string totalPedido, string nomeImp, string finalizadora, bool reimp)
         {
 
             Lista = new List<ModeloImpressaoReport>();
@@ -59,10 +60,6 @@ namespace WindowsFormsApp6.Relatorio.Impressao
                     });
             }
 
-
-
-
-
             ModeloImpressaoReport modelo = new ModeloImpressaoReport
             {
                 EmpresaCidade = empresa.Cidade,
@@ -72,15 +69,17 @@ namespace WindowsFormsApp6.Relatorio.Impressao
                 ClienteBairro = cliente.Bairro,
                 ClienteCidade = Cidade(cliente.Cidade).Nome,
                 ClienteComplemento = cliente.Complemento,
-                ClienteCondicaoPagamento = "A Vista",
+                ClienteCondicaoPagamento = finalizadora,
                 ClienteTelefone = cliente.Telefone,
                 ClienteEndereco = cliente.Endereco,
+                ClienteNumero = cliente.Numero,
                 ClienteNome = cliente.Nome,
                 ClienteVencimento = "30 dias",
-                Hora = DateTime.Now.ToString("HH:mm"),
+                Hora = reimp ? "REIMPRESSÃO" : DateTime.Now.ToString("HH:mm"),
                 Lista = listaModel,
                 NumeroPedido = idPedido,
-                TotalPedido = totalPedido
+                TotalPedido = totalPedido,
+                Finalizadora = finalizadora
             };
 
             Lista.Add(modelo);
@@ -91,10 +90,16 @@ namespace WindowsFormsApp6.Relatorio.Impressao
             this.Relatorio.ShowPrintMarginsWarning = false;
             this.Relatorio.PrinterName = nomeImp;
 
-           // Relatorio.ShowPreview();
+            // Relatorio.ShowPreview();
+            try
+            {
+                this.Relatorio.Print();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ocorreu um erro ao tentar imprimir\n\n\n" + e.ToString());
+            }
 
-            this.Relatorio.Print();
-            
         }
 
         private IList<string> ListaImpressoras()
