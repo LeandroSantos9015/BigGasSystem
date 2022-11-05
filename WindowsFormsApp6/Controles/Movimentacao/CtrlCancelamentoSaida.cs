@@ -54,15 +54,17 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 if (this.CancelamentoSaidaView.DgvLista.CurrentRow is null)
                     this.CancelamentoSaidaView.DgvLista.Focus();
 
-                ModelMovimentacaoPeriodo nota = this.CancelamentoSaidaView.DgvLista.CurrentRow.DataBoundItem as ModelMovimentacaoPeriodo;
-                repositorio.CancelarNotaDeSaida(nota.Id);
 
+                var result = MessageBox.Show(this.CancelamentoSaidaView.CancelamentoView, "Deseja realmente cancelar?", "Confirmação", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    ModelMovimentacaoPeriodo nota = this.CancelamentoSaidaView.DgvLista.CurrentRow.DataBoundItem as ModelMovimentacaoPeriodo;
+                    repositorio.CancelarNotaDeSaida(nota.Id);
 
+                    MessageBox.Show("Cancelamento da venda realizado com sucesso");
 
-                MessageBox.Show("Cancelamento da venda realizado com sucesso");
-
-                RealizarBusca();
-
+                    RealizarBusca();
+                }
             }
             catch (Exception ex)
             {
