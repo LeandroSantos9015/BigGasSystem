@@ -34,7 +34,7 @@ namespace Relatorios.Query.Entrada
 
             string query = $"select * from [Relatorio04_VendaMercadoriaPorPeriodo]('{ini}','{fim}')";
 
-            IList<Relatorio04_VendaMercadoriaPeriodo> retorno = Connection.Query<Relatorio04_VendaMercadoriaPeriodo>(query).ToList();
+            IList<Relatorio04_VendaMercadoriaPeriodo> retorno = Connection.Query<Relatorio04_VendaMercadoriaPeriodo>(query).ToList().OrderBy(x=> x.Data).ToList();
 
             return retorno;
 

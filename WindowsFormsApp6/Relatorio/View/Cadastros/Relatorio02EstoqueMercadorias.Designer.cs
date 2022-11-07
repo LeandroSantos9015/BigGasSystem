@@ -212,7 +212,7 @@
             this.xrLabel11.SizeF = new System.Drawing.SizeF(64.58331F, 23F);
             this.xrLabel11.StylePriority.UseBorders = false;
             this.xrLabel11.StylePriority.UseTextAlignment = false;
-            this.xrLabel11.Text = "[Ativo]";
+            this.xrLabel11.Text = "[ProxyAtivo]";
             this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // PageHeader

@@ -693,7 +693,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE FUNCTION [dbo].[Relatorio02_EstoqueMercadorias](@Ativo BIT)
+CREATE FUNCTION [dbo].[Relatorio02_EstoqueMercadorias](@Ativo INT)
 RETURNS TABLE AS RETURN
 SELECT [Id]
       ,[Nome]
@@ -1107,5 +1107,5 @@ SELECT
 	 OR (@Status = 7)) AND Operacao = @Operacao
 
 
-
+	 -- MUDAR RELATORIO 2 de BIT PRA INT
 

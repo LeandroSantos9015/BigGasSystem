@@ -20,6 +20,8 @@ namespace WindowsFormsApp6.Relatorio.ModeloRelatorio
         public string ProxyPrecoCusto => PrecoCusto.ToString("C2");
         public string ProxyPrecoVenda => PrecoVenda.ToString("C2");
 
-        public string Ativo { get; set; }
+        public bool Ativo { get; set; }
+
+        public string ProxyAtivo => Ativo ? "Ativo" : "Inativo";
     }
 }
