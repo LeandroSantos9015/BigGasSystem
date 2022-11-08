@@ -107,7 +107,6 @@ namespace WindowsFormsApp6.Menus.Movimentacao
             // 
             // txtPreco
             // 
-            this.txtPreco.Enabled = false;
             this.txtPreco.Location = new System.Drawing.Point(205, 45);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(58, 20);
