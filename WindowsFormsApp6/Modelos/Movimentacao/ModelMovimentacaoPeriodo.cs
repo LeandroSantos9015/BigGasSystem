@@ -22,9 +22,12 @@ namespace WindowsFormsApp6.Modelos.Movimentacao
 
         [DisplayName("Total")]
         public decimal ValorLiquidoTotal { get; set; }
-        
+
+		[DisplayName("Pagamento")]
+		public string Descricao { get; set; }
 
 
 
-    }
+
+	}
 }
