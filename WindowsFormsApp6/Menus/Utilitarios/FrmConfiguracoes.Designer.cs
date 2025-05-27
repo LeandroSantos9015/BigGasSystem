@@ -35,16 +35,17 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnTestar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtPortaImp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnTestar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkMostrar = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chkPerguntarImpressora = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -77,7 +78,7 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(328, 154);
+            this.btnCancelar.Location = new System.Drawing.Point(328, 185);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 1;
@@ -86,7 +87,7 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(244, 154);
+            this.btnSalvar.Location = new System.Drawing.Point(244, 185);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 1;
@@ -95,24 +96,28 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkPerguntarImpressora);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.txtPortaImp);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(173, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(230, 145);
+            this.groupBox2.Size = new System.Drawing.Size(230, 176);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Impressão";
             // 
-            // btnTestar
+            // dataGridView1
             // 
-            this.btnTestar.Location = new System.Drawing.Point(107, 154);
-            this.btnTestar.Name = "btnTestar";
-            this.btnTestar.Size = new System.Drawing.Size(131, 23);
-            this.btnTestar.TabIndex = 1;
-            this.btnTestar.Text = "Testar Impressão";
-            this.btnTestar.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 51);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(218, 88);
+            this.dataGridView1.TabIndex = 2;
             // 
             // txtPortaImp
             // 
@@ -132,12 +137,21 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.label2.TabIndex = 1;
             this.label2.Text = "Padrão:";
             // 
+            // btnTestar
+            // 
+            this.btnTestar.Location = new System.Drawing.Point(107, 185);
+            this.btnTestar.Name = "btnTestar";
+            this.btnTestar.Size = new System.Drawing.Size(131, 23);
+            this.btnTestar.TabIndex = 1;
+            this.btnTestar.Text = "Testar Impressão";
+            this.btnTestar.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.chkMostrar);
             this.groupBox3.Location = new System.Drawing.Point(8, 87);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(159, 61);
+            this.groupBox3.Size = new System.Drawing.Size(159, 92);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cadastros";
@@ -152,17 +166,15 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.chkMostrar.Text = "Mostrar excluídos";
             this.chkMostrar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // chkPerguntarImpressora
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 51);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(218, 88);
-            this.dataGridView1.TabIndex = 2;
+            this.chkPerguntarImpressora.AutoSize = true;
+            this.chkPerguntarImpressora.Location = new System.Drawing.Point(9, 149);
+            this.chkPerguntarImpressora.Name = "chkPerguntarImpressora";
+            this.chkPerguntarImpressora.Size = new System.Drawing.Size(216, 17);
+            this.chkPerguntarImpressora.TabIndex = 2;
+            this.chkPerguntarImpressora.Text = "Perguntar impressora na hora de imprimir";
+            this.chkPerguntarImpressora.UseVisualStyleBackColor = true;
             // 
             // FrmConfiguracoes
             // 
@@ -184,9 +196,9 @@ namespace WindowsFormsApp6.Menus.Utilitarios
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +217,6 @@ namespace WindowsFormsApp6.Menus.Utilitarios
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox chkMostrar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox chkPerguntarImpressora;
     }
 }

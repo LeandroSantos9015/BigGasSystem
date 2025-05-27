@@ -99,7 +99,8 @@ namespace WindowsFormsApp6.Controles.Utilitarios
             {
                 PortaImpressora = this.ConfiguracaoView.TxtPortaImpressora.Text,
                 ValorFrete = valorFrete,
-                MostrarExcluidos = this.ConfiguracaoView.ChkMostrarExc.Checked
+                MostrarExcluidos = this.ConfiguracaoView.ChkMostrarExc.Checked,
+                PerguntarImpressora = this.ConfiguracaoView.ChkPerguntarImpressora.Checked,
 
             };
         }
@@ -111,6 +112,7 @@ namespace WindowsFormsApp6.Controles.Utilitarios
                 this.ConfiguracaoView.TxtValorFrete.Text = cfg.ValorFrete.ToString();
                 this.ConfiguracaoView.TxtPortaImpressora.Text = cfg.PortaImpressora;
                 this.ConfiguracaoView.ChkMostrarExc.Checked = cfg.MostrarExcluidos;
+                this.ConfiguracaoView.ChkPerguntarImpressora.Checked = cfg.PerguntarImpressora;
 
             }
             else
@@ -118,6 +120,7 @@ namespace WindowsFormsApp6.Controles.Utilitarios
                 this.ConfiguracaoView.TxtValorFrete.Text = null;
                 this.ConfiguracaoView.TxtPortaImpressora.Text = null;
                 this.ConfiguracaoView.ChkMostrarExc.Checked = false;
+                this.ConfiguracaoView.ChkPerguntarImpressora.Checked = false;
             }
             this.ConfiguracaoView.DgvImpressora.DataSource = ListaImpressoras();
 

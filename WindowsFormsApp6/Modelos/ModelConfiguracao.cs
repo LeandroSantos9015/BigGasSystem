@@ -16,6 +16,8 @@ namespace WindowsFormsApp6.Modelos
 
         public bool MostrarExcluidos { get; set; }
 
+        public bool PerguntarImpressora { get; set; }
+
         public DynamicParameters Save => Salvar(this);
 
     }

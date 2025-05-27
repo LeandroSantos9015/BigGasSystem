@@ -40,7 +40,7 @@ namespace WindowsFormsApp6.Controles.Movimentacao
             this.CancelamentoSaidaView.BtnBuscar.Click += BtnBuscar_Click;
             this.CancelamentoSaidaView.BtnExecutar.Click += BtnExecutar_Click;
 
-            this.CancelamentoSaidaView.BtnReimprimir.Click += BtnReimprimir_Click; ;
+            this.CancelamentoSaidaView.BtnReimprimir.Click += BtnReimprimir_Click;
 
         }
 
@@ -133,8 +133,6 @@ namespace WindowsFormsApp6.Controles.Movimentacao
                 string porta = new RepositorioConfiguracao().Listar().PortaImpressora;
 
                 new CtrlImpressaoReport(cliente, itens, mov.Id, mov.ValorLiquidoTotal, porta, mov.Finalizadora.ToUpper(), true);
-
-                MessageBox.Show("Reimpressão de venda realizado com sucesso");
 
                 RealizarBusca();
 

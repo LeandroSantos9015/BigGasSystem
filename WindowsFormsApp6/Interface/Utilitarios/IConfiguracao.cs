@@ -23,6 +23,8 @@ namespace WindowsFormsApp6.Interface.Utilitarios
 
         CheckBox ChkMostrarExc { get; }
 
+        CheckBox ChkPerguntarImpressora { get; }
+
         DataGridView DgvImpressora { get; }
 
     }

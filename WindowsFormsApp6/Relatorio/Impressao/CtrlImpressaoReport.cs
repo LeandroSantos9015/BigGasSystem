@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraReports.UI;
+﻿using BigJetGas.Controles.Movimentacao;
+using DevExpress.XtraReports.UI;
 using Relatorios.Impressao;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Windows.Forms;
 using WindowsFormsApp6.Controles.Cadastros;
 using WindowsFormsApp6.Modelos;
 using WindowsFormsApp6.Modelos.Movimentacao;
+using WindowsFormsApp6.Repositorios.Utilitarios;
 
 namespace WindowsFormsApp6.Relatorio.Impressao
 {
@@ -20,6 +22,8 @@ namespace WindowsFormsApp6.Relatorio.Impressao
         IList<ModeloImpressaoReport> Lista = null;
 
         RegraCliente cli = new RegraCliente();
+
+        RepositorioConfiguracao repCfg = new RepositorioConfiguracao();
 
         public CtrlImpressaoReport(ModelCliente cliente, IList<ModelItemMovimentacao> mercadorias, Int64 idPedido, decimal totalPedido, string nomeImp, string finalizadora, bool reimp)
         {
@@ -88,17 +92,50 @@ namespace WindowsFormsApp6.Relatorio.Impressao
             this.Relatorio.DataSource = Lista;
 
             this.Relatorio.ShowPrintMarginsWarning = false;
-            this.Relatorio.PrinterName = nomeImp;
 
-            // Relatorio.ShowPreview();
-            try
+
+            if (repCfg.Listar().PerguntarImpressora)
             {
-                this.Relatorio.Print();
+                var selecao = new CtrlSelecionarImpressora();
+
+                if (selecao.SelecaoView.FrmSelecao.DialogResult.Equals(DialogResult.OK))
+                {
+                    this.Relatorio.Landscape = selecao.Impressao.Paisagem;
+                    this.Relatorio.PaperKind = selecao.Impressao.PapelA5 ? PaperKind.A5 : PaperKind.Letter;
+                    this.Relatorio.PrinterName = selecao.Impressao.Impressora;
+
+                    this.Relatorio.Margins.Right = selecao.Impressao.MargemDireita;
+                    this.Relatorio.Margins.Left = selecao.Impressao.MargemEsquerda;
+
+                    try
+                    {
+                        this.Relatorio.Print();
+                        MessageBox.Show("Reimpressão de venda realizado com sucesso");
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Ocorreu um erro ao tentar imprimir\n\n\n" + e.ToString());
+                    }
+                }
+
             }
-            catch (Exception e)
+            else
             {
-                MessageBox.Show("Ocorreu um erro ao tentar imprimir\n\n\n" + e.ToString());
+                this.Relatorio.PrinterName = nomeImp;
+
+                // Relatorio.ShowPreview();
+                try
+                {
+                    this.Relatorio.Print();
+                    MessageBox.Show("Reimpressão de venda realizado com sucesso");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Ocorreu um erro ao tentar imprimir\n\n\n" + e.ToString());
+                }
             }
+
+
 
         }
 

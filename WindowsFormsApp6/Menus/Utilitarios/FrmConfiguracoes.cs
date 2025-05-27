@@ -29,6 +29,8 @@ namespace WindowsFormsApp6.Menus.Utilitarios
 
         public CheckBox ChkMostrarExc => chkMostrar;
 
+        public CheckBox ChkPerguntarImpressora => chkPerguntarImpressora;
+
         public DataGridView DgvImpressora => dataGridView1;
     }
 }

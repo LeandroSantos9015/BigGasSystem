@@ -130,7 +130,8 @@ GO
 CREATE PROCEDURE [dbo].[SalvarConfiguracoes]
 @ValorFrete DECIMAL(11,2),
 @PortaImpressora VARCHAR(MAX),
-@MostrarExcluidos BIT
+@MostrarExcluidos BIT,
+@PerguntarImpressora BIT
 
 AS BEGIN
 
@@ -141,10 +142,11 @@ AS BEGIN
 			SET  ValorFrete = @ValorFrete
 				,PortaImpressora = @PortaImpressora
 				,MostrarExcluidos = @MostrarExcluidos
+				,PerguntarImpressora = @PerguntarImpressora
 	 END
 	 ELSE
 		INSERT Configuracoes
-		SELECT @ValorFrete, @PortaImpressora, @MostrarExcluidos
+		SELECT @ValorFrete, @PortaImpressora, @MostrarExcluidos, @PerguntarImpressora
 END
 
 
@@ -362,7 +364,9 @@ GO
 CREATE TABLE [dbo].[Configuracoes](
 	[ValorFrete] [decimal](11, 2) NOT NULL,
 	[PortaImpressora] [varchar](max) NOT NULL,
-	[MostrarExcluidos] [bit] NOT NULL DEFAULT ((0))
+	[MostrarExcluidos] [bit] NOT NULL DEFAULT ((0)),
+	[PerguntarImpressora] [bit] NOT NULL DEFAULT ((0))
+	
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
@@ -552,6 +556,7 @@ RETURNS TABLE AS RETURN
 SELECT [ValorFrete]
       ,[PortaImpressora]
 	  ,[MostrarExcluidos]
+	  ,[PerguntarImpressora]
   FROM [dbo].[Configuracoes]
 
 
