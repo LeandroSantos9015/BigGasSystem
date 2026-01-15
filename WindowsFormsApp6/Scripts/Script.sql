@@ -927,7 +927,7 @@ END
 GO
 
 insert configuracoes
-select 0,'LPT1', 0
+select 0,'LPT1', 0, 1
 
 GO
 

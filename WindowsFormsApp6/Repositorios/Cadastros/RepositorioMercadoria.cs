@@ -17,6 +17,8 @@ namespace WindowsFormsApp6.Repositorios.Cliente
 
         public RepositorioMercadoria() : base()
         {
+
+
             Conexao = base.Connection;
         }
 
@@ -37,6 +39,7 @@ namespace WindowsFormsApp6.Repositorios.Cliente
 
         public IList<ModelMercadoria> Listar()
         {
+
             var consulta = Conexao.Query<ModelMercadoria>("SELECT * FROM ConsultarMercadoria()").ToList();
 
             return consulta;
