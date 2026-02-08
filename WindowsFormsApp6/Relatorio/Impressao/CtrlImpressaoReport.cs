@@ -12,6 +12,7 @@ using WindowsFormsApp6.Controles.Cadastros;
 using WindowsFormsApp6.Modelos;
 using WindowsFormsApp6.Modelos.Movimentacao;
 using WindowsFormsApp6.Repositorios.Utilitarios;
+using WindowsFormsApp6.Utilitarios;
 
 namespace WindowsFormsApp6.Relatorio.Impressao
 {
@@ -90,6 +91,9 @@ namespace WindowsFormsApp6.Relatorio.Impressao
 
 
             this.Relatorio.DataSource = Lista;
+            
+            // ⭐ IMPORTANTE: Aplica fonte DEPOIS de definir DataSource
+            this.Relatorio.AplicarFonteConfigurada();
 
             this.Relatorio.ShowPrintMarginsWarning = false;
 

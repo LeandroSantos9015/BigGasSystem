@@ -1,5 +1,4 @@
-﻿
-using Relatorios.View.Cadastros.Mercadorias;
+﻿using Relatorios.View.Cadastros.Mercadorias;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +48,9 @@ namespace Relatorios.Controller.Cadastros
             this.Relatorio = new Relatorio03NotasDeEntrada(ERelatorio.NotaEntadaPeriodo03, nomeFooter, valor);
 
             this.Relatorio.DataSource = Lista;
+            
+            // ⭐ Aplica fonte DEPOIS de definir DataSource
+            this.Relatorio.AplicarFonteConfigurada();
 
             Inicializacao();
 

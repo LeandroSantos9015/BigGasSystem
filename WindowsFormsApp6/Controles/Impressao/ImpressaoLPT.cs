@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp6.Modelos;
+using WindowsFormsApp6.Utilitarios;
 
 namespace WindowsFormsApp6.Controles.Impressao
 {
@@ -64,12 +65,15 @@ namespace WindowsFormsApp6.Controles.Impressao
             // Select text that was appended
             rtb.Select(start, end - start);
 
+            // Obtém fonte configurada para impressão
+            Font fonteImpressao = FonteHelper.ObterFonteImpressao();
+
             #region Apply Formatting
             rtb.SelectionColor = textColour;
             rtb.SelectionAlignment = alignment;
             rtb.SelectionFont = new Font(
-                 rtb.SelectionFont.FontFamily,
-                 rtb.SelectionFont.Size,
+                 fonteImpressao.FontFamily,
+                 fonteImpressao.Size,
                  (isBold ? FontStyle.Bold : FontStyle.Regular));
             #endregion
 

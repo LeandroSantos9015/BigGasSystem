@@ -131,7 +131,11 @@ CREATE PROCEDURE [dbo].[SalvarConfiguracoes]
 @ValorFrete DECIMAL(11,2),
 @PortaImpressora VARCHAR(MAX),
 @MostrarExcluidos BIT,
-@PerguntarImpressora BIT
+@PerguntarImpressora BIT,
+@FonteRelatorioNome VARCHAR(100),
+@FonteRelatorioTamanho INT,
+@FonteImpressaoNome VARCHAR(100),
+@FonteImpressaoTamanho INT
 
 AS BEGIN
 
@@ -143,10 +147,16 @@ AS BEGIN
 				,PortaImpressora = @PortaImpressora
 				,MostrarExcluidos = @MostrarExcluidos
 				,PerguntarImpressora = @PerguntarImpressora
+				,FonteRelatorioNome = @FonteRelatorioNome
+				,FonteRelatorioTamanho = @FonteRelatorioTamanho
+				,FonteImpressaoNome = @FonteImpressaoNome
+				,FonteImpressaoTamanho = @FonteImpressaoTamanho
 	 END
 	 ELSE
-		INSERT Configuracoes
-		SELECT @ValorFrete, @PortaImpressora, @MostrarExcluidos, @PerguntarImpressora
+		INSERT INTO Configuracoes (ValorFrete, PortaImpressora, MostrarExcluidos, PerguntarImpressora, 
+								   FonteRelatorioNome, FonteRelatorioTamanho, FonteImpressaoNome, FonteImpressaoTamanho)
+		VALUES (@ValorFrete, @PortaImpressora, @MostrarExcluidos, @PerguntarImpressora, 
+			    @FonteRelatorioNome, @FonteRelatorioTamanho, @FonteImpressaoNome, @FonteImpressaoTamanho)
 END
 
 
@@ -365,7 +375,11 @@ CREATE TABLE [dbo].[Configuracoes](
 	[ValorFrete] [decimal](11, 2) NOT NULL,
 	[PortaImpressora] [varchar](max) NOT NULL,
 	[MostrarExcluidos] [bit] NOT NULL DEFAULT ((0)),
-	[PerguntarImpressora] [bit] NOT NULL DEFAULT ((0))
+	[PerguntarImpressora] [bit] NOT NULL DEFAULT ((0)),
+	[FonteRelatorioNome] [varchar](100) NOT NULL,
+	[FonteRelatorioTamanho] [int] NOT NULL,
+	[FuenteImpressaoNome] [varchar](100) NOT NULL,
+	[FuenteImpressaoTamanho] [int] NOT NULL
 	
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
@@ -452,8 +466,6 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-SET ANSI_PADDING OFF
-GO
 /****** Object:  UserDefinedFunction [dbo].[ConsultaNotas]    Script Date: 17/10/2022 14:16:49 ******/
 SET ANSI_NULLS ON
 GO
@@ -499,7 +511,7 @@ SELECT
 	doc.Id,
 	cli.Nome,
 	doc.Data,
-	doc.ValorLiquidoTotal
+	doc.ValorLiquidoTotal + doc.Frete ValorLiquidoTotal
 
   FROM [dbo].[Documento] doc
   INNER JOIN Cliente cli
@@ -927,7 +939,7 @@ END
 GO
 
 insert configuracoes
-select 0,'LPT1', 0, 1
+select 0,'LPT1', 0, 1, 'Arial', 10, 'Arial', 8
 
 GO
 

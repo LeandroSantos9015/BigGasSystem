@@ -27,5 +27,15 @@ namespace WindowsFormsApp6.Interface.Utilitarios
 
         DataGridView DgvImpressora { get; }
 
+        // Configurações de Fonte para Relatórios
+        ComboBox CboFonteRelatorio { get; }
+        
+        NumericUpDown NumTamanhoFonteRelatorio { get; }
+
+        // Configurações de Fonte para Impressão Matricial
+        ComboBox CboFonteImpressao { get; }
+        
+        NumericUpDown NumTamanhoFonteImpressao { get; }
+
     }
 }

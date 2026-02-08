@@ -75,6 +75,9 @@ namespace WindowsFormsApp6.Controles.Utilitarios
 
                 repositorio.Salvar(cfg);
 
+                // Limpa cache de fontes após salvar
+                FonteHelper.LimparCache();
+
                 MessageBox.Show("Configurações salvas com sucesso");
 
                 this.ConfiguracaoView.ConfiguracaoView.Close();
@@ -101,7 +104,10 @@ namespace WindowsFormsApp6.Controles.Utilitarios
                 ValorFrete = valorFrete,
                 MostrarExcluidos = this.ConfiguracaoView.ChkMostrarExc.Checked,
                 PerguntarImpressora = this.ConfiguracaoView.ChkPerguntarImpressora.Checked,
-
+                FonteRelatorioNome = this.ConfiguracaoView.CboFonteRelatorio.SelectedItem?.ToString() ?? "Arial",
+                FonteRelatorioTamanho = (int)this.ConfiguracaoView.NumTamanhoFonteRelatorio.Value,
+                FonteImpressaoNome = this.ConfiguracaoView.CboFonteImpressao.SelectedItem?.ToString() ?? "Courier New",
+                FonteImpressaoTamanho = (int)this.ConfiguracaoView.NumTamanhoFonteImpressao.Value,
             };
         }
 
@@ -113,7 +119,26 @@ namespace WindowsFormsApp6.Controles.Utilitarios
                 this.ConfiguracaoView.TxtPortaImpressora.Text = cfg.PortaImpressora;
                 this.ConfiguracaoView.ChkMostrarExc.Checked = cfg.MostrarExcluidos;
                 this.ConfiguracaoView.ChkPerguntarImpressora.Checked = cfg.PerguntarImpressora;
-
+                
+                // Configurações de Fonte para Relatórios
+                if (!string.IsNullOrEmpty(cfg.FonteRelatorioNome))
+                {
+                    this.ConfiguracaoView.CboFonteRelatorio.SelectedItem = cfg.FonteRelatorioNome;
+                }
+                if (cfg.FonteRelatorioTamanho > 0)
+                {
+                    this.ConfiguracaoView.NumTamanhoFonteRelatorio.Value = cfg.FonteRelatorioTamanho;
+                }
+                
+                // Configurações de Fonte para Impressão
+                if (!string.IsNullOrEmpty(cfg.FonteImpressaoNome))
+                {
+                    this.ConfiguracaoView.CboFonteImpressao.SelectedItem = cfg.FonteImpressaoNome;
+                }
+                if (cfg.FonteImpressaoTamanho > 0)
+                {
+                    this.ConfiguracaoView.NumTamanhoFonteImpressao.Value = cfg.FonteImpressaoTamanho;
+                }
             }
             else
             {
@@ -121,6 +146,10 @@ namespace WindowsFormsApp6.Controles.Utilitarios
                 this.ConfiguracaoView.TxtPortaImpressora.Text = null;
                 this.ConfiguracaoView.ChkMostrarExc.Checked = false;
                 this.ConfiguracaoView.ChkPerguntarImpressora.Checked = false;
+                this.ConfiguracaoView.CboFonteRelatorio.SelectedItem = "Arial";
+                this.ConfiguracaoView.NumTamanhoFonteRelatorio.Value = 10;
+                this.ConfiguracaoView.CboFonteImpressao.SelectedItem = "Courier New";
+                this.ConfiguracaoView.NumTamanhoFonteImpressao.Value = 8;
             }
             this.ConfiguracaoView.DgvImpressora.DataSource = ListaImpressoras();
 

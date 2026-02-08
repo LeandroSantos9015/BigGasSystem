@@ -26,6 +26,13 @@ namespace WindowsFormsApp6
         ToolStripMenuItem MenuRelatorios { get; }
 
         ToolStripMenuItem MenuImportar { get; }
-
+        
+        // Novos menus de segurança
+        ToolStripMenuItem MenuPerfis { get; }
+        ToolStripMenuItem MenuUsuarios { get; }
+        ToolStripMenuItem MenuMudarUsuario { get; }
+        
+        // Label para exibir usuário logado
+        ToolStripStatusLabel LblUsuarioLogado { get; }
     }
 }

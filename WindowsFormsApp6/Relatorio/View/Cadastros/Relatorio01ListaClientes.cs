@@ -17,9 +17,6 @@ namespace Relatorios.View.Cadastros.Mercadorias
         public Relatorio01ListaClientes(ERelatorio relatorio) : base(relatorio)
         {
             InitializeComponent();
-
         }
-
-
     }
 }

@@ -34,6 +34,9 @@ namespace Relatorios.Controller.Cadastros
 
 
             this.Relatorio.DataSource = Lista;
+            
+            // ⭐ Aplica fonte DEPOIS de definir DataSource
+            this.Relatorio.AplicarFonteConfigurada();
 
             Inicializacao();
 

@@ -18,6 +18,16 @@ namespace WindowsFormsApp6.Modelos
 
         public bool PerguntarImpressora { get; set; }
 
+        // Configurações de Fonte para Relatórios (XtraReports)
+        public string FonteRelatorioNome { get; set; }
+        
+        public int FonteRelatorioTamanho { get; set; }
+
+        // Configurações de Fonte para Impressão Matricial
+        public string FonteImpressaoNome { get; set; }
+        
+        public int FonteImpressaoTamanho { get; set; }
+
         public DynamicParameters Save => Salvar(this);
 
     }

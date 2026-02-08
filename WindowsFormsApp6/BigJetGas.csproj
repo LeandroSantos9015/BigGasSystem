@@ -140,6 +140,11 @@
     <Compile Include="Controles\Impressao\ModelCidade.cs" />
     <Compile Include="Controles\Movimentacao\CtrlCancelamentoSaida.cs" />
     <Compile Include="Controles\Movimentacao\CtrlSelecionarImpressora.cs" />
+    <Compile Include="Controles\Seguranca\CtrlCadastroPerfil.cs" />
+    <Compile Include="Controles\Seguranca\CtrlCadastroUsuario.cs" />
+    <Compile Include="Controles\Seguranca\CtrlLogin.cs" />
+    <Compile Include="Controles\Seguranca\CtrlPermissoesPerfil.cs" />
+    <Compile Include="Controles\Seguranca\CtrlValidarPermissao.cs" />
     <Compile Include="Controles\Utilitarios\CtrlConfiguracao.cs" />
     <Compile Include="Controles\Impressao\CtrlImpressao.cs" />
     <Compile Include="Controles\Impressao\ImpressaoLPT.cs" />
@@ -155,6 +160,7 @@
     <Compile Include="Enumeradores\EOperacaoMovimento.cs" />
     <Compile Include="Enumeradores\EStatusMovimento.cs" />
     <Compile Include="Enumeradores\EUnidadeMedida.cs" />
+    <Compile Include="Exemplos\ExemploUsoFontes.cs" />
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,10 @@
     <Compile Include="Interface\Cadastros\IClienteCadastroView.cs" />
     <Compile Include="Interface\Movimentacao\IManutencaoSaida.cs" />
     <Compile Include="Interface\Movimentacao\ISelecionarImpressora.cs" />
+    <Compile Include="Interface\Seguranca\ICadastroPerfilView.cs" />
+    <Compile Include="Interface\Seguranca\ICadastroUsuarioView.cs" />
+    <Compile Include="Interface\Seguranca\ILoginView.cs" />
+    <Compile Include="Interface\Seguranca\IPermissoesPerfilView.cs" />
     <Compile Include="Interface\Utilitarios\IConfiguracao.cs" />
     <Compile Include="Interface\Movimentacao\IAddEntradaMercadoria.cs" />
     <Compile Include="Interface\Movimentacao\IAddVendaMercadoria.cs" />
@@ -222,6 +232,21 @@
     <Compile Include="Menus\Movimentacao\FrmSaidas.Designer.cs">
       <DependentUpon>FrmSaidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus\Seguranca\FrmCadastroPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Seguranca\FrmCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Seguranca\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Seguranca\FrmPermissoesPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Seguranca\FrmValidarPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Menus\Utilitarios\FrmConfiguracoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +283,10 @@
     <Compile Include="Modelos\Movimentacao\ModelMovimentacaoPeriodo.cs" />
     <Compile Include="Modelos\Movimentacao\ModelMovimentacao.cs" />
     <Compile Include="Modelos\Movimentacao\ModelSelecaoImpressao.cs" />
+    <Compile Include="Modelos\Seguranca\ModelMenu.cs" />
+    <Compile Include="Modelos\Seguranca\ModelPerfil.cs" />
+    <Compile Include="Modelos\Seguranca\ModelSessao.cs" />
+    <Compile Include="Modelos\Seguranca\ModelUsuario.cs" />
     <Compile Include="Pesquisar\FrmPesquisar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +295,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regras\Seguranca\RegraPerfil.cs" />
+    <Compile Include="Regras\Seguranca\RegraUsuario.cs" />
     <Compile Include="Relatorio\Controller\Abstrato\ARelatorios.cs" />
     <Compile Include="Relatorio\Controller\Abstrato\VerificaRelatorioVazio.cs" />
     <Compile Include="Relatorio\Controller\Cadastros\CtrlRelatorio01ListaCliente.cs" />
@@ -412,9 +443,13 @@
     <Compile Include="Repositorios\IRepositoryBase.cs" />
     <Compile Include="Repositorios\Movimentacao\RepositorioMovimentacao.cs" />
     <Compile Include="Repositorios\RepositorioBase.cs" />
+    <Compile Include="Repositorios\Seguranca\RepositorioPerfil.cs" />
+    <Compile Include="Repositorios\Seguranca\RepositorioUsuario.cs" />
     <Compile Include="Repositorios\Utilitarios\RepositorioConfiguracao.cs" />
     <Compile Include="Utilitarios\EnumPelaDescricao.cs" />
+    <Compile Include="Utilitarios\FonteHelper.cs" />
     <Compile Include="Utilitarios\Mascara.cs" />
+    <Compile Include="Utilitarios\PermissaoHelper.cs" />
     <Compile Include="Utilitarios\Util.cs" />
     <Compile Include="Utilitarios\Validadores.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
@@ -521,6 +556,16 @@
     <EmbeddedResource Include="Relatorio\View\Venda\Relatorio03VendaMercadoriaTurno.resx">
       <DependentUpon>Relatorio03VendaMercadoriaTurno.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Docs\CONTROLES_NO_DESIGNER.md" />
+    <None Include="Docs\CORRECAO_Fonte_Conteudo_Relatorio.md" />
+    <None Include="Docs\CORRECAO_VerificacaoObjetos.md" />
+    <None Include="Docs\CORRECOES_ConfiguracaoFontes.md" />
+    <None Include="Docs\CORRECOES_FINAIS_Fontes.md" />
+    <None Include="Docs\IMPLEMENTACAO_Fontes_Relatorios.md" />
+    <None Include="Docs\README_ConfiguracaoFontes.md" />
+    <None Include="Docs\RESUMO_FINAL.md" />
+    <None Include="Docs\SOLUCAO_FINAL_DetailReport.md" />
+    <None Include="Docs\TROUBLESHOOTING_Fontes.md" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -533,6 +578,7 @@
     </Compile>
     <None Include="Relatorio\Properties\Settings.settings" />
     <None Include="Scripts\Configuracao.json" />
+    <None Include="Scripts\Producao\README_EXECUTAR_EM_PRODUCAO.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -581,7 +627,20 @@
     <Content Include="DllsDev\DevExpress.XtraReports.v13.2.xml" />
     <Content Include="DllsDev\DevExpress.XtraTreeList.v13.2.dll" />
     <Content Include="DllsDev\DevExpress.XtraTreeList.v13.2.xml" />
+    <Content Include="Scripts\DEBUG_VerificarFontes.sql" />
+    <Content Include="Scripts\Producao\00_EXECUTAR_TUDO.sql" />
+    <Content Include="Scripts\Producao\00_VERIFICACAO_PRE_EXECUCAO.sql" />
+    <Content Include="Scripts\Producao\01_ALTER_Configuracoes_Fontes.sql" />
+    <Content Include="Scripts\Producao\02_CREATE_Tabelas_Seguranca.sql" />
+    <Content Include="Scripts\Producao\03_CREATE_Procedures_Seguranca.sql" />
+    <Content Include="Scripts\Producao\03_INSERT_Dados_Iniciais.sql" />
+    <Content Include="Scripts\Producao\04_ALTER_Procedure_SalvarConfiguracoes.sql" />
+    <Content Include="Scripts\Producao\05_ALTER_Function_ConsultarConfiguracoes.sql" />
+    <Content Include="Scripts\Producao\06_CORRECAO_SalvarConfiguracoes.sql" />
+    <Content Include="Scripts\Producao\99_ROLLBACK.sql" />
     <Content Include="Scripts\Script.sql" />
+    <Content Include="Scripts\ScriptConfiguracaoFontes.sql" />
+    <Content Include="Scripts\ScriptLogin.sql" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
