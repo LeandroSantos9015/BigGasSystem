@@ -23,7 +23,7 @@ namespace WindowsFormsApp6.Menus.Seguranca
             this.SuspendLayout();
 
             // Form
-            this.Text = "Login - Sistema de Vendas";
+            this.Text = "Login - BigJet Gas";
             this.Size = new Size(400, 250);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -32,7 +32,7 @@ namespace WindowsFormsApp6.Menus.Seguranca
 
             // Label Título
             Label lblTitulo = new Label();
-            lblTitulo.Text = "BEM-VINDO AO SISTEMA";
+            lblTitulo.Text = "BEM-VINDO";
             lblTitulo.Font = new Font("Arial", 14, FontStyle.Bold);
             lblTitulo.Location = new Point(70, 20);
             lblTitulo.Size = new Size(260, 25);
