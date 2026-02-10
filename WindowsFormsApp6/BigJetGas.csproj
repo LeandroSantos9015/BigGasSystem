@@ -561,8 +561,12 @@
     <None Include="Docs\CORRECAO_VerificacaoObjetos.md" />
     <None Include="Docs\CORRECOES_ConfiguracaoFontes.md" />
     <None Include="Docs\CORRECOES_FINAIS_Fontes.md" />
+    <None Include="Docs\DOCUMENTACAO_COMPLETA.md" />
     <None Include="Docs\IMPLEMENTACAO_Fontes_Relatorios.md" />
+    <None Include="Docs\INTEGRACAO_BACKUP_CONCLUIDA.md" />
+    <None Include="Docs\PROJETO_COMPLETO_FINAL.md" />
     <None Include="Docs\README_ConfiguracaoFontes.md" />
+    <None Include="Docs\README_FINAL.md" />
     <None Include="Docs\RESUMO_FINAL.md" />
     <None Include="Docs\SOLUCAO_FINAL_DetailReport.md" />
     <None Include="Docs\TROUBLESHOOTING_Fontes.md" />

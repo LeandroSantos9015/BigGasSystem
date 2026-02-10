@@ -51,6 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboFonteRelatorio = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnBackupBanco = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -212,7 +213,7 @@
             this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(9, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(343, 13);
+            this.label5.Size = new System.Drawing.Size(349, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Relatórios: visualização em tela/PDF  |  Impressão: matricial (LPT/USB)";
             // 
@@ -243,7 +244,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(272, 52);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Tamanho:";
             // 
@@ -261,7 +262,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(9, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 13);
+            this.label7.Size = new System.Drawing.Size(92, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "Fonte Impressão:";
             // 
@@ -292,7 +293,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(272, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Tamanho:";
             // 
@@ -310,15 +311,26 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Fonte Relatórios:";
+            // 
+            // btnBackupBanco
+            // 
+            this.btnBackupBanco.Location = new System.Drawing.Point(8, 305);
+            this.btnBackupBanco.Name = "btnBackupBanco";
+            this.btnBackupBanco.Size = new System.Drawing.Size(150, 30);
+            this.btnBackupBanco.TabIndex = 11;
+            this.btnBackupBanco.Text = "🗄️ Backup do Banco";
+            this.btnBackupBanco.UseVisualStyleBackColor = true;
+            this.btnBackupBanco.Click += new System.EventHandler(this.btnBackupBanco_Click);
             // 
             // FrmConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 336);
+            this.ClientSize = new System.Drawing.Size(415, 430);
+            this.Controls.Add(this.btnBackupBanco);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnTestar);
             this.Controls.Add(this.btnSalvar);
@@ -371,5 +383,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnBackupBanco;
     }
 }
